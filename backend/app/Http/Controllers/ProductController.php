@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Item;
+use App\Product;
 
-class ItemController extends Controller
+class ProductController extends Controller
 {
     public function index(){
 
-        $items = Item::all();
+        $items = Product::all();
         return view('items',compact('items'));
     }
     public function show($id){
 
-        $item = Item::findOrFail($id);
+        $item = Product::findOrFail($id);
       
         return view('/show',compact('item'));
     }
@@ -24,32 +24,32 @@ class ItemController extends Controller
     }
 
     public function store(Request $request){
-        $newItem= new Item;
-        $newItem->name = $request->input('name');
-        $newItem->description = $request->input('description');
-        $newItem->price = $request->input('price');
-        $newItem->image = $request->input('image');
-        $newItem->category_id = $request->input('category_id');
-        $newItem->discount = $request->input('discount');
-        $newItem->save();
+        $newProduct= new Product;
+        $newProduct->name = $request->input('name');
+        $newProduct->description = $request->input('description');
+        $newProduct->price = $request->input('price');
+        $newProduct->image = $request->input('image');
+        $newProduct->category_id = $request->input('category_id');
+        $newProduct->discount = $request->input('discount');
+        $newProduct->save();
 
         return redirect('/items');
 
     }
     public function delete(Request $request){
         $delId= $request->id;
-        $valueDie = Item::findOrFail($delId);
+        $valueDie = Product::findOrFail($delId);
         $valueDie->delete();
         return redirect('/items');
     }
     public function edit($id){
-        $item = Item::findOrFail($id);
+        $item = Product::findOrFail($id);
         
         return view('/edit',compact('item'));
     }
     public function update($id,Request $request){
        
-        $editId= Item::findOrFail($id);
+        $editId= Product::findOrFail($id);
         
        
         $editId->name = $request->input('name');

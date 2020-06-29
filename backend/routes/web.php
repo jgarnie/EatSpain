@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/items', 'ItemController@index');
-Route::get('/items/{id}', 'ItemController@show');
-Route::get('/create', 'ItemController@create');
-Route::post('/items/create', 'ItemController@store');
-Route::post('/items/delete', 'ItemController@delete');
-Route::get('/item/{id}/edit','ItemController@edit');
-Route::post('/items/{id}/update', 'ItemController@update');
+Route::get('/items', 'ProductController@index');
+Route::get('/items/{id}', 'ProductController@show');
+Route::get('/create', 'ProductController@create');
+Route::post('/items/create', 'ProductController@store');
+Route::post('/items/delete', 'ProductController@delete');
+Route::get('/item/{id}/edit','ProductController@edit');
+Route::post('/items/{id}/update', 'ProductController@update');
 
