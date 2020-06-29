@@ -23,7 +23,11 @@ Route::post('/items/create', 'ProductController@store');
 Route::post('/items/delete', 'ProductController@delete');
 Route::get('/item/{id}/edit','ProductController@edit');
 Route::post('/items/{id}/update', 'ProductController@update');
+//api for the fetching frontend /api/products
 
+
+Route::get('/api/all', 'ProductController@apiAll')->name('apiAll');
+Route::get('/api/food', 'ProductController@apiAll')->name('apiFood');
 
 Auth::routes();
 

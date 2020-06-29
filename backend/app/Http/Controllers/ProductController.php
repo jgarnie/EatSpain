@@ -10,6 +10,7 @@ class ProductController extends Controller
     public function index(){
 
         $items = Product::all();
+
         return view('items',compact('items'));
     }
     public function show($id){
@@ -60,6 +61,18 @@ class ProductController extends Controller
         $editId->discount = $request->input('discount');
         $editId->save();
         return redirect('/items');
+
+    }
+    public function apiAll(){
+
+        $items = Product::all();
+
+        return [
+            'products'=>$items,
+        ];
+
+
+
 
     }
 }
