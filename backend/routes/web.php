@@ -24,3 +24,7 @@ Route::post('/items/delete', 'ProductController@delete');
 Route::get('/item/{id}/edit','ProductController@edit');
 Route::post('/items/{id}/update', 'ProductController@update');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
