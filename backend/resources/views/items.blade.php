@@ -6,7 +6,7 @@
     <h2>{{$item->name}}</h2>
 
     <p>{{$item->description}}</p>
-    <p>{{$item->price}}</p>
+    <p>{{$item->price}}Eur</p>
             
     <a href="/items/{{$item->id}}"><button>Details</button></a>
 
