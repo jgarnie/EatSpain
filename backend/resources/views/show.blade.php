@@ -13,7 +13,7 @@
     @csrf
     <input type="hidden" name="id" value="{{$item->id}}">
     <label>delete
-    <input type="submit"></label>
+    <input type="submit" onclick="return confirm('Are you sure to delete {{$item->name}}?')"></label>
 </form>
 
 

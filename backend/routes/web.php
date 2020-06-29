@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/items', 'ProductController@index');
+Route::get('/items', 'ProductController@index')->middleware('auth');
 Route::get('/items/{id}', 'ProductController@show');
 Route::get('/create', 'ProductController@create');
 Route::post('/items/create', 'ProductController@store');
