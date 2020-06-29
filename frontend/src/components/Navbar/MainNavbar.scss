@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+
+
+}
+
+
+
+.mainNav {
+    height: 6rem;
+    background-color: lightgrey;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__img {
+        height: 5rem;
+        padding-right: 25%;
+    }
+
+    &__text {
+        padding-right: 2rem;
+    }
+
+    &__search {
+        padding-right: 1rem;
+        background-color: white ;
+        border: 2px solid lightgrey;
+    }
+
+    &__cartNum {
+        padding-right: 2rem;
+    }
+}
