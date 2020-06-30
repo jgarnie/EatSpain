@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledProductCard = styled.div`
-  width: 350px;
-  height: 350px;
+  /* width: 350px;
+  height: 350px; */
   border-radius: 10px;
   background-color: #1e1e26;
-  box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
 
   & img {
     height: 150px;
