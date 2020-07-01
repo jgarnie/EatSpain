@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/products/all', 'ApiController@apiAll')->name('apiAll');
+
+Route::get('/categories/all', 'ApiController@categoryAll')->name('categoryAll');
+
+Route::get('products/new', 'ApiController@newest')->name('newitems');

@@ -1,3 +1,20 @@
+
+@extends('layouts.layout', [
+    'title' => 'Products'
+])
+
+@section('content')
+
+@if (Session::has('success_message'))
+    
+    <div class="alert alert-success">
+        {{ Session::get('success_message') }}
+    </div>
+
+@endif
+
+
+
 <a href="/create"><button>create new Item</button></a>
 
 
@@ -10,10 +27,8 @@
             
     <a href="/items/{{$item->id}}"><button>Details</button></a>
 
-
-
-
 </div>
 
 @endforeach
-<?php
+
+@endsection

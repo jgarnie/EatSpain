@@ -1,3 +1,13 @@
+{{-- not being used at the moment, functionallity applied to edit blade--}}
+
+{{--
+
+not functional
+
+ --}}
+
+
+
 <h1>Add new items</h1>
 
 <form method="post" action="/items/create">
