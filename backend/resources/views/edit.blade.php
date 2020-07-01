@@ -17,6 +17,11 @@
 {{$item->description}}<br>
  -->--}}
 
+
+ @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+ @endforeach
+
 @if($item->id)
 <form method="post" action="/items/{{$item->id}}/update">
 

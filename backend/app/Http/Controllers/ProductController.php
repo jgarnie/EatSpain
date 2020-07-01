@@ -30,6 +30,23 @@ class ProductController extends Controller
 
     public function store(Request $request){
 
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:700',
+            'price' => 'required|string|between:0,100',
+            'image' => 'required|string|between:0,100',
+            'category_id' => 'required|numeric|between:0,100',
+            'discount' => 'nullable|numeric|between:0,100',
+        ], [
+            'name.required' => 'That number is outside of bounds.',
+            'description.required' => 'A review without a text does not make sense, love.',
+            'image.max.required' => 'image is requiresd and must be string',
+            'category_id.required' => 'category is required and must be number!',
+            'price.max.required' => 'price is required'
+        ]);
+
+
+
         $newProduct= new Product;
         $newProduct->name = $request->input('name');
         $newProduct->description = $request->input('description');
