@@ -11,7 +11,6 @@ const Navbar = () => {
         src={require("../../img/logo.png")}
         alt="logo"
       />
-      <span className="mainNav__text">EatSpain</span>
       <input className="mainNav__search" type="text" placeholder="Search" />
       <FontAwesomeIcon icon={faShoppingCart} />
       <span className="mainNav__cartNum">0</span>

@@ -1,38 +1,49 @@
+@import "../../scss/variables/variables";
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-
-
-
 }
 
-
-
 .mainNav {
-    height: 6rem;
-    background-color: lightgrey;
-    color: red;
+    height: 5rem;
+    background-color: #cccccc;
+    color: #AA151B;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
 
     &__img {
-        height: 5rem;
-        padding-right: 25%;
+        height: 4rem;
+        padding-right: 30vw;
+
     }
 
-    &__text {
-        padding-right: 2rem;
-    }
+
 
     &__search {
+        background-color: darkgrey;
+        margin-right: 1rem;
         padding-right: 1rem;
-        background-color: white ;
-        border: 2px solid lightgrey;
+        border: 2px solid #cccccc;
+        border-radius: 15px;
+        height: 1.8rem;
+        outline: none;
+        text-indent: 1rem;
+        color: #058E6E;
+        &::placeholder {
+            color: #058E6E;
+        }
+
+        &:hover{
+            opacity: 0.75;
+            height: 2.1rem;
+        }
     }
 
     &__cartNum {

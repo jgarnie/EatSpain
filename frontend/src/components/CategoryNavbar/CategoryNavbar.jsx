@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./CategoryNavbar.scss"
+
 
 const CategoryNavbar = () => {
   return (
-    <nav>
-      <Link to="/category/meat">Meat</Link>
-      <Link to="/category/canned">Canned</Link>
-      <Link to="/category/dried">Dried</Link>
-      <Link to="/category/drinks">Drinks</Link>
-      <Link to="/">Sweets</Link>
-      <Link to="/">Cheese</Link>
+    <nav className="categoryNav">
+      <Link className="categoryNav__input" to="/category/meat">Meat</Link>
+      <Link className="categoryNav__input" to="/category/canned">Canned</Link>
+      <Link className="categoryNav__input" to="/category/dried">Dried</Link>
+      <Link className="categoryNav__input" to="/category/drinks">Drinks</Link>
+      <Link className="categoryNav__input" to="/">Sweets</Link>
+      <Link className="categoryNav__input" to="/">Cheese</Link>
     </nav>
   );
 };

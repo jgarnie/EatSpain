@@ -1,0 +1,29 @@
+@import "../../scss/variables/variables";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.categoryNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #058E6E;
+    height: 2rem;
+    
+    &__input {
+        color: white;
+        text-decoration: none;
+        font-size: 0.8rem;
+        
+        &:hover {
+            color: $mainColor;
+        }
+    }
+}
