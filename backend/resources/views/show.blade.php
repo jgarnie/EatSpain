@@ -1,3 +1,19 @@
+@extends('layouts.layout', [
+    'title' => 'Publisher management'
+])
+
+@section('content')
+
+@if (Session::has('success_message'))
+    
+    <div class="alert alert-success">
+        {{ Session::get('success_message') }}
+    </div>
+
+@endif
+
+
+
 <h1>{{$item->name}}</h1>
 
 <p>{{$item->id}}</p>
@@ -5,6 +21,8 @@
 <p>{{$item->description}}</p>
 
 <p>{{$item->price}}Eur</p>
+
+<p>{{$category->name}}</p>
 <img src="{{$item->image}}" alt="" srcset="">
 <br>
 <a href="/items"><button>back</button></a>
@@ -17,7 +35,7 @@
 </form>
 
 
-
+@endsection
 
 
 
