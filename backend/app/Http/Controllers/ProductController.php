@@ -23,8 +23,9 @@ class ProductController extends Controller
     public function create(){
 
         $item = new Product;
-
-        return view('/edit',compact('item'));
+        $categories = Category::All();
+       
+        return view('/edit',compact('item','categories'));
         //create view changed by edit
     }
 
@@ -32,11 +33,11 @@ class ProductController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'description' => 'required|string|max:700',
-            'price' => 'required|string|between:0,100',
-            'image' => 'required|string|between:0,100',
+            'description' => 'required|string|max:1000',
+            'price' => 'required|string|between:0,10',
+            'image' => 'required|string|between:0,255',
             'category_id' => 'required|numeric|between:0,100',
-            'discount' => 'nullable|numeric|between:0,100',
+            'discount' => 'nullable|numeric|between:0,10',
         ], [
             'name.required' => 'That number is outside of bounds.',
             'description.required' => 'A review without a text does not make sense, love.',
@@ -72,10 +73,9 @@ class ProductController extends Controller
     public function edit($id){
         $item = Product::with('category')
         ->findOrFail($id);
-        $category = Category::all();
+        $categories = Category::All();
         //return $item;
-        return $category;
-        return view('/edit',compact('item','category'));
+        return view('/edit',compact('item','categories'));
     }
     public function update($id,Request $request){
        

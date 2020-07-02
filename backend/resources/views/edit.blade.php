@@ -55,7 +55,14 @@
     </div>
     <div>
         <label>category</label>
-        <input type="text" name="category_id" value="{{ old('category_id', $item->category_id) }}">
+        <select name="category_id">
+
+        @foreach($categories as $category)
+
+            <option value="{{$category->id}}">{{$category->name}}</option>
+        @endforeach
+        </select>
+        <!-- <input type="text" name="category_id" value="{{ old('category_id', $item->category_id) }}"> -->
         @if($item->id)
             <p>category name: {{$item->category->name}}</p>
         @endif
