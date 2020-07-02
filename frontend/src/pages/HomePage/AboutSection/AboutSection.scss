@@ -1,1 +1,53 @@
-@import "../../../scss/variables/variables"
+@import "../../../scss/variables/variables";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.about {
+
+    position: relative;
+    height: 100vh;
+
+    &__heading {
+        font-size: 5rem;
+        // position: absolute;
+        padding-top: 5vh;
+        width: 100vw;
+        text-align: center;
+        color: $yellow;
+        z-index: 1;
+        background-color: black;
+        margin: 0;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 1.5rem;
+        // position: absolute;
+        padding-top: 3rem;
+        padding-left: 3rem;
+        text-align: center;
+        color: $yellow;
+        background-color: black;
+        z-index: 0.5;
+    }
+    &__mainImg {
+        width: 60vw;
+        height: 65vh;
+        
+    
+    }
+
+}
+
+.test {
+    display: flex;
+    flex-direction: row;
+}

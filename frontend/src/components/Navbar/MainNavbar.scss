@@ -12,7 +12,7 @@ body {
 .mainNav {
     height: 5rem;
     background-color: #cccccc;
-    color: #AA151B;
+    color: $red;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,9 +35,9 @@ body {
         height: 1.8rem;
         outline: none;
         text-indent: 1rem;
-        color: #058E6E;
+        color: white;
         &::placeholder {
-            color: #058E6E;
+            color: white;
         }
 
         &:hover{

@@ -14,7 +14,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #058E6E;
+    background-color: $red;
     height: 2rem;
     
     &__input {
@@ -23,7 +23,7 @@ body {
         font-size: 0.8rem;
         
         &:hover {
-            color: $mainColor;
+            color: $green;
         }
     }
 }
