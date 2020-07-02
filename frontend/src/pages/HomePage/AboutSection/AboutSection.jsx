@@ -7,16 +7,17 @@ const AboutSection = () => {
     <section className="about">
       <h1 className="about__heading">EatSpain</h1>
 
-<div className="test">
-<p className="about__text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil possimus
-        facere totam iure maiores quis odio ea provident autem exercitationem
-        voluptatibus quam veniam fugit.
-      </p>
+    <div className="about__section">
+    <p className="about__text">
 
-      <img className="about__mainImg" src={require("../../../img/main.jpg")} alt="paella"/>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil possimus
+            facere totam iure maiores quis odio ea provident autem exercitationem
+            voluptatibus quam veniam fugit.
+          </p>
 
-</div>
+          <img className="about__mainImg" src={require("../../../img/main.jpg")} alt="paella"/>
+
+    </div>
 
 
     </section>
