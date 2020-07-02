@@ -28,9 +28,15 @@ class ApiController extends Controller
             'products'=>$items,
         ];
     }
-    public function newest(){
+    public function newest(Request $request){
         //shows the last 10 products added to DB
-        $items = Product::orderBy('created_at', 'desc')->take(10)->get();
+        $limit = $request->input('limit');
+        if(isset($limit))
+        {$items = Product::orderBy('created_at', 'desc')->take(10)->get();
+        }else{
+            $items = Product::orderBy('created_at', 'desc')->get();
+        }
+        
 
         return [
             'products'=>$items,

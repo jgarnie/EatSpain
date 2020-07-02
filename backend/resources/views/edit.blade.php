@@ -58,11 +58,15 @@
         <select name="category_id">
 
         @foreach($categories as $category)
-
-            <option value="{{$category->id}}">{{$category->name}}</option>
+            @if($item->category_id == $category->id)
+                <option selected value="{{$category->id}}">{{$category->name}}</option>
+            @elseif($item->category_id != $category->id)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endif
         @endforeach
+
         </select>
-        <!-- <input type="text" name="category_id" value="{{ old('category_id', $item->category_id) }}"> -->
+       
         @if($item->id)
             <p>category name: {{$item->category->name}}</p>
         @endif

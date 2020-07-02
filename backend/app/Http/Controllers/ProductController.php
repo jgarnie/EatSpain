@@ -17,14 +17,15 @@ class ProductController extends Controller
     public function show($id){
 
         $item = Product::findOrFail($id);
-      
-        return view('/show',compact('item'));
+        $category = Category::findOrFail($item->category_id);
+        
+        return view('/show',compact('item','category'));
     }
     public function create(){
 
         $item = new Product;
         $categories = Category::All();
-       
+   
         return view('/edit',compact('item','categories'));
         //create view changed by edit
     }
@@ -58,7 +59,7 @@ class ProductController extends Controller
         $newProduct->save();
        
         session()->flash('success_message', 'The product was successfully saved!');
-
+       
         return redirect(action('ProductController@show',$newProduct->id ));
        
     }
@@ -71,14 +72,30 @@ class ProductController extends Controller
         return redirect('/items');
     }
     public function edit($id){
+
         $item = Product::with('category')
         ->findOrFail($id);
         $categories = Category::All();
-        //return $item;
+
         return view('/edit',compact('item','categories'));
     }
     public function update($id,Request $request){
-       
+        
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'price' => 'required|string|between:0,10',
+            'image' => 'required|string|between:0,255',
+            'category_id' => 'required|numeric|between:0,100',
+            'discount' => 'nullable|numeric|between:0,10',
+        ], [
+            'name.required' => 'That number is outside of bounds.',
+            'description.required' => 'A review without a text does not make sense, love.',
+            'image.max.required' => 'image is requiresd and must be string',
+            'category_id.required' => 'category is required and must be number!',
+            'price.max.required' => 'price is required'
+        ]);
+
         $editId= Product::findOrFail($id);
         
         $editId->name = $request->input('name');
@@ -88,10 +105,10 @@ class ProductController extends Controller
         $editId->category_id = $request->input('category_id');
         $editId->discount = $request->input('discount');
         $editId->save();
-        
+        $itemid = $id;
         session()->flash('success_message', 'product modified succesfully!');
 
-        return redirect(action('ProductController@index'));
+        return redirect(action('ProductController@show',$itemid));
 
     }
     

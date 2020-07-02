@@ -21,6 +21,8 @@
 <p>{{$item->description}}</p>
 
 <p>{{$item->price}}Eur</p>
+
+<p>{{$category->name}}</p>
 <img src="{{$item->image}}" alt="" srcset="">
 <br>
 <a href="/items"><button>back</button></a>
