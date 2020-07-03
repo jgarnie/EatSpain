@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "dried",
+      "description": "description"
+    },
+    {
+      "id": 2,
+      "name": "meat",
+      "description": "different kinds of meat"
+    },
+    {
+      "id": 3,
+      "name": "canned",
+      "description": "different kinds of canned food"
+    },
+    {
+      "id": 4,
+      "name": "drinks",
+      "description": "different kinds of spanish drinks"
+    },
+    {
+      "id": 5,
+      "name": "sweets",
+      "description": "different kinds of spanish sweets"
+    },
+    {
+      "id": 6,
+      "name": "cheese",
+      "description": "different kinds of spanish cheese"
+    }
+]
