@@ -1,0 +1,15 @@
+.product-slider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #555;
+
+  &:hover {
+    color: #000;
+  }
+}
