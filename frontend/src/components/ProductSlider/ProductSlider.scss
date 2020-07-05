@@ -1,6 +1,20 @@
-.product-slider {
+.carousel {
   width: 90%;
   margin: 0 auto;
+
+  &__header {
+    margin: 0;
+  }
+}
+
+.product-slider {
+  position: relative;
+
+  &__slider {
+  }
+
+  &__slide {
+  }
 }
 
 .btn {
@@ -8,8 +22,18 @@
   background-color: transparent;
   font-size: 2rem;
   color: #555;
+  position: absolute;
+  top: 50%;
 
   &:hover {
     color: #000;
+  }
+
+  &--back {
+    left: -2rem;
+  }
+
+  &--next {
+    right: -2rem;
   }
 }

@@ -5,19 +5,17 @@ import "./topproducts.scss";
 
 const TopProducts = () => {
   return (
-    <div>
-      <ProductSlider header={"Top Products"}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </ProductSlider>
-    </div>
+    <ProductSlider header={"Top Products"} className={"carousel"}>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+    </ProductSlider>
   );
 };
 

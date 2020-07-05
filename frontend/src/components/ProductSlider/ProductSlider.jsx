@@ -13,7 +13,7 @@ import { throttleFunction } from "../../utils/throttleFunction.js";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "./ProductSlider.scss";
 
-const ProductSlider = ({ children, heading }) => {
+const ProductSlider = ({ children, header, className }) => {
   const [displaySlides, setDisplaySlides] = useState(2);
 
   const checkWindowSize = () => {
@@ -41,31 +41,37 @@ const ProductSlider = ({ children, heading }) => {
 
   return (
     <CarouselProvider
-      naturalSlideWidth={100}
-      naturalSlideHeight={125}
+      naturalSlideWidth={125}
+      naturalSlideHeight={100}
       totalSlides={children.length}
       visibleSlides={displaySlides}
       interval={2500}
       infinite={true}
       isPlaying={true}
-      className="product-slider"
+      className={className}
     >
-      <h3>{heading}</h3>
-      <Slider style={{ height: "200px" }}>
-        {children.map((child, index) => {
-          return (
-            <Slide key={index} index={index}>
-              {child}
-            </Slide>
-          );
-        })}
-      </Slider>
-      <ButtonBack className="btn">
-        <FontAwesomeIcon icon={faAngleLeft} />
-      </ButtonBack>
-      <ButtonNext className="btn">
-        <FontAwesomeIcon icon={faAngleRight} />
-      </ButtonNext>
+      <h3 className="carousel__header">{header}</h3>
+      <div className="product-slider">
+        <Slider className="product-slider__slider">
+          {children.map((child, index) => {
+            return (
+              <Slide
+                key={index}
+                index={index}
+                className="product-slider__slide"
+              >
+                {child}
+              </Slide>
+            );
+          })}
+        </Slider>
+        <ButtonBack className="btn btn--back">
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </ButtonBack>
+        <ButtonNext className="btn btn--next">
+          <FontAwesomeIcon icon={faAngleRight} />
+        </ButtonNext>
+      </div>
     </CarouselProvider>
   );
 };
