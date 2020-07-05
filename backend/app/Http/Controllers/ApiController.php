@@ -37,9 +37,10 @@ class ApiController extends Controller
             $items = Product::orderBy('created_at', 'desc')->get();
         }
         
-
         return [
             'products'=>$items,
         ];
     }
+
+
 }

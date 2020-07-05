@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Product;
-class ProductsSeeder extends Seeder
+
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -28,19 +29,11 @@ class ProductsSeeder extends Seeder
         $product->image = $item->image;
         $product->category_id = $item->category_id;
         $product->price = $item->price;
-        $product->discount = $item->diccount;
+        $product->discount = $item->discount;
         $product->quantity = $item->quantity;
         $product->times_sold = $item->times_sold;
 
         $product->save();
-        
     }
-
-    
-    
-    
-    
-   
-   
     }
 }
