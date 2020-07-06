@@ -45,12 +45,12 @@ const ProductSlider = ({ children, header, className }) => {
       naturalSlideHeight={100}
       totalSlides={children.length}
       visibleSlides={displaySlides}
-      interval={2500}
+      interval={5000}
       infinite={true}
       isPlaying={true}
       className={className}
     >
-      <h3 className="carousel__header">{header}</h3>
+      <h2 className="carousel__header">{header}</h2>
       <div className="product-slider">
         <Slider className="product-slider__slider">
           {children.map((child, index) => {

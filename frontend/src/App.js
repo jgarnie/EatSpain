@@ -6,6 +6,7 @@ import MainNavbar from "./components/Navbar/MainNavbar";
 import Footer from "./components/Footer/Footer";
 import CategoryNavbar from "./components/CategoryNavbar/CategoryNavbar";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <CategoryNavbar />
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
+
+        <Route component={AboutPage} path="/about" />
         <Route component={HomePage} path="/" />
       </Switch>
       <Footer />
