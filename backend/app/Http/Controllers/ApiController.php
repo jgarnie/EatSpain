@@ -8,39 +8,38 @@ use App\Category;
 
 class ApiController extends Controller
 {
-    public function apiAll(Request $request){
+    public function apiAll(Request $request)
+    {
         $category = $request->input("category");
 
-        if(isset($category)){
-            $items = Product::where('category_id','=',$category)->get();  
-        }else{
+        if (isset($category)) {
+            $items = Product::where('category_id', '=', $category)->get();
+        } else {
             $items = Product::orderByRaw('RAND()')->get();
         }
         return [
-            'products'=>$items,
+            'products' => $items,
         ];
     }
-    public function categoryAll(){
+    public function categoryAll()
+    {
 
         $items = Category::all();
 
-        return [
-            'products'=>$items,
-        ];
+        return $items;
     }
-    public function newest(Request $request){
+    public function newest(Request $request)
+    {
         //shows the last 10 products added to DB
         $limit = $request->input('limit');
-        if(isset($limit))
-        {$items = Product::orderBy('created_at', 'desc')->take(10)->get();
-        }else{
+        if (isset($limit)) {
+            $items = Product::orderBy('created_at', 'desc')->take(10)->get();
+        } else {
             $items = Product::orderBy('created_at', 'desc')->get();
         }
-        
+
         return [
-            'products'=>$items,
+            'products' => $items,
         ];
     }
-
-
 }

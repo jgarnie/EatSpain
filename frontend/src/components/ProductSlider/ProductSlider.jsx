@@ -8,7 +8,7 @@ import {
 } from "pure-react-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { throttleFunction } from "../../utils/throttleFunction.js";
+import { throttle } from "../../utils/throttle.js";
 
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "./ProductSlider.scss";
@@ -28,7 +28,7 @@ const ProductSlider = ({ children, header, className }) => {
   };
 
   const throttledWindowSize = () => {
-    throttleFunction(checkWindowSize, 200);
+    throttle(checkWindowSize, 200);
   };
 
   useEffect(() => {

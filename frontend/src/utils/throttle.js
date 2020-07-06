@@ -1,5 +1,6 @@
 let timerId;
-export const throttleFunction = function (func, delay) {
+
+export const throttle = function (func, delay) {
   // If setTimeout is already scheduled, no need to do anything
   if (timerId) return;
 
