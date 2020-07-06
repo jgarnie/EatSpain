@@ -40,6 +40,6 @@ class LoginController extends Controller
     }
     protected function loggedOut(Request $request) {
         return redirect('/admin/login');
-    }
+    }//to redirect users after log out
    
 }

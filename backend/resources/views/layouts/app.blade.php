@@ -64,14 +64,14 @@
 
 
 
-                                    {{--this has been pasted on my navbar to logout users--}}
+                                    {{--this has been pasted on navbar to logout users--}}
 
 
 
 
 
 
-                                    
+
                             </li>
                         @endguest
                     </ul>
