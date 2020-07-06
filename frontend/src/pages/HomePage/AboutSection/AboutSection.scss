@@ -4,38 +4,36 @@
 .about {
 
     position: relative;
-    height: 100vh;
+    height: 90vh;
     background-color: $green;
+    overflow: hidden;
 
-    &__heading {
-        font-size: 6rem;
-        // position: absolute;
-        padding-top: 5vh;
-        width: 100vw;
-        text-align: center;
-        color: $yellow;
-        z-index: 1;
-        // background-color: black;
-        margin: 0;
-    }
+    // &__heading {
+    //     font-family: 'Amatic SC', cursive;
+    //     font-size: 6rem;
+    //     padding-top: 5vh;
+    //     width: 100vw;
+    //     text-align: center;
+    //     color: $yellow;
+    //     z-index: 1;
+    //     margin: 0;
+    // }
 
     &__text {
         margin: 0;
         width: 50%;
         font-size: 1.5rem;
-        // position: absolute;
         padding-top: 10rem;
         padding-left: 3rem;
         text-align: center;
         color: $yellow;
-        // background-color: black;
     }
 
     &__mainImg {
         width: 50%;
-        height: auto;
+        height: 70vh;
         padding-right: 2rem;
-        border-radius: 320px 720px 750px 700px;
+        border-radius: 770px 770px 770px 770px;
 
     }
 
@@ -43,6 +41,47 @@
         display: flex;
         flex-direction: row;
     }
-}
 
+    &__scroll {
+        position: absolute;
+        margin-left: 50vw;
+        margin-top: -10vh;
+        height: 7rem;
+        width: 7rem;
+        z-index: 1;
+
+        animation-iteration-count: infinite;
+        animation-duration: 1.5s;
+        animation: bounce 3.6s ease infinite;
+        transform-origin: 50% 50%;
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            5.55556% {
+                transform: translateY(0);
+            }
+            11.11111% {
+                transform: translateY(0);
+            }
+            22.22222% {
+                transform: translateY(-15px);
+            }
+            27.77778% {
+                transform: translateY(0);
+            }
+            33.33333% {
+                transform: translateY(-15px);
+            }
+            44.44444% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(0);
+            }
+            }
+    }
+
+}
 

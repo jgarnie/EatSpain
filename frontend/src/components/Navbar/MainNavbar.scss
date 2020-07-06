@@ -49,4 +49,16 @@ body {
     &__cartNum {
         padding-right: 2rem;
     }
+
+
 }
+
+    .title {
+        font-family: 'Amatic SC', cursive;
+        font-size: 6rem;
+        padding-top: 0vh;
+        width: 100vw;
+        color: $yellow;
+        z-index: 1;
+        margin: 0;
+    }

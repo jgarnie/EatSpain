@@ -5,7 +5,7 @@ import "./AboutSection.scss"
 const AboutSection = () => {
   return (
     <section className="about">
-      <h1 className="about__heading">EatSpain</h1>
+      <h1 className="about__heading">Eat Spain</h1>
 
     <div className="about__section">
     <p className="about__text">
@@ -15,9 +15,11 @@ const AboutSection = () => {
             voluptatibus quam veniam fugit.
           </p>
 
-          <img className="about__mainImg" src={require("../../../img/main.jpg")} alt="paella"/>
+          <img className="about__mainImg" src={require("../../../img/test.jpg")} alt="paella"/>
 
     </div>
+
+    <img className="about__scroll" src={require("../../../img/arrow.svg")} alt="scroll"/>
 
 
     </section>
