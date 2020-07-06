@@ -22,10 +22,10 @@ class ApiController extends Controller
     }
     public function categoryAll(){
 
-        $items = Category::all();
+        $categories = Category::all();
 
         return [
-            'products'=>$items,
+            'categories'=>$categories,
         ];
     }
     public function newest(Request $request){
@@ -41,6 +41,16 @@ class ApiController extends Controller
             'products'=>$items,
         ];
     }
+    public function searchBar(Request $request){
 
+        $name = $request->input('name');
+
+        $items = Product::where('name','like','%'.$name.'%')->get();
+
+        return [
+            'products'=>$items,
+        ];
+    }
+   
 
 }
