@@ -28,7 +28,7 @@ class ProductsSeeder extends Seeder
         $product->image = $item->image;
         $product->category_id = $item->category_id;
         $product->price = $item->price;
-        $product->discount = $item->diccount;
+        $product->discount = $item->discount;
         $product->quantity = $item->quantity;
         $product->times_sold = $item->times_sold;
 

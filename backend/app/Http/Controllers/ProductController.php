@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index(){
 
         $items = Product::orderByRaw('RAND()')->get();
-        return $items;
+       
         return view('items',compact('items'));
     }
     public function show($id){
