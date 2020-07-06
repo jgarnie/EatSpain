@@ -8,6 +8,7 @@ import CategoryNavbar from "./components/CategoryNavbar/CategoryNavbar";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import { CartApi } from "./api/CartApi";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   const [cart, setCart] = useState({});
@@ -30,6 +31,8 @@ function App() {
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
         <Route component={SearchPage} path="/search/" />
+
+        <Route component={AboutPage} path="/about" />
         <Route component={HomePage} path="/" />
       </Switch>
       <Footer />
