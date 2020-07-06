@@ -13,7 +13,6 @@ const HomePage = () => {
         <RecipeOfTheWeek />
         <GoGreen />
       </div>
-      
     </div>
   );
 };

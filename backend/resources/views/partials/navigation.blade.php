@@ -4,6 +4,8 @@
 
     <a href="{{ route('products.index') }}">Product Index</a>
 
+    <a href="{{ route('admin.users.index') }}">Manage Users</a>
+
     <h6>the next links are not working, are there for testing purpose</h6>
 
     <a href="">Make a promo</a>

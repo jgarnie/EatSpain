@@ -30,6 +30,13 @@ Route::post('/items/{id}/update', 'ProductController@update');
 
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::resource('/users', 'UsersController',['except'=>['show','create','store']]);
+});
+//after route name to hide urls should be: ->middleware('can:admin'), has been defined on app\Providers\AuthServiceProvider.php as a gate
