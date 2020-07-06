@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Category;
 
-class CategoriesSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +12,6 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-            
-     
-
-
-
         DB::table('categories')->truncate();
 
         $source_file = storage_path('categories.json');
@@ -29,8 +24,9 @@ class CategoriesSeeder extends Seeder
         
         $category->name = $item->name;
         $category->description = $item->description;
-        
-        $product->save();
+        $category->slug = $item->slug;
+
+        $category->save();
         
     }
     }

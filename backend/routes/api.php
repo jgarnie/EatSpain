@@ -23,3 +23,6 @@ Route::get('/products/all', 'ApiController@apiAll')->name('apiAll');
 Route::get('/categories/all', 'ApiController@categoryAll')->name('categoryAll');
 
 Route::get('products/new', 'ApiController@newest')->name('newitems');
+
+Route::get('/carts/cart', 'CartController@find')->name('cart.find');
+Route::post('/carts/cart', 'CartController@add')->name('cart.add');
