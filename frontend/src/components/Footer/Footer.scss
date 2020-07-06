@@ -1,0 +1,72 @@
+@import "../../scss/variables/variables";
+
+
+
+.footer {
+    padding-left: 3rem;
+    background-color: grey;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 0.9rem;
+
+    &__flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__about {
+        padding-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    &__category {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+
+    }
+
+    &__input {
+        color: white;
+        padding-bottom: 1rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        &:hover {
+            color: $green;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: row;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &__fb {
+        font-size: 3rem;
+        margin-right: 2rem;
+        &:hover {
+            color: #3B5998;  
+        }
+    }
+
+    
+    &__insta {
+        font-size: 3rem;
+        &:hover {
+            color:#DD2A7B;  
+        }
+    }
+
+    &__category {
+        line-height: 0.9;
+    }
+
+    &__address {
+
+    }
+}
+
