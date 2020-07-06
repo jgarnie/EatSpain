@@ -20,9 +20,9 @@ not functional
         <label>description</label>
         <input type="textarea" name="description">
     </div>
-     <div>
+    <div>
         <label>image</label>
-        <input type="text" name="image">
+        <input type="file" name="image">
     </div>
     <div>
         <label>category</label>

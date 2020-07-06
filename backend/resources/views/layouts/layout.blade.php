@@ -65,7 +65,8 @@
         </style>
     </head>
     <body>
-     
+    @include('partials.logout')
+    
     @include('partials.navigation')
 
 
@@ -76,3 +77,4 @@
 
     </body>
 </html>
+{{--partials logout has been copied from app.blade, also new routes for prefix admi--}}

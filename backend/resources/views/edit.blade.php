@@ -4,18 +4,7 @@
 
 @section('content')
 
-@if(($item->id))
-<img src="{{$item->image}}" alt="rice image">
 
-@endif
-{{--
-<!-- 
-{{$item->id}}
-<img src="{{$item->image}}" alt="" srcset="">url to img {{$item->image}}<br>
-{{$item->name}}<br>
-{{$item->price}}<br>
-{{$item->description}}<br>
- -->--}}
 
 
  @foreach ($errors->all() as $error)
@@ -23,10 +12,10 @@
  @endforeach
 
 @if($item->id)
-<form method="post" action="/items/{{$item->id}}/update">
+<form method="post" action="/items/{{$item->id}}/update" enctype="multipart/form-data">
 
 @else
-<form method="post" action="{{ route('products.store') }}">
+<form method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
 @endif
 
 
@@ -48,9 +37,9 @@
     </div>
      <div>
         <label>image</label>
-        <input type="text" name="image" value="{{ old('image', $item->image) }}">
+        <input type="file" name="image" value="{{ old('image', $item->image) }}">
         @if($item->id)
-            <p>img url: {{$item->image}}</p>
+        <img src="/images/uploads/{{$item->image}}" alt="{{ $item->name }}">
         @endif
     </div>
     <div>

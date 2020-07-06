@@ -23,7 +23,7 @@
 <p>{{$item->price}}Eur</p>
 
 <p>{{$category->name}}</p>
-<img src="{{$item->image}}" alt="" srcset="">
+<img src="/images/uploads/{{$item->image}}" alt="" srcset="">
 <br>
 <a href="/items"><button>back</button></a>
 <a href="/item/{{$item->id}}/edit"><button>edit</button></a>

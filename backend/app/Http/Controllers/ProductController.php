@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index(){
 
         $items = Product::orderByRaw('RAND()')->get();
-       
+      
         return view('items',compact('items'));
     }
     public function show($id){
@@ -31,31 +31,33 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-
+        
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'price' => 'required|string|between:0,10',
-            'image' => 'required|string|between:0,255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required|numeric|between:0,100',
             'discount' => 'nullable|numeric|between:0,10',
         ], [
             'name.required' => 'That number is outside of bounds.',
             'description.required' => 'A review without a text does not make sense, love.',
-            'image.max.required' => 'image is requiresd and must be string',
-            'category_id.required' => 'category is required and must be number!',
+            'image.required' => 'accepted formats jpeg,png,jpg,gif,svg|max:2048',
+            'category_id.required' => 'category is required',
             'price.max.required' => 'price is required'
         ]);
-
+        $newFileName = md5(time()) . '.' . $request->file('image')->extension();
+        $request->file('image')->move(public_path('images/uploads'), $newFileName);
 
 
         $newProduct= new Product;
         $newProduct->name = $request->input('name');
         $newProduct->description = $request->input('description');
         $newProduct->price = $request->input('price');
-        $newProduct->image = $request->input('image');
+        $newProduct->image = $newFileName;
         $newProduct->category_id = $request->input('category_id');
         $newProduct->discount = $request->input('discount');
+
         $newProduct->save();
        
         session()->flash('success_message', 'The product was successfully saved!');
@@ -116,7 +118,7 @@ class ProductController extends Controller
         $name = $request->input('name');
 
         $items = Product::where('name','like','%'.$name.'%')->get();
-
+        
         return view('/items', compact('items'));
     }
 }
