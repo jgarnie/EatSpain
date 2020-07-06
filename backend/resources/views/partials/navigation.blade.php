@@ -24,3 +24,10 @@
     <a href="">category 6</a>
 <h6>from here it works again</h6>
 </nav>
+<form action="{{ route('products.searchBar') }}" method="POST">
+    @csrf
+        <input type="text" name="name">
+        <button type="submit" placeholder="type the name of the product">Search</button>
+
+
+</form>

@@ -16,6 +16,8 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->string("token")->unique();
+            //$table-> deleted_at (soft deleting)
+            //z requestu můžu získat OS, typ browseru, timezone atd. --přidat sem
             $table->timestamps();
         });
     }

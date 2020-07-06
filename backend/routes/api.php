@@ -26,3 +26,4 @@ Route::get('products/new', 'ApiController@newest')->name('newitems');
 
 Route::get('/carts/cart', 'CartController@find')->name('cart.find');
 Route::post('/carts/cart', 'CartController@add')->name('cart.add');
+Route::get('/searchBar', 'ApiController@searchBar')->name('search.results');
