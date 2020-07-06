@@ -22,8 +22,6 @@ const recipeSection = () => {
             voluptatibus quam veniam fugit.
             </p>
 
-            <button className="recipe__btn">more info</button>
-
         </div>
 
 

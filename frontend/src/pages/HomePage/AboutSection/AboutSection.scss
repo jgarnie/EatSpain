@@ -2,50 +2,43 @@
 
 
 .about {
-
-    position: relative;
     height: 90vh;
-    background-color: $green;
+    background-image: url(../../../img/main.jpg);
     overflow: hidden;
 
-    // &__heading {
-    //     font-family: 'Amatic SC', cursive;
-    //     font-size: 6rem;
-    //     padding-top: 5vh;
-    //     width: 100vw;
-    //     text-align: center;
-    //     color: $yellow;
-    //     z-index: 1;
-    //     margin: 0;
-    // }
+    &__heading {
+        font-family: 'Amatic SC', cursive;
+        font-size: 6rem;
+        padding-top: 5vh;
+        padding-left: 5rem;
+        width: 100vw;
+        text-align: center;
+        color: $red;
+        z-index: 1;
+        margin: 0;
+    }
 
     &__text {
-        margin: 0;
+        margin-top: 25rem;
+        margin-left: 3rem;
         width: 50%;
         font-size: 1.5rem;
-        padding-top: 10rem;
-        padding-left: 3rem;
         text-align: center;
         color: $yellow;
+        background-color:rgba(grey, 0.7);
     }
 
-    &__mainImg {
-        width: 50%;
-        height: 70vh;
-        padding-right: 2rem;
-        border-radius: 770px 770px 770px 770px;
-
-    }
 
     &__section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__scroll {
         position: absolute;
         margin-left: 50vw;
-        margin-top: -10vh;
+        margin-top: 10vh;
         height: 7rem;
         width: 7rem;
         z-index: 1;

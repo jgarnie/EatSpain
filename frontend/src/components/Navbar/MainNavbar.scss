@@ -21,10 +21,15 @@ body {
     &__img {
         height: 4rem;
         padding-right: 30vw;
-
     }
 
-
+    &__title {
+        font-family: 'Amatic SC', cursive;
+        font-size: 4rem;
+        width: 100vw;
+        color: $yellow;
+        padding-left: 2rem;
+    }
 
     &__search {
         background-color: darkgrey;
@@ -53,12 +58,4 @@ body {
 
 }
 
-    .title {
-        font-family: 'Amatic SC', cursive;
-        font-size: 6rem;
-        padding-top: 0vh;
-        width: 100vw;
-        color: $yellow;
-        z-index: 1;
-        margin: 0;
-    }
+

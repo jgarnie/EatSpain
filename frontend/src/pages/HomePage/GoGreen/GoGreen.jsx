@@ -20,8 +20,7 @@ const goGreenSection = () => {
             facere totam iure maiores quis odio ea provident autem exercitationem
             voluptatibus quam veniam fugit.
             </p>
-
-            <button className="goGreen__btn">more info</button>
+            
         </div>
         
 
