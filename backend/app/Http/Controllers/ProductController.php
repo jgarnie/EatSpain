@@ -111,5 +111,12 @@ class ProductController extends Controller
         return redirect(action('ProductController@show',$itemid));
 
     }
-    
+    public function searchBar(Request $request){
+
+        $name = $request->input('name');
+
+        $items = Product::where('name','like','%'.$name.'%')->get();
+
+        return view('/items', compact('items'));
+    }
 }

@@ -7,6 +7,7 @@ import "./MainNavbar.scss"
 const Navbar = () => {
   return (
     <nav className="mainNav">
+      <h1 className="title">Eat Spain</h1>
       <img className="mainNav__img"
         src={require("../../img/logo.png")}
         alt="logo"
