@@ -45,9 +45,9 @@ class ApiController extends Controller
     public function searchBar(Request $request)
     {
 
-        $name = $request->input('name');
+        $query = $request->input('query');
 
-        $items = Product::where('name', 'like', '%' . $name . '%')->get();
+        $items = Product::where('name', 'like', '%' . $query . '%')->get();
 
         return [
             'products' => $items,

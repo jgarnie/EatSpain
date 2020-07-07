@@ -2,10 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
+import CartProvider from "./providers/CartProvider";
+import CategoryProvider from "./providers/CategoryProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <CategoryProvider>
+        <App />
+      </CategoryProvider>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
