@@ -21,6 +21,12 @@ class ApiController extends Controller
             'products' => $items,
         ];
     }
+
+    public function productDetail($product_id)
+    {
+        $product = Product::findOrFail($product_id);
+        return $product;
+    }
     public function categoryAll()
     {
 
