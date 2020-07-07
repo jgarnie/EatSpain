@@ -34,7 +34,7 @@ export class ProductsApi {
       if (!response.status) throw new Error(response.statusText);
       const data = await response.json();
       console.log(`product id ${productId} detail`, data);
-      setData(data.products);
+      setData(data);
       setIsLoading(false);
     } catch (e) {
       console.log(

@@ -6,14 +6,14 @@ import "./ProductDetail.scss"
 
 
 const ProductDetail = (props) => {
-  console.log(props);
+  console.log(props, "PROPS");
 return (
     <div className="product-detail">
-      <img className="product-detail__img" src={require("../../img/main.jpg")} alt="cheese"/>
+      <img className="product-detail__img" src={props.product.image} alt="cheese"/>
       <div className="product-detail__container">
-        <h1>Name of the product</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum nisi obcaecati deserunt, reprehenderit ipsum, aliquid sapiente molestiae laborum dolores placeat labore.</p>
-        <p>Price: 3$</p>
+      <h1>{props.product.name}</h1>
+        <p>{props.product.description}</p>
+      <p>Price: {props.product.price} €</p>
         
 
         
