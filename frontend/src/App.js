@@ -10,23 +10,23 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import CartPage from "./pages/CartParge/CartPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 
 function App() {
   // const [searchInput, setSearchInput] = useState([]);
-  
+
   // const handleSearch=(searchValue)=>{
   //   setSearchInput(searchValue)
   // }
 
   return (
     <Router>
-       <MainNavbar /> {/*handleSearch={handleSearch}*/}
+      <MainNavbar /> {/*handleSearch={handleSearch}*/}
       <CategoryNavbar />
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
         <Route component={SearchPage} path="/search/" />
-        <Route component={ProductDetail} path="/product/:productId" />
+        <Route component={ProductDetailPage} path="/products/:productId" />
         <Route component={AboutPage} path="/about" />
         <Route component={CartPage} path="/cart" />
         <Route component={OrderDetailsPage} path="/order-details" />

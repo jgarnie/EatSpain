@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/products/all', 'ApiController@apiAll')->name('apiAll');
+Route::get('/products/product/{product_id}', 'ApiController@productDetail')->name('product.detail');
 
 Route::get('/categories/all', 'ApiController@categoryAll')->name('categoryAll');
 

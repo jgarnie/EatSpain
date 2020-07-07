@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./MainNavbar.scss";
 import { CartContext } from "../../providers/CartProvider";
-import { Link } from "react-router-dom";
 
 const Navbar = ({ handleSearch }) => {
   const { cartCount } = useContext(CartContext);
@@ -14,9 +13,7 @@ const Navbar = ({ handleSearch }) => {
 
   return (
     <nav className="mainNav">
-      <h1 className="mainNav__title">
-        <Link to="/">Eat Spain </Link>
-      </h1>
+      <h1 className="mainNav__title">Eat Spain</h1>
 
       <img
         className="mainNav__img"
