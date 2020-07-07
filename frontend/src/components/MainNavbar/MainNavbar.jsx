@@ -4,8 +4,15 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./MainNavbar.scss";
 import { CartContext } from "../../providers/CartProvider";
 
-const Navbar = () => {
+
+const Navbar = ({handleSearch}) => {
+
   const { cartCount } = useContext(CartContext);
+
+  const handleKeyDown=(e)=>{
+    if(e.key==='Enter')
+    handleSearch()
+  }
 
   return (
     <nav className="mainNav">
@@ -15,7 +22,8 @@ const Navbar = () => {
         src={require("../../img/logo.png")}
         alt="logo"
       />
-      <input className="mainNav__search" type="text" placeholder="Search" />
+      
+      <input onKeyDown={handleKeyDown} className="mainNav__search" type="text" placeholder="Search" />
       <FontAwesomeIcon icon={faShoppingCart} />
       <span className="mainNav__cartNum">{cartCount}</span>
     </nav>

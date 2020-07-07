@@ -9,7 +9,21 @@ export class ProductsApi {
       setData(data.products);
       setIsLoading(false);
     } catch (e) {
-      console.log("There was an error when trying to fetch the categories", e);
+      console.log("There was an error when trying to fetch the products", e);
     }
   };
+
+    static getSearchProducts = async (query, setData, setIsLoading) => {
+      try {
+        const response = await fetch(`${baseUrl}/search?query=${query}`);
+        if (!response.status) throw Error(response.statusText);
+        const data = await response.json();
+        console.log("search result", data);
+        setData(data.products);
+        setIsLoading(false);
+      } catch (e) {
+        console.log("There was an error when trying to fetch the products", e);
+      }
+    };
+  
 }
