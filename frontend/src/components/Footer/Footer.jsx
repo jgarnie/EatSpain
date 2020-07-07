@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__flex">
         <div className="footer__about">
-          <p>About page</p>
+          <p><Link to="/about">About page</Link></p>
           <p>Recipes</p>
           <p>Events</p>
         </div>

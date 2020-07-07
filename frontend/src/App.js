@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import CartPage from "./pages/CartParge/CartPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 function App() {
   // const [searchInput, setSearchInput] = useState([]);
@@ -25,6 +26,7 @@ function App() {
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
         <Route component={SearchPage} path="/search/" />
+        <Route component={ProductDetail} path="/product/:productId" />
         <Route component={AboutPage} path="/about" />
         <Route component={CartPage} path="/cart" />
         <Route component={OrderDetailsPage} path="/order-details" />
