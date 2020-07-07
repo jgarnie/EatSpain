@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//use always api
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -32,4 +33,4 @@ Route::get('/carts/cart/{token}', 'CartController@find')->name('carts.find');
 // Route::post('/carts/new', 'CartController@add')->name('cart.add'); 
 // Route::post('/carts/', 'CartController@create')->name('cart.create');
 
-Route::get('/searchBar', 'ApiController@searchBar')->name('search.results');
+Route::get('/search', 'ApiController@searchBar')->name('search.results');

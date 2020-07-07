@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
@@ -9,21 +8,29 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import CartPage from "./pages/CartParge/CartPage";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+
 
 function App() {
-  // const [searchInput, setSearchInput] = useState([]);
-  
-  // const handleSearch=(searchValue)=>{
-  //   setSearchInput(searchValue)
-  // }
+  const [ searchValue, setSearchValue ] = useState('');
+  const [ redirect, setRedirect ] = useState(false);
 
-  return (
-    <Router>
-       <MainNavbar /> {/*handleSearch={handleSearch}*/}
+
+  const handleSearch=(value)=>{
+    setSearchValue(value)
+    setRedirect(true)
+  
+  }
+  
+
+  return (<Router>
+      {redirect && <Redirect to={`/search/${searchValue}`} />} 
+      <MainNavbar handleSearch={handleSearch}/>
       <CategoryNavbar />
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
-        <Route component={SearchPage} path="/search/" />
+        <Route component={SearchPage} searchValue={searchValue} path="/search/:query" />
         <Route component={AboutPage} path="/about" />
         <Route component={CartPage} path="/cart" />
         <Route component={HomePage} path="/" />
