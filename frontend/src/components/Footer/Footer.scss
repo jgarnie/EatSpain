@@ -2,6 +2,7 @@
 
 
 
+
 .footer {
     padding-left: 3rem;
     background-color: grey;
@@ -19,9 +20,17 @@
     &__about {
         padding-bottom: 1rem;
         font-size: 0.9rem;
-        color: white;
-        text-decoration: none;
+        
+        &__input {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                color: $green;
+            }
+        }
     }
+
+
 
     &__category {
         display: flex;

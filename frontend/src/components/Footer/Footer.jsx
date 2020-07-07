@@ -13,9 +13,9 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__flex">
         <div className="footer__about">
-          <p><Link to="/about">About page</Link></p>
-          <p>Recipes</p>
-          <p>Events</p>
+          <p><Link className="footer__about__input" to="/about">Recipes</Link></p>
+          <p><Link className="footer__about__input" to="/about">Events</Link></p>
+          <p><Link className="footer__about__input" to="/about">About page</Link></p>
         </div>
 
         <div className="footer__category">

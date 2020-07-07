@@ -16,7 +16,7 @@ const Navbar = ({handleSearch}) => {
 
   return (
     <nav className="mainNav">
-      <h1 className="mainNav__title">Eat Spain</h1>
+      <h1 className="mainNav__title"> Eat Spain</h1>
       <img
         className="mainNav__img"
         src={require("../../img/logo.png")}
