@@ -11,15 +11,15 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import CartPage from "./pages/CartParge/CartPage";
 
 function App() {
-  const [searchInput, setSearchInput] = useState([]);
+  // const [searchInput, setSearchInput] = useState([]);
   
-  const handleSearch=(searchValue)=>{
-    setSearchInput(searchValue)
-  }
+  // const handleSearch=(searchValue)=>{
+  //   setSearchInput(searchValue)
+  // }
 
   return (
     <Router>
-      <MainNavbar handleSearch={handleSearch}/>
+       <MainNavbar /> {/*handleSearch={handleSearch}*/}
       <CategoryNavbar />
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
