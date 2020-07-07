@@ -31,7 +31,6 @@ function App() {
       <Switch>
         <Route component={CategoryPage} path="/category/:categoryName" />
         <Route component={SearchPage} path="/search/" />
-
         <Route component={AboutPage} path="/about" />
         <Route component={HomePage} path="/" />
       </Switch>

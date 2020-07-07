@@ -5,6 +5,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { CategoriesApi } from "../../api/CategoriesApi.js";
+import AboutPage from "../../pages/AboutPage/AboutPage";
 
 
 

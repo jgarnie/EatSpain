@@ -6,7 +6,7 @@ const AboutPage = () => {
     return (
         <div className="aboutPage">
             <div className="aboutPage__headline">
-                <h1>Who are we and why are we doing it?</h1>    
+                <h1>Who are we and why are we doing this?</h1>    
                 <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error inventore assumenda cumque similique explicabo praesentium asperiores delectus placeat enim? Sunt ad veritatis totam magnam mollitia. Saepe repellendus ab porro blanditiis.</h4>
             </div>
 
@@ -16,7 +16,7 @@ const AboutPage = () => {
             </div>
 
             <div className="aboutPage__second">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, dolores ipsa a in excepturi neque hic, officiis, aperiam beatae sit iste repudiandae voluptates id aut vel quaerat nesciunt eos autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident explicabo, illum ratione sit voluptatem rerum dolorem earum quasi repudiandae, vel nesciunt impedit ipsam beatae ex facere placeat alias id dolore!
+                <p className="aboutPage__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, dolores ipsa a in excepturi neque hic, officiis, aperiam beatae sit iste repudiandae voluptates id aut vel quaerat nesciunt eos autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident explicabo, illum ratione sit voluptatem rerum dolorem earum quasi repudiandae, vel nesciunt impedit ipsam beatae ex facere placeat alias id dolore!
                 </p>
                 <img className="aboutPage__img" src={require("../../img/green.jpg")} alt="greenNature"/>
             </div>
