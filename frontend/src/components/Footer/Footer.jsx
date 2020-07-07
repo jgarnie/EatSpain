@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { CategoryContext } from "../../providers/CategoryProvider";
 
 const Footer = () => {
-  const { categories, isLoading } = useContext(CategoryContext);
+  const { categories } = useContext(CategoryContext);
 
   return (
     <div className="footer">
