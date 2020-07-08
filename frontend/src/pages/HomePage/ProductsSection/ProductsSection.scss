@@ -1,0 +1,16 @@
+.HomePage__products__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    &--ProductCard{
+        width: 30%;
+        margin: 0.25rem;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
