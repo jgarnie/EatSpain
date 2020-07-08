@@ -46,26 +46,45 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
+
+
         $token = $request->input("token");
-        $cart = Cart::where("token", $token)->with("products")->get();
-        $cart->products()->attach($request->input("product_id"), ["count" => $request->input('count')]);
-        return [
-            "cart" => $cart,
-            "response" => "ok"
-        ];
+        $cart = Cart::where("token", $token)->with("products")->first();
+
+        $item_exists = $cart->products->contains($request->input("productId"));
+
+        if ($item_exists) {
+            $current_count = $cart->products->firstWhere("id", $request->input("productId"))->pivot->count;
+            $new_count = $current_count + $request->input('count');
+            $cart->products()->updateExistingPivot($request->input("productId"), ["count" => $new_count]);
+        } else {
+            $cart->products()->attach($request->input("productId"), ["count" => $request->input('count')]);
+        }
+
+        $cart->load('products');
+        return $cart;
     }
 
     public function updateCount(Request $request)
     {
         $token = $request->input("token");
         $cart = Cart::where("token", $token)->with("products")->get();
-        $cart->products()->updateExistingPivot($request->input("product_id"), ["count" => $request->input('count')]);
+        $cart->products()->updateExistingPivot($request->input("productId"), ["count" => $request->input('count')]);
     }
 
     public function remove(Request $request)
     {
+        $cart = Cart::where("token", 2123)->with("products")->first();
+        $item_exists = $cart->products->contains(5);
+        $current_count = $cart->products->firstWhere("id", 5)->pivot->count;
+
+        return [$current_count];
+
+        return [$item_exists];
+
+
         $token = $request->input("token");
         $cart = Cart::where("token", $token)->with("products")->get();
-        $cart->products()->detach($request->input("product_id"));
+        $cart->products()->detach($request->input("productId"));
     }
 }
