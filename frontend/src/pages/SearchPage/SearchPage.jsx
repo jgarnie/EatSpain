@@ -30,7 +30,7 @@ console.log('results',results)
     return (
         <>
         
-        <h3>We have found <span className="SeearchPage__poducts__wrapper--total">{query.length}</span> products</h3> 
+        <h3>We have found <span className="SeearchPage__poducts__wrapper--total">{results.length}</span> products</h3> 
           <div className="SeearchPage__poducts__wrapper">
             {results.map((product, index)=>{
 

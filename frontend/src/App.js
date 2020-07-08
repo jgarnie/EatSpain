@@ -19,6 +19,7 @@ function App() {
 
 
   const handleSearch=(value)=>{
+    
     setSearchValue(value)
     setRedirect(true)
   
