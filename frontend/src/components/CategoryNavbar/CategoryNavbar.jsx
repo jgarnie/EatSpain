@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./CategoryNavbar.scss";
-import { CategoriesApi } from "../../api/CategoriesApi.js";
+import { CategoryContext } from "../../providers/CategoryProvider";
 
 const CategoryNavbar = () => {
-  const [categories, setCategories] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    CategoriesApi.getAllCategories(setCategories, setIsLoading);
-  }, []);
+  const { categories } = useContext(CategoryContext);
 
   return (
     <nav className="categoryNav">

@@ -16,22 +16,22 @@ import "./ProductSlider.scss";
 const ProductSlider = ({ children, header, className }) => {
   const [displaySlides, setDisplaySlides] = useState(2);
 
-  const checkWindowSize = () => {
-    let display = displaySlides;
-    //Set responsivity:
-    if (window.innerWidth < 1024) {
-      display = 2;
-    } else {
-      display = 4;
-    }
-    setDisplaySlides(display);
-  };
-
-  const throttledWindowSize = () => {
-    throttle(checkWindowSize, 200);
-  };
-
   useEffect(() => {
+    const checkWindowSize = () => {
+      let display = null;
+      //Set responsivity:
+      if (window.innerWidth < 1024) {
+        display = 2;
+      } else {
+        display = 4;
+      }
+      setDisplaySlides(display);
+    };
+
+    const throttledWindowSize = () => {
+      throttle(checkWindowSize, 200);
+    };
+
     window.addEventListener("resize", throttledWindowSize);
     checkWindowSize();
     return function cleanup() {

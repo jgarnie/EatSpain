@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     CartApi.getToken(token, setToken);
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     window.localStorage.setItem("_cartToken", token);
@@ -26,6 +26,14 @@ const CartProvider = ({ children }) => {
     return count;
   };
 
+  const addToCart = () => {
+    console.log("add item to cart");
+  };
+
+  const removeFromCart = () => {
+    console.log("remove item from cart");
+  };
+
   const cartCount = countCart();
 
   return (
@@ -35,6 +43,8 @@ const CartProvider = ({ children }) => {
         cartCount,
         isCartLoading,
         token,
+        addToCart,
+        removeFromCart,
       }}
     >
       {children}
