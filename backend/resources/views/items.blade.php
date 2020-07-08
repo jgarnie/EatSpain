@@ -21,7 +21,7 @@
 @foreach($items as $item)
 <div>
     <h2>{{$item->name}}</h2>
-
+    <img src="/images/uploads/{{$item->image}}" alt="" srcset="">
     <p>{{$item->description}}</p>
     <p>{{$item->price}}Eur</p>
             
