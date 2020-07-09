@@ -16,19 +16,19 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     &__img {
         height: 4rem;
-        padding-right: 30vw;
+        padding-left: 2rem;
     }
 
     &__title {
         font-family: 'Amatic SC', cursive;
         font-size: 4rem;
-        width: 100vw;
         color: $yellow;
         padding-left: 2rem;
+        text-decoration: none;
     }
 
     &__search {
@@ -53,6 +53,7 @@ body {
 
     &__cartNum {
         padding-right: 2rem;
+        padding-left: 0.5rem;
     }
 
 
