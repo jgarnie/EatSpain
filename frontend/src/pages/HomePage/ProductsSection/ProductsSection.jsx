@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ProductsApi } from "./../../../api/ProductsApi.js";
 import ProductCard from "./../../../components/ProductCard/ProductCard.jsx";
 import "./ProductsSection.scss";
-import { linksUrl } from "./../../../env.js";
 import { Link } from "react-router-dom";
 
 
