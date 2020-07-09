@@ -22,7 +22,6 @@ export default function ProductsSection() {
       }else{
           setProducts(products.concat(data.data));
       }
-
   }
 
     useEffect(() => {

@@ -8,7 +8,7 @@ use App\Category;
 
 class ApiController extends Controller
 {
-    public function apiAll(Request $request)
+    public function apiAll()
     {
        //$items = Product::all()->paginate($_GET['limit'])->get();
       
@@ -30,8 +30,18 @@ class ApiController extends Controller
     }
     public function categoryAll()
     {
+        //testing, working $categories = Product::where('category_id','=',$_GET['category'])->orderByRaw('RAND()')->get();
+        
+        if(isset($_GET['name'])){
+            
+            $category = Category::where('name','=',$_GET['name'])->get();
 
-        $categories = Category::all();
+            $categories = Product::where('category_id','=',$category[0]->id)->orderByRaw('RAND()')->get();
+            
+        }else{
+            $categories = Category::all();
+        }
+      
 
         return $categories;
     }
