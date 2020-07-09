@@ -25,16 +25,16 @@ const CartProvider = ({ children }) => {
     });
     return count;
   };
+  const cartCount = countCart();
 
-  const addToCart = () => {
-    console.log("add item to cart");
+  const addToCart = (productId, count) => {
+    console.log(cart, productId, "add item to cart");
+    CartApi.addToCart({ productId, token, count }, setCart, setIsCartLoading);
   };
 
   const removeFromCart = () => {
-    console.log("remove item from cart");
+    console.log(cart, "remove item from cart");
   };
-
-  const cartCount = countCart();
 
   return (
     <CartContext.Provider

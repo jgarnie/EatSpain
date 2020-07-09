@@ -30,7 +30,9 @@ Route::get('products/new', 'ApiController@newest')->name('newitems');
 
 
 Route::get('/carts', 'CartController@checkToken')->name('carts.checkToken');
-Route::get('/carts/cart/{token}', 'CartController@find')->name('carts.find');
+Route::get('/carts/{token}', 'CartController@find')->name('carts.find');
+Route::post('/carts/{token}', 'CartController@add')->name('carts.add');
+Route::delete('/carts/{token}', 'CartController@remove')->name('carts.remove');
 
 // Route::post('/carts/new', 'CartController@add')->name('cart.add'); 
 // Route::post('/carts/', 'CartController@create')->name('cart.create');
