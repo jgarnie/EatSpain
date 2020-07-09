@@ -10,16 +10,17 @@ class ApiController extends Controller
 {
     public function apiAll(Request $request)
     {
-        $category = $request->input("category");
-
-        if (isset($category)) {
-            $items = Product::where('category_id', '=', $category)->get();
-        } else {
-            $items = Product::orderByRaw('RAND()')->get();
-        }
-        return [
-            'products' => $items,
-        ];
+       //$items = Product::all()->paginate($_GET['limit'])->get();
+      
+            if(isset($_GET['limit'])){
+                $items = Product::orderby('discount','desc')->paginate($_GET['limit']);
+            }else{
+                $items = Product::orderByRaw('RAND()')->get();
+            }
+        
+            return [
+                'products' => $items,
+            ];
     }
 
     public function productDetail($product_id)
@@ -39,7 +40,7 @@ class ApiController extends Controller
         //shows the last 10 products added to DB
         $limit = $request->input('limit');
         if (isset($limit)) {
-            $items = Product::orderBy('created_at', 'desc')->take(10)->get();
+            $items = Product::orderBy('created_at', 'desc')->take($limit)->get();
         } else {
             $items = Product::orderBy('created_at', 'desc')->get();
         }
