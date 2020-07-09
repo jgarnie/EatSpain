@@ -14,7 +14,7 @@ export class CategoriesApi {
       const response = await fetch(`${baseUrl}/api/categories/all?name=${category}`);
       if (!response.status) throw Error(response.statusText);
       const data = await response.json();
-      console.log("all categories", data);
+      //console.log("all categories", data);
       setData(data);
       setIsLoading(false);
     } catch (e) {

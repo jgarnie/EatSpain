@@ -30,14 +30,15 @@ class ApiController extends Controller
     }
     public function categoryAll()
     {
+        //&page=1 to send several values in the url
         //testing, working $categories = Product::where('category_id','=',$_GET['category'])->orderByRaw('RAND()')->get();
         
         if(isset($_GET['name'])){
             
             $category = Category::where('name','=',$_GET['name'])->get();
 
-            $categories = Product::where('category_id','=',$category[0]->id)->orderByRaw('RAND()')->get();
-            
+            $categories = Product::where('category_id','=',$category[0]->id)->orderby('discount','desc')->paginate(10);
+//->orderByRaw('RAND()')
         }else{
             $categories = Category::all();
         }
