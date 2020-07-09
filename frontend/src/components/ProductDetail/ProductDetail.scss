@@ -31,14 +31,11 @@
         
     }
 
-    &
-
-
 
     &__btn {
         background-color: $yellow;
-        color: grey;
-        border: 1px solid $yellow;
+        color: white;
+        border: none;
         border-radius: 10px;
         height: 3rem;
         width: 9rem;
@@ -46,7 +43,7 @@
         margin-left: 2rem;
         
         &:hover {
-            color:$red;
+            background-color:$green;
         }
     }
 
