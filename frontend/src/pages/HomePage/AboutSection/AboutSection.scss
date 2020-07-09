@@ -2,10 +2,24 @@
 
 
 .about {
-    height: 90vh;
+
+    position: relative;
+    height: calc(100vh - 7rem);
     background-image: url(../../../img/main.jpg);
     background-size: cover;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:after {
+        content:"";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(black, 0.3);
+    }
 
     // &__heading {
     //     font-family: 'Amatic SC', cursive;
@@ -20,22 +34,23 @@
     // }
 
     &__text {
-        margin-top: 50vh;
-        margin-left: 1rem;
+        position: relative;
         width: 50%;
         font-size: 1.5rem;
         text-align: center;
         color: $yellow;
-        background-color:rgba(grey, 0.7);
+        // background-color:rgba(grey, 0.7);
+        z-index: 1;
     }
 
 
     &__scroll {
         position: absolute;
-        margin-left: 50vw;
+        left: calc(50% - 35px);
         z-index: 1;
         color: $yellow;
         font-size: 5rem;
+        bottom: 1.5rem;
 
         animation-iteration-count: infinite;
         animation-duration: 1.5s;
