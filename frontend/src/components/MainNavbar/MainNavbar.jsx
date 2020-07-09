@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./MainNavbar.scss";
 import { CartContext } from "../../providers/CartProvider";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ handleSearch }) => {
   const { cartCount } = useContext(CartContext);
@@ -13,22 +14,26 @@ const Navbar = ({ handleSearch }) => {
 
   return (
     <nav className="mainNav">
-      <h1 className="mainNav__title">Eat Spain</h1>
 
-      <img
+      <Link to="/"><img 
         className="mainNav__img"
         src={require("../../img/logo.png")}
         alt="logo"
-      />
+      /></Link>
 
-      <input
-        onKeyDown={handleKeyDown}
-        className="mainNav__search"
-        type="text"
-        placeholder="Search"
-      />
-      <FontAwesomeIcon icon={faShoppingCart} />
-      <span className="mainNav__cartNum">{cartCount}</span>
+      <h1><Link className="mainNav__title" to="/">Eat Spain</Link></h1>
+
+      <div>
+        <input
+          onKeyDown={handleKeyDown}
+          className="mainNav__search"
+          type="text"
+          placeholder="Search"
+        />
+        <FontAwesomeIcon icon={faShoppingCart} />
+        <span className="mainNav__cartNum">{cartCount}</span>
+      </div>
+
     </nav>
   );
 };
