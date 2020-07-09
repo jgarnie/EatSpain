@@ -1,12 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../providers/CartProvider";
 
 const CartItem = ({ item }) => {
   const { updateCart, removeFromCart } = useContext(CartContext);
 
+  const [input, setInput] = useState(item.pivot.count);
+
   const handleInputChange = (e) => {
-    updateCart(item.id, e.target.value);
+    setInput(e.target.value);
   };
+
+  useEffect(() => {
+    if (input) {
+      updateCart(item.id, input);
+    }
+  }, [input]);
 
   const handleDelete = () => {
     removeFromCart(item.id);
@@ -18,11 +26,7 @@ const CartItem = ({ item }) => {
       <h3>{item.name}</h3>
       <p>{item.description}</p>
       <img src={item.image} alt={item.name} />
-      <input
-        type="number"
-        value={item.pivot.count}
-        onChange={handleInputChange}
-      />
+      <input type="number" value={input} onChange={handleInputChange} />
       <div>{item.price} USD</div>
     </div>
   );

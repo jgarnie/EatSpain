@@ -17,15 +17,7 @@ const CartProvider = ({ children }) => {
     CartApi.getCartItems(token, setCart, setIsCartLoading);
   }, [token]);
 
-  const countCart = () => {
-    let count = 0;
-
-    cart.forEach((item) => {
-      count += Number(item.pivot.count);
-    });
-    return count;
-  };
-  const cartCount = countCart();
+  const cartCount = cart.length;
 
   const addToCart = (productId, count) => {
     CartApi.addToCart({ productId, token, count }, setCart, setIsCartLoading);
