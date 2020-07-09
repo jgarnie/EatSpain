@@ -31,8 +31,8 @@ const Footer = () => {
         </div>
 
         <div className="footer__socials">
-          <FontAwesomeIcon className="footer__fb" icon={faFacebook} />
-          <FontAwesomeIcon className="footer__insta" icon={faInstagram} />
+          <a className="footer__fb" href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon  icon={faFacebook} /></a>
+          <a className="footer__insta" href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon  icon={faInstagram} /></a>
         </div>
 
         <div className="footer__address">

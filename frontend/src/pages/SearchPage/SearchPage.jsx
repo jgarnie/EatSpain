@@ -26,7 +26,7 @@ const SearchPage = ({searchValue, ...restProps}) => {
     }, [query]);
 
  const results = searchResults;
-console.log('results',results)
+// console.log('results',results)
     return (
         <>
           {searchResults.length<= 0 ?  <Spinner/> :

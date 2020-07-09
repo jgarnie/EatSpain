@@ -4,23 +4,24 @@
 .about {
     height: 90vh;
     background-image: url(../../../img/main.jpg);
+    background-size: cover;
     overflow: hidden;
 
-    &__heading {
-        font-family: 'Amatic SC', cursive;
-        font-size: 6rem;
-        padding-top: 5vh;
-        padding-left: 5rem;
-        width: 100vw;
-        text-align: center;
-        color: $red;
-        z-index: 1;
-        margin: 0;
-    }
+    // &__heading {
+    //     font-family: 'Amatic SC', cursive;
+    //     font-size: 5rem;
+    //     padding-top: 5vh;
+    //     padding-left: 5rem;
+    //     width: 100vw;
+    //     text-align: center;
+    //     color: $red;
+    //     z-index: 1;
+    //     margin: 0;
+    // }
 
     &__text {
-        margin-top: 25rem;
-        margin-left: 3rem;
+        margin-top: 50vh;
+        margin-left: 1rem;
         width: 50%;
         font-size: 1.5rem;
         text-align: center;
@@ -29,19 +30,12 @@
     }
 
 
-    &__section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     &__scroll {
         position: absolute;
         margin-left: 50vw;
-        margin-top: 10vh;
-        height: 7rem;
-        width: 7rem;
         z-index: 1;
+        color: $yellow;
+        font-size: 5rem;
 
         animation-iteration-count: infinite;
         animation-duration: 1.5s;

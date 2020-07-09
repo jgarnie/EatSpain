@@ -9,44 +9,49 @@ body {
 }
 
 .mainNav {
-  height: 5rem;
-  background-color: $grey;
-  color: $red;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+    height: 5rem;
+    background-color:white;
+    color: $red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-  &__img {
-    height: 4rem;
-    padding-left: 2rem;
-  }
-
-  &__title {
-    font-family: "Amatic SC", cursive;
-    font-size: 4rem;
-    color: $yellow;
-    padding-left: 2rem;
-    text-decoration: none;
-  }
-
-  &__search {
-    background-color: darkgrey;
-    margin-right: 1rem;
-    padding-right: 1rem;
-    border: 2px solid #cccccc;
-    border-radius: 15px;
-    height: 1.8rem;
-    outline: none;
-    text-indent: 1rem;
-    color: white;
-    &::placeholder {
-      color: white;
+    &__img {
+        height: 4rem;
+        padding-left: 2rem;
     }
 
-    &:hover {
-      opacity: 0.75;
-      height: 2.1rem;
+    &__title {
+        font-family: 'Amatic SC', cursive;
+        font-size: 4rem;
+        color: $yellow;
+        text-decoration: none;
+    }
+
+    &__search {
+        background-color: darkgrey;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border: 2px solid darkgrey;
+        border-radius: 15px;
+        height: 1.8rem;
+        outline: none;
+        text-indent: 1rem;
+        color: white;
+        &::placeholder {
+            color: white;
+        }
+
+        &:hover{
+            opacity: 0.75;
+            height: 2.1rem;
+        }
+    }
+
+    &__cartNum {
+        padding-right: 2rem;
+        padding-left: 0.5rem;
     }
   }
 
