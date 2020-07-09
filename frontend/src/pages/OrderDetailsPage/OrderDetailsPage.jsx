@@ -1,12 +1,15 @@
 import React from "react";
 import DeliveryAddress from "../../components/DeliveryAddress/DeliveryAddress";
+import "./OrderDetailsPage.scss";
 
 const OrderDetailsPage = () => {
   return (
     <div>
-      OrderDetails Page, Product List here
-      <h1>Delivery address</h1>
+      <div>
+      <h3 className="summary">Order Summary</h3>
       <DeliveryAddress />
+      </div>
+
     </div>
   );
 };

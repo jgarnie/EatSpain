@@ -28,22 +28,27 @@ const CartProvider = ({ children }) => {
   const cartCount = countCart();
 
   const addToCart = (productId, count) => {
-    console.log(cart, productId, "add item to cart");
     CartApi.addToCart({ productId, token, count }, setCart, setIsCartLoading);
   };
 
-  const removeFromCart = () => {
-    console.log(cart, "remove item from cart");
+  const updateCart = (productId, count) => {
+    CartApi.updateCart({ productId, token, count }, setCart, setIsCartLoading);
+  };
+
+  const removeFromCart = (productId) => {
+    console.log("test");
+    CartApi.removeFromCart({ productId, token }, setCart, setIsCartLoading);
   };
 
   return (
     <CartContext.Provider
       value={{
+        token,
         cart,
         cartCount,
         isCartLoading,
-        token,
         addToCart,
+        updateCart,
         removeFromCart,
       }}
     >
