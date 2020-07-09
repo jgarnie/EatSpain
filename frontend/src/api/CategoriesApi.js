@@ -12,4 +12,5 @@ export class CategoriesApi {
       console.log("There was an error when trying to fetch the categories", e);
     }
   };
+ 
 }
