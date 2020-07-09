@@ -9,13 +9,14 @@ body {
 }
 
 .mainNav {
-  height: 5rem;
-  background-color: white;
-  color: $red;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+    position: relative;
+    height: 5rem;
+    background-color: white;
+    color: $red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
   &__img {
     height: 4rem;
@@ -27,6 +28,9 @@ body {
     font-size: 4rem;
     color: $yellow;
     text-decoration: none;
+    position: absolute;
+    left: calc(50% - 83px);
+    top: 0;
   }
 
   &__search {
@@ -34,9 +38,10 @@ body {
     margin-right: 1rem;
     padding-right: 1rem;
     border: 2px solid darkgrey;
-    border-radius: 15px;
+    border-radius: 30px;
     height: 1.8rem;
     outline: none;
+    transition: 0.2s;
     text-indent: 1rem;
     color: white;
     &::placeholder {

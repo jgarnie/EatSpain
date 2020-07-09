@@ -7,7 +7,7 @@ const CartPage = () => {
 
   return (
     <div>
-      test
+      <h1>Cart Items</h1>
       {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}

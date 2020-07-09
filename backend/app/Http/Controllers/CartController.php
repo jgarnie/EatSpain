@@ -11,7 +11,6 @@ class CartController extends Controller
 
     private function createToken($user_agent)
     {
-        //create token here
         do {
             $token = md5(time() . mt_rand(1, 1000) . $user_agent);
         } while (Cart::where("token", $token)->exists());
@@ -22,7 +21,6 @@ class CartController extends Controller
     {
         $token = $request->input("token");
         $cart = Cart::where("token", $token)->with("products")->first();
-
 
         if (empty($cart)) {
             //create a new token
