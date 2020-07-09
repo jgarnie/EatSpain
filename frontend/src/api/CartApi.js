@@ -1,50 +1,55 @@
 import { baseUrl } from "../env.js";
+import fetchData from "../utils/fetchData.js";
+
 export class CartApi {
   static getToken = async (token, setData) => {
-    try {
-      const response = await fetch(`${baseUrl}/api/carts?token=${token}`);
-      if (!response.status) throw Error(response.statusText);
-      const data = await response.json();
-      console.log("_cartToken", data.token);
+    const data = await fetchData(`${baseUrl}/api/carts?token=${token}`);
+    if (data.token) {
       setData(data.token);
-    } catch (e) {
-      console.log("There was an error when trying to fetch token", e);
     }
   };
 
   static getCartItems = async (token, setData, setIsLoading) => {
-    try {
-      const response = await fetch(`${baseUrl}/api/carts/${token}`);
-      if (!response.status) throw Error(response.statusText);
-      const data = await response.json();
-      console.log("cart products", data.products);
+    const data = await fetchData(`${baseUrl}/api/carts/${token}`);
+    if (data.products) {
       setData(data.products);
-      setIsLoading(false);
-    } catch (e) {
-      console.log("There was an error when trying to fetch ", e);
     }
+    setIsLoading(false);
   };
 
-  static addToCart = async (requestData, setData, setIsLoading) => {
-    try {
-      const response = await fetch(
-        `${baseUrl}/api/carts/${requestData.productId}`,
-        {
-          method: "POST",
-          mode: "cors",
-          cache: "no-cache",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(requestData),
-        }
-      );
-      console.log("REEEESPPPPOOONSE", response);
-      if (!response.status) throw Error(response.statusText);
-      const data = await response.json();
-      console.log("cart products", data.products);
+  static addToCart = async (requestBody, setData, setIsLoading) => {
+    const data = await fetchData(
+      `${baseUrl}/api/carts/${requestBody.productId}`,
+      "POST",
+      requestBody
+    );
+    if (data.products) {
       setData(data.products);
-      setIsLoading(false);
-    } catch (e) {
-      console.log("There was an error when trying to fetch ", e);
     }
+    setIsLoading(false);
+  };
+
+  static updateCart = async (requestBody, setData, setIsLoading) => {
+    const data = await fetchData(
+      `${baseUrl}/api/carts/${requestBody.productId}`,
+      "PUT",
+      requestBody
+    );
+    if (data.products) {
+      setData(data.products);
+    }
+    setIsLoading(false);
+  };
+
+  static removeFromCart = async (requestBody, setData, setIsLoading) => {
+    const data = await fetchData(
+      `${baseUrl}/api/carts/${requestBody.productId}`,
+      "DELETE",
+      requestBody
+    );
+    if (data.products) {
+      setData(data.products);
+    }
+    setIsLoading(false);
   };
 }

@@ -1,11 +1,9 @@
 import React from "react";
 import "./ProductCard.scss";
-import {baseUrl} from "./../../env.js";
+import { baseUrl } from "./../../env.js";
 
-const ProductCard = ({id,name,image,price}) => {
-  console.log(image)
+const ProductCard = ({ id, name, image, price }) => {
   return (
-    
     <div className="product-card" id={id}>
       <img
         className="product-card__img"
@@ -17,5 +15,3 @@ const ProductCard = ({id,name,image,price}) => {
   );
 };
 export default ProductCard;
-
-

@@ -1,62 +1,62 @@
 @import "../../scss/variables/variables";
 
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .mainNav {
-    height: 5rem;
-    background-color:$grey;
-    color: $red;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  height: 5rem;
+  background-color: $grey;
+  color: $red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-    &__img {
-        height: 4rem;
-        padding-left: 2rem;
+  &__img {
+    height: 4rem;
+    padding-left: 2rem;
+  }
+
+  &__title {
+    font-family: "Amatic SC", cursive;
+    font-size: 4rem;
+    color: $yellow;
+    padding-left: 2rem;
+    text-decoration: none;
+  }
+
+  &__search {
+    background-color: darkgrey;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #cccccc;
+    border-radius: 15px;
+    height: 1.8rem;
+    outline: none;
+    text-indent: 1rem;
+    color: white;
+    &::placeholder {
+      color: white;
     }
 
-    &__title {
-        font-family: 'Amatic SC', cursive;
-        font-size: 4rem;
-        color: $yellow;
-        padding-left: 2rem;
-        text-decoration: none;
+    &:hover {
+      opacity: 0.75;
+      height: 2.1rem;
     }
+  }
 
-    &__search {
-        background-color: darkgrey;
-        margin-right: 1rem;
-        padding-right: 1rem;
-        border: 2px solid #cccccc;
-        border-radius: 15px;
-        height: 1.8rem;
-        outline: none;
-        text-indent: 1rem;
-        color: white;
-        &::placeholder {
-            color: white;
-        }
+  &__cartLink {
+    text-decoration: none;
+    color: inherit;
+  }
 
-        &:hover{
-            opacity: 0.75;
-            height: 2.1rem;
-        }
-    }
-
-    &__cartNum {
-        padding-right: 2rem;
-        padding-left: 0.5rem;
-    }
-
-
+  &__cartNum {
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+  }
 }
-
-
