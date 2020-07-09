@@ -3,7 +3,9 @@ import "./ProductCard.scss";
 import {baseUrl} from "./../../env.js";
 
 const ProductCard = ({id,name,image,price}) => {
+  console.log(image)
   return (
+    
     <div className="product-card" id={id}>
       <img
         className="product-card__img"

@@ -1,11 +1,20 @@
 import { baseUrl } from "../env.js";
 export class ProductsApi {
-  static getAllProducts = async (setData, setIsLoading) => {
+  static getAllProducts = async (setData, setIsLoading, limit=null) => {
     try {
-      const response = await fetch(`${baseUrl}/api/products/all`);
+      console.log(limit)
+      let url = null;
+      if(limit){
+        url = `${baseUrl}/api/products/all?limit=${limit}`
+      }else{
+        url = `${baseUrl}/api/products/all`
+      }
+
+//`${baseUrl}/api/products/all&category=${category}&limit=${limit}`
+      const response = await fetch(url);
       if (!response.status) throw Error(response.statusText);
       const data = await response.json();
-      console.log("all products", data);
+      console.log(url);
       setData(data.products);
       setIsLoading(false);
     } catch (e) {

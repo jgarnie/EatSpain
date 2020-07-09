@@ -12,7 +12,7 @@ import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
-import ProductsSection from "./pages/HomePage/ProductsSection/ProductsSection.jsx";
+
 
 function App() {
   const [ searchValue, setSearchValue ] = useState('');
@@ -40,7 +40,7 @@ function App() {
         <Route component={OrderDetailsPage} path="/order-details" />
         <Route component={HomePage} path="/" />
       </Switch>
-      <ProductsSection />
+      
       <Footer />
     </Router>
   );

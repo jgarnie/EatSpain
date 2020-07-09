@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ProductsApi } from "./../../api/ProductsApi.js";
 import ProductCard from "./../../components/ProductCard/ProductCard.jsx";
 import "./SearchPage.scss";
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../../components/Spinner/Spinner.jsx";
 
 const SearchPage = ({searchValue, ...restProps}) => {
 

@@ -4,6 +4,7 @@ import TopProducts from "./TopProducts/TopProducts";
 import RecipeOfTheWeek from "./RecipeOfTheWeek/RecipeOfTheWeek";
 import GoGreen from "./GoGreen/GoGreen";
 import "./HomePage.scss";
+import ProductsSection from "./ProductsSection/ProductsSection";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
         <RecipeOfTheWeek />
         <GoGreen />
       </div>
+      <ProductsSection />
     </div>
   );
 };

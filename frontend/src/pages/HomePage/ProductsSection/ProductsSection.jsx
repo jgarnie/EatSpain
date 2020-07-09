@@ -3,28 +3,34 @@ import { ProductsApi } from "./../../../api/ProductsApi.js";
 import ProductCard from "./../../../components/ProductCard/ProductCard.jsx";
 import "./ProductsSection.scss";
 import { linksUrl } from "./../../../env.js";
+import { Link } from "react-router-dom";
+
 
 export default function ProductsSection() {
     const [isLoading, setIsLoading] = useState(false);
-    const [products, setProducts] = useState([]);
-   
+    const [products, setProducts] = useState(null);
+    const [offSet, setOffset] = useState(15);
+
+  
     useEffect(() => {
         setIsLoading(true);
         
-        ProductsApi.getAllProducts(setProducts, setIsLoading);
+        ProductsApi.getAllProducts(setProducts, setIsLoading, offSet);
      }, []);
-//console.log('products',products)
+const handleClick =()=>{
+    console.log(window.pageYOffset)
+}
 
 
-
-    return (
-             <>
+    return (<> 
+                {products ?
                 <div className="HomePage__products__wrapper">
-                        {products.map((product,index)=>{
+               
+                        {products.data.map((product,index)=>{
                             return (
-                                    <>
+                                    
                                         <div className="HomePage__products__wrapper--ProductCard">
-                                            <a href={`${ linksUrl }/products/${ product.id }`}>
+                                           <Link to={`/products/${product.id}`}>
                                                 <ProductCard 
                                                 key={index}
                                                 id={product.id}
@@ -33,12 +39,14 @@ export default function ProductsSection() {
                                                 image={product.image}
                                                 categlry_id={product.category_id}
                                                 />
-                                            </a>
+                                            </Link>
                                         </div>
-                                    </>
+                                   
                             )
                         })}
-                </div>
-            </>
+                   
+                </div>: <h1>loadind</h1>}
+               <button onClick={handleClick}>daasd</button> 
+           </>
     )
 }
