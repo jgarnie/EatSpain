@@ -12,8 +12,8 @@ class ApiController extends Controller
     {
        //$items = Product::all()->paginate($_GET['limit'])->get();
       
-            if(isset($_GET['limit'])){
-                $items = Product::orderby('discount','desc')->paginate($_GET['limit']);
+            if(isset($_GET['page'])){
+                $items = Product::orderby('discount','desc')->paginate(10);
             }else{
                 $items = Product::orderByRaw('RAND()')->get();
             }

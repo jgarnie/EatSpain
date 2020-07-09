@@ -10,7 +10,7 @@ body {
 
 .mainNav {
   height: 5rem;
-  background-color: $grey;
+  background-color: white;
   color: $red;
   display: flex;
   flex-direction: row;
@@ -26,7 +26,6 @@ body {
     font-family: "Amatic SC", cursive;
     font-size: 4rem;
     color: $yellow;
-    padding-left: 2rem;
     text-decoration: none;
   }
 
@@ -34,7 +33,7 @@ body {
     background-color: darkgrey;
     margin-right: 1rem;
     padding-right: 1rem;
-    border: 2px solid #cccccc;
+    border: 2px solid darkgrey;
     border-radius: 15px;
     height: 1.8rem;
     outline: none;
@@ -50,6 +49,10 @@ body {
     }
   }
 
+  &__cartNum {
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+  }
   &__cartLink {
     text-decoration: none;
     color: inherit;
