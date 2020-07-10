@@ -1,0 +1,27 @@
+@import "../../scss/variables/variables";
+
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        &__btn {
+            color: white;
+            background-color: $yellow;
+            font-size: 1rem;
+            width: 15%;
+            height: 2rem;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            margin-right: 20vw;
+            align-self: flex-end;
+            cursor: pointer;
+        }
+        &__total {
+            font-size: 1rem;
+            width: 15%;
+            align-self: flex-start;
+            margin-left: 20vw;
+
+        }
+    }

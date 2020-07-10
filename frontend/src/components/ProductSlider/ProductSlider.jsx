@@ -42,7 +42,7 @@ const ProductSlider = ({ children, header, className }) => {
   return (
     <CarouselProvider
       naturalSlideWidth={125}
-      naturalSlideHeight={100}
+      naturalSlideHeight={125}
       totalSlides={children.length}
       visibleSlides={displaySlides}
       step={displaySlides}

@@ -37,6 +37,7 @@ const ProductDetail = ({ product }) => {
               icon={faShoppingCart}
             />
           </button>
+
         </div>
 
         <p>Ships Worldwide</p>

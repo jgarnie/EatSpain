@@ -36,9 +36,8 @@
     }
 
     &:hover {
-
+        cursor: pointer;
         .goGreen__image{
-
             transform: scale(1.1);
             &:after {
             background-color: rgba(#333333, 0.1);

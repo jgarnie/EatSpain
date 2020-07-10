@@ -1,19 +1,15 @@
 @import "../../../scss/variables/variables";
 
-.produts{
+.products{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    justify-content: center;
+    justify-content: space-evenly;
+
     &__ProductCard{
-        width: 30%;
-        margin: 0.25rem;
-        a{
-            text-decoration: none;
-            color: black;
-        }
+        width: 33%;
     }
 
     &__ProductsSection{

@@ -1,14 +1,18 @@
 .product-card {
-  border-radius: 2%;
-  flex: 30%;
   margin: 0.5rem;
   padding: 0.5rem;
-  text-decoration: none;
   color: black;
+  width: 20vw;
+  text-decoration: none;
+
   &__img {
-    height: 250px;
-    padding-left: 5vw;
+    height: 10vw;
+    width: 10vw;
     transition: 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -16,10 +20,13 @@
 
   &__title {
     font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
   }
 
   &__price {
     font-size: 0.8rem;
-    padding-left: 50%;
+    text-align: right;
+    text-decoration:none;
   }
 }
