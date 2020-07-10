@@ -2,26 +2,41 @@ import React, { useState, useEffect } from "react";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 import { ProductsApi } from "../../api/ProductsApi";
 import Spinner from "../../components/Spinner/Spinner";
+import ProductSlider from "../../components/ProductSlider/ProductSlider";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import { CategoriesApi } from "../../api/CategoriesApi";
 
 const ProductDetailPage = (props) => {
-
   // console.log(props)
 
-  const productId = props.match.params.productId
+  const productId = props.match.params.productId;
 
+  const [product, setProduct] = useState(null);
+  const [isProductLoading, setIsProductLoading] = useState(false);
+  const [sliderProducts, setSliderProducts] = useState([]);
+  const [isSliderLoading, setIsSliderLoading] = useState(false);
 
-    const [product, setProduct] = useState(null);
-    const [isProductLoading, setIsProductLoading] = useState(false);
-  
-    useEffect(() => {
-      ProductsApi.getProduct(productId, setProduct, setIsProductLoading);
-    }, []);
-  
-  
-  return (
-    !product? <Spinner/> :
-    <ProductDetail product={product}/>
+  useEffect(() => {
+    setIsProductLoading(true);
+    ProductsApi.getProduct(productId, setProduct, setIsProductLoading);
+  }, [productId]);
+
+  useEffect(() => {
+    setIsSliderLoading(true);
+    ProductsApi.getNewProducts(setSliderProducts, setIsSliderLoading);
+  }, []);
+
+  return !product ? (
+    <Spinner />
+  ) : (
+    <>
+      <ProductDetail product={product} />
+      <ProductSlider>
+        {sliderProducts.map((prod) => (
+          <ProductCard key={prod.id} {...prod} />
+        ))}
+      </ProductSlider>
+    </>
   );
-
-}
+};
 export default ProductDetailPage;

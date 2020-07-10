@@ -9,12 +9,13 @@ export class CategoriesApi {
     }
     setIsLoading(false);
   };
-  static getCategory = async (setData, setIsLoading,category) => {
+  static getCategory = async (setData, setIsLoading, category) => {
     try {
-      const response = await fetch(`${baseUrl}/api/categories/all?name=${category}`);
+      const response = await fetch(
+        `${baseUrl}/api/categories/all?name=${category}`
+      );
       if (!response.status) throw Error(response.statusText);
       const data = await response.json();
-      //console.log("all categories", data);
       setData(data);
       setIsLoading(false);
     } catch (e) {
