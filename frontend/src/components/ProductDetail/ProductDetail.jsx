@@ -3,13 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./ProductDetail.scss";
 import { CartContext } from "../../providers/CartProvider";
+import { baseUrl } from "../../env";
+
+
 
 const ProductDetail = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   const [countInput, setCountInput] = useState(1);
   return (
     <div className="product-detail">
-      <img className="product-detail__img" src={product.image} alt="cheese" />
+      <div className="product-detail__img">
+      <img  src={`${baseUrl}/images/uploads/${product.image}`} alt={product.name} />
+        </div>
       <div className="product-detail__container">
         <h1>{product.name}</h1>
         <p>{product.description}</p>

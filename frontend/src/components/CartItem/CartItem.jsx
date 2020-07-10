@@ -35,8 +35,13 @@ const CartItem = ({ item }) => {
       <div className="cartItem__text">
         <h3 className="cartItem__name">{item.name}</h3>
 
+<<<<<<< HEAD
         <input
           className="cartItem__number"
+=======
+        
+        <input className="cartItem__number"
+>>>>>>> jakub
           type="number"
           value={input}
           onChange={handleInputChange}
