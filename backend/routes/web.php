@@ -24,11 +24,12 @@ Route::post('/items/create', 'ProductController@store')->name('products.store');
 Route::post('/items/delete', 'ProductController@delete');
 Route::get('/item/{id}/edit','ProductController@edit');
 Route::post('/items/{id}/update', 'ProductController@update');
-Route::post('/items','ProductController@searchBar')->name('products.searchBar');
+Route::post('/items/search','ProductController@searchBar')->name('products.searchBar');
 
 //api for the fetching frontend /api/products
 
-
+//dashboard
+Route::get('/admin/dashboard','HomePageController@index')->name('dashboard');
 
 
 

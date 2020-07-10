@@ -116,7 +116,6 @@ class ProductController extends Controller
 
     }
     public function searchBar(Request $request){
-
         $name = $request->input('name');
 
         $items = Product::where('name','like','%'.$name.'%')->get();

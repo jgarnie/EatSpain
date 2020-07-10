@@ -12,6 +12,7 @@ import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
+import PaymentPage from "./pages/PaymentPage/PaymentPage";
 
 
 function App() {
@@ -38,7 +39,9 @@ function App() {
         <Route component={AboutPage} path="/about" />
         <Route component={CartPage} path="/cart" />
         <Route component={OrderDetailsPage} path="/order-details" />
+        <Route component={PaymentPage} path="/payment" />
         <Route component={HomePage} path="/" />
+        
       </Switch>
       
       <Footer />
