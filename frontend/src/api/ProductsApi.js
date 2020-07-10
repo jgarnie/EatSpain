@@ -22,6 +22,14 @@ export class ProductsApi {
     }
   };
 
+  static getNewProducts = async (setData, setIsLoading, limit = 12) => {
+    const data = await fetchData(`${baseUrl}/api/products/new?limit=${limit}`);
+    if (data) {
+      setData(data.products);
+    }
+    setIsLoading(false);
+  };
+
   static getSearchProducts = async (query, setData, setIsLoading) => {
     try {
       const response = await fetch(`${baseUrl}/api/search?query=${query}`);

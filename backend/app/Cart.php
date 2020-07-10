@@ -7,7 +7,8 @@ use App\Product;
 
 class Cart extends Model
 {
-    public function products(){
-        return $this->belongsToMany(Product::class)->withPivot(['count']);
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)->withPivot(['count'])->with("category");
     }
 }

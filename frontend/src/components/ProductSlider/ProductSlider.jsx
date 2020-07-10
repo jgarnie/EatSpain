@@ -45,7 +45,8 @@ const ProductSlider = ({ children, header, className }) => {
       naturalSlideHeight={100}
       totalSlides={children.length}
       visibleSlides={displaySlides}
-      interval={5000}
+      step={displaySlides}
+      interval={8000}
       infinite={true}
       isPlaying={true}
       className={className}
