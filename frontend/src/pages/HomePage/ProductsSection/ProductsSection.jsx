@@ -41,36 +41,23 @@ export default function ProductsSection() {
   return (
     <>
       {products ? (
-        <div className="HomePage__products__wrapper">
+        <div className="products">
           {products.map((product, index) => {
             return (
-              <div
-                key={index}
-                className="HomePage__products__wrapper--ProductCard"
-              >
-                <Link to={`/products/${product.id}`}>
-                  <ProductCard
-                    id={product.id}
-                    name={product.name}
-                    description={product.description}
-                    image={product.image}
-                    category_id={product.category_id}
-                  />
-                </Link>
-              </div>
+ 
+                <ProductCard className="products__ProductCard"
+                  key={product.id}
+                  {...product}
+                />
+              
             );
           })}
         </div>
       ) : (
         <Spinner />
       )}
-      <div className="ProductsSection__wrapper" hidden={hidder}>
-        <FontAwesomeIcon
-          className="ProductsSection__wrapper__faIcon"
-          onClick={handleClick}
-          icon={faChevronDown}
-        />
-      </div>
+      <div className="products__ProductsSection" hidden={hidder}><button className="products__btn" onClick={handleClick}>Load more...</button> 
+                </div> 
     </>
   );
 }

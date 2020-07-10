@@ -1,35 +1,40 @@
-.HomePage__products__wrapper{
+@import "../../../scss/variables/variables";
+
+.products{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    justify-content: center;
-    &--ProductCard{
-        width: 30%;
-        margin: 0.25rem;
-        a{
-            text-decoration: none;
-            color: black;
+    justify-content: space-evenly;
+
+    &__ProductCard{
+        width: 33%;
+    }
+
+    &__ProductsSection{
+        text-align: center;
+        width: 20%;
+        margin: auto;
+        margin-bottom: 2rem;
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+        }
+    
+    
+    &__btn {
+        background-color: $yellow;
+        color: white;
+        height: 3rem;
+        transition: 0.2s;
+        width: 100%;
+        border: none;
+        font-size: 1rem;
+        border-radius: 10px;
+    
+        &:hover{
+            background-color: $green;
+            cursor: pointer;
         }
     }
-}
-.ProductsSection__wrapper{
-    text-align: center;
-    width: 15%;
-    margin: auto;
-    margin-bottom: 0.5rem;
-    background-color: rgb(241, 228, 149);
-    border: 1px solid goldenrod;
-    box-shadow: 1px 2px grey;
-    transition: 0.5s ease;
-        &__faIcon{
-            font-size: 4rem;
-            color: goldenrod;
-        }
-        &:hover{
-            background-color: rgb(225, 240, 14);
-            
-        }
-
 }

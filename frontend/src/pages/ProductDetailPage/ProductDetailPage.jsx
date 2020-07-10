@@ -5,6 +5,9 @@ import Spinner from "../../components/Spinner/Spinner";
 import ProductSlider from "../../components/ProductSlider/ProductSlider";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { CategoriesApi } from "../../api/CategoriesApi";
+import "./ProductDetailPage.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetailPage = (props) => {
   // console.log(props)
@@ -26,17 +29,23 @@ const ProductDetailPage = (props) => {
     ProductsApi.getNewProducts(setSliderProducts, setIsSliderLoading);
   }, []);
 
+  console.log(product)
   return !product ? (
     <Spinner />
   ) : (
-    <>
+    <div className="productDetail">
+      <button className="productDetail__btn"> <FontAwesomeIcon className="productDetail__arrow" icon={faAngleDoubleLeft}/>go back to Category</button>
+
       <ProductDetail product={product} />
+
+      <h1 className="productDetail__text">similar</h1>
       <ProductSlider>
         {sliderProducts.map((prod) => (
           <ProductCard key={prod.id} {...prod} />
         ))}
       </ProductSlider>
-    </>
+
+    </div>
   );
 };
 export default ProductDetailPage;

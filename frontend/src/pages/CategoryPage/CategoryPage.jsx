@@ -50,27 +50,27 @@ const CategoryPage = (props) => {
   return (
     <>
       {products ? (
+        <div>
+        <img src={require(`../../img/categories/${categoryName}.jpg`)} alt=""/>
+
+        <h1>Category {categoryName}</h1>
+
+        <div>
+        </div>
         <div className="categorypage__products__wrapper">
-          Category {categoryName}
-          {products.map((product) => {
+        {products.map((product, index) => {
             return (
-              <div
-                className="categorypage__products__wrapper--ProductCard"
-                key={product.id}
-              >
-                <Link to={`/products/${product.id}`}>
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    description={product.description}
-                    image={product.image}
-                    categlry_id={product.category_id}
-                  />
-                </Link>
-              </div>
+ 
+                <ProductCard className="products__ProductCard"
+                  key={product.id}
+                  {...product}
+                />
+              
             );
           })}
+          
+        </div>
+
         </div>
       ) : (
         <Spinner />
