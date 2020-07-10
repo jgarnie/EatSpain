@@ -48,15 +48,14 @@ export default function ProductsSection() {
                 key={index}
                 className="HomePage__products__wrapper--ProductCard"
               >
-                <Link to={`/products/${product.id}`}>
-                  <ProductCard
-                    id={product.id}
-                    name={product.name}
-                    description={product.description}
-                    image={product.image}
-                    category_id={product.category_id}
-                  />
-                </Link>
+                <ProductCard
+                  key={index}
+                  id={product.id}
+                  name={product.name}
+                  description={product.description}
+                  image={product.image}
+                  category_id={product.category_id}
+                />
               </div>
             );
           })}

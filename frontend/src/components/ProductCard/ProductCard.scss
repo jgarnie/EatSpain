@@ -1,20 +1,16 @@
 .product-card {
   border-radius: 2%;
-  //margin: 0 2rem;
-  //height: 100%;
   flex: 30%;
   margin: 0.5rem;
   padding: 0.5rem;
-  
-
-
-
+  text-decoration: none;
+  color: black;
   &__img {
     height: 250px;
     padding-left: 5vw;
     transition: 0.2s;
     &:hover {
-      transform: scale(1.1)
+      transform: scale(1.1);
     }
   }
 
