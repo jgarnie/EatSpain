@@ -4,21 +4,29 @@
 .product-detail {
     display: flex;
     padding-top: 10vh;
-    align-items: center;
     padding-bottom: 5vh;
+    width: 70%;
+    margin: auto;
 
     &__container {
         display: flex;
         flex-direction: column;
-        margin-left: 3rem;
-        justify-content: center;
-        margin-right: 5rem;
+        width: 50%;
+        min-height: 30rem;
     }
 
     &__img {
-        width: 30rem;
+        display: flex;
+        justify-content: center;
+        width: 50%;
         height: 30rem;
-        margin-left: 30rem;
+        margin: 1rem;
+        align-items: center;
+        padding: 3rem;
+        img{
+            width: auto;
+            height: 100%;
+        }
     }
 
     &__number {

@@ -46,11 +46,11 @@ const handleClick =()=>{
 
     return (<> 
                 {products ?
-                <div className="HomePage__products__wrapper">
+                <div className="products">
                         {products.map((product,index)=>{
                             return (
                                     
-                                    <div className="HomePage__products__wrapper--ProductCard">
+                                    <div className="products__ProductCard">
                                         <Link to={`/products/${product.id}`}>
                                             <ProductCard 
                                             key={index}
@@ -65,9 +65,10 @@ const handleClick =()=>{
                                 
                             )
                         })}
-                   
+                
                 </div>: <Spinner />}
-              <div className="ProductsSection__wrapper" hidden={hidder}><FontAwesomeIcon className="ProductsSection__wrapper__faIcon" onClick={handleClick}icon={faChevronDown}/></div> 
-           </>
+                <div className="products__ProductsSection" hidden={hidder}><button className="products__btn" onClick={handleClick}>Load more...</button> 
+                </div> 
+            </>
     )
 }

@@ -23,6 +23,7 @@ const CartItem = ({ item }) => {
 
       <div className="cartItem__text">
         <h3 className="cartItem__name">{item.name}</h3>
+
         
         <input className="cartItem__number"
           type="number"

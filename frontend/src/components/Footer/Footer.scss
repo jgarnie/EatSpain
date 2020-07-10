@@ -1,8 +1,6 @@
 @import "../../scss/variables/variables";
 
 
-
-
 .footer {
     padding-left: 3rem;
     background-color: grey;
@@ -25,18 +23,16 @@
             color: white;
             text-decoration: none;
             &:hover {
-                color: $green;
+                color: $yellow;
             }
         }
     }
-
-
 
     &__category {
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
-
+        text-transform: capitalize;
     }
 
     &__input {
@@ -45,7 +41,7 @@
         text-decoration: none;
         font-size: 0.9rem;
         &:hover {
-            color: $green;
+            color: $yellow;
         }
     }
 
@@ -57,7 +53,7 @@
     }
 
     &__fb {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-right: 2rem;
         color: white;
         &:hover {
@@ -67,7 +63,7 @@
 
     
     &__insta {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: white;
         &:hover {
             color:#DD2A7B;  
@@ -82,4 +78,3 @@
 
     }
 }
-
