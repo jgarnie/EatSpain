@@ -14,8 +14,23 @@ input{
 }
 .cardContainer{
     padding: 1rem;
+    &__alert{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: lightgray;
+    color: rgb(255, 123, 0);
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 2px 2px grey;
+    min-height: 20%;
+    border-radius: 10px;
+        button{
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: palegoldenrod;
+        }
+    }
+ 
 }
-.formbtn{
-    padding: 0.3rem;
-    
-}
+

@@ -3,5 +3,15 @@
 ])
 
 @section('content')
-hi
+
+
+<div id="app">
+
+<script src="{{ mix('js/app.js') }}"></script>
+</div>
+
+
+
+
+
 @endsection

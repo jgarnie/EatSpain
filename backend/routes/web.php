@@ -26,10 +26,10 @@ Route::get('/item/{id}/edit','ProductController@edit');
 Route::post('/items/{id}/update', 'ProductController@update');
 Route::post('/items/search','ProductController@searchBar')->name('products.searchBar');
 
-//api for the fetching frontend /api/products
+
 
 //dashboard
-Route::get('/admin/dashboard','HomePageController@index')->name('dashboard');
+
 
 
 
@@ -46,3 +46,5 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::resource('/users', 'UsersController',['except'=>['show','create','store']]);
 });
 //after route name to hide urls should be: ->middleware('can:admin'), has been defined on app\Providers\AuthServiceProvider.php as a gate
+
+
