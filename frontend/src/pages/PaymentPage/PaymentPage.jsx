@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./PaymentPage.scss";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function PaymentPage() {
     const [number, setNumber] = useState('');
@@ -9,38 +10,42 @@ export default function PaymentPage() {
     const [expiry, setExpiry] = useState('');
     const [cvc, setCvc] = useState('');
     const [focus, setFocus] = useState('');
-
-const handleSubmit=(e)=>{
-    
-        e.preventDefault();
-   
-    console.log('cc details', number,name,expiry,cvc,expiry)
-       
-        fetch('/api/mission/attach', {
-            method: 'POST',
-            body: JSON.stringify({
-                person_id: this.props.person.id,
-                mission_id:this.state.newMission
-            }),
-            headers: {
-                'Accept':       'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + this.props.token,
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            this.setState({missions:data});
-            }
-        );
-    
+    const [status, setStatus] = useState(false);
+    const [alert, setAlert] = useState(true);
+    const [spinner, setSpinner] = useState(true);
   
     
-    
+
+const verifier=(e)=>{
+    e.preventDefault();
+   
+    if(number.length>=16 && name!=='' && expiry!=='' && cvc.length>=3){
+        setStatus(true)
+        console.log('alert',status)
+       
+    }else{
+        setAlert(false)
+        console.log('alert',alert)
+    }
+
 }
 
-    return (
+const handleAlert=()=>{
+    setAlert(true)
+}
+
+useEffect(() => {
+     
+    console.log('cc details', number,name,expiry,cvc,expiry)
+
+    setTimeout(function() {
+        
+    }, 1000);
+
+}, [status])
+
+
+    return (<>
         <div className="cardContainer">
             <Cards 
             number={number}
@@ -50,7 +55,7 @@ const handleSubmit=(e)=>{
             focused={focus}
             
             />
-            <form action="">
+            <form onSubmit={verifier}>
 
                 <input 
                 type="tel" 
@@ -84,10 +89,21 @@ const handleSubmit=(e)=>{
                 onChange={e=>setCvc(e.target.value)}
                 onFocus={e=> setFocus(e.target.name)}
                 />
-                <div className="formbtn">
-                    <button onClick={handleSubmit}>Complete Order</button>
-                </div>
+                
+                    <button>Complete Order</button>
+                
             </form>
+            <div hidden={alert} className="cardContainer__alert">
+
+                <p> "please, verify the paymetn information is correct and try again"</p>
+                   
+                <button onClick={handleAlert}>Try Again</button>
+
+            </div>
+            <div hidden={spinner}>
+                <Spinner />
+            </div>
         </div>
-    )
+        
+    </>)
 }
