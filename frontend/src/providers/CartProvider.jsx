@@ -5,6 +5,7 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [deliveryDetails, setDeliveryDetails] = useState([]);
   const [isCartLoading, setIsCartLoading] = useState(false);
   const [token, setToken] = useState(window.localStorage.getItem("_cartToken"));
 
@@ -13,8 +14,15 @@ const CartProvider = ({ children }) => {
   }, [token]);
 
   useEffect(() => {
-    window.localStorage.setItem("_cartToken", token);
-    CartApi.getCartItems(token, setCart, setIsCartLoading);
+    if (token) {
+      window.localStorage.setItem("_cartToken", token);
+      CartApi.getCartItems(
+        token,
+        setCart,
+        setDeliveryDetails,
+        setIsCartLoading
+      );
+    }
   }, [token]);
 
   const cartCount = cart.length;
@@ -39,6 +47,7 @@ const CartProvider = ({ children }) => {
         cart,
         cartCount,
         isCartLoading,
+        deliveryDetails,
         addToCart,
         updateCart,
         removeFromCart,

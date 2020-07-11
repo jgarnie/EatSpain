@@ -33,4 +33,5 @@ Route::post('/carts/{token}', 'CartController@add')->name('carts.add');
 Route::put('/carts/{token}', 'CartController@updateCount')->name('carts.update');
 Route::delete('/carts/{token}', 'CartController@remove')->name('carts.remove');
 
+
 Route::get('/search', 'ApiController@searchBar')->name('search.results');

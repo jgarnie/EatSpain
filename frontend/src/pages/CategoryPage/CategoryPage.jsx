@@ -58,16 +58,14 @@ const CategoryPage = (props) => {
                 className="categorypage__products__wrapper--ProductCard"
                 key={product.id}
               >
-                <Link to={`/products/${product.id}`}>
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    description={product.description}
-                    image={product.image}
-                    categlry_id={product.category_id}
-                  />
-                </Link>
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  description={product.description}
+                  image={product.image}
+                  categlry_id={product.category_id}
+                />
               </div>
             );
           })}
