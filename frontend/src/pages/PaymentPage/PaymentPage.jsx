@@ -4,7 +4,7 @@ import "react-credit-cards/es/styles-compiled.css";
 import "./PaymentPage.scss";
 import Spinner from "../../components/Spinner/Spinner";
 
-export default function PaymentPage() {
+ const PaymentPage=({thankerHandler})=> {
     const [number, setNumber] = useState('');
     const [name, setName] = useState('');
     const [expiry, setExpiry] = useState('');
@@ -13,20 +13,29 @@ export default function PaymentPage() {
     const [status, setStatus] = useState(false);
     const [alert, setAlert] = useState(true);
     const [spinner, setSpinner] = useState(true);
+    const [verification, setVerification] = useState("");
+    const [thanks, setThanks] = useState(false);
   
-    
 
 const verifier=(e)=>{
     e.preventDefault();
-   
+
     if(number.length>=16 && name!=='' && expiry!=='' && cvc.length>=3){
         setStatus(true)
         console.log('alert',status)
+             setSpinner(false)
+       setInterval(print,500);
+        
        
     }else{
         setAlert(false)
         console.log('alert',alert)
     }
+
+}
+const print=()=>{
+
+    setVerification(verification=> verification+".");
 
 }
 
@@ -37,12 +46,27 @@ const handleAlert=()=>{
 useEffect(() => {
      
     console.log('cc details', number,name,expiry,cvc,expiry)
-
-    setTimeout(function() {
-        
-    }, 1000);
+   
 
 }, [status])
+useEffect(() => {
+     
+    if(verification.length===8){
+   
+        setThanks(true);
+    
+    }
+   
+}, [verification])
+
+useEffect(() => {
+     
+    thankerHandler(thanks);
+
+}, [thanks])
+
+console.log('props',thankerHandler)
+
 
 
     return (<>
@@ -100,10 +124,18 @@ useEffect(() => {
                 <button onClick={handleAlert}>Try Again</button>
 
             </div>
-            <div hidden={spinner}>
-                <Spinner />
+            <div hidden={spinner} className="cardContainer__verify">
+                <div className="cardContainer__verify__inner">
+                <h4>We are processing you request, this may take few seconds</h4>
+                <p>conecting with server <div className="cardContainer__verify__inner__loading">{verification}</div></p>
+                   <div className="spinner"><Spinner /></div>
+                        
+                    
+                </div>
             </div>
+            
         </div>
         
     </>)
 }
+export default PaymentPage;

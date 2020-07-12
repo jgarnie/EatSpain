@@ -31,6 +31,37 @@ input{
             background-color: palegoldenrod;
         }
     }
- 
+    &__verify{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        align-items: center;
+        background-color: whitesmoke;
+        opacity: 0.9;
+        padding: 5rem 0;
+        &__inner{
+            
+            width: 60%;
+            height: 70%;
+            margin: auto;
+            opacity: 1;
+           
+            &__loading{
+                font-size: 5rem;
+            }
+        }
+    }
+}
+.spinner{
+    position: absolute;
+    left: 40%;
+    top:50%;
+    width: 20%;
+    height: 20%;
+    margin: auto;
 }
 
