@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { CategoriesApi } from "../../api/CategoriesApi.js";
 import Spinner from "../../components/Spinner/Spinner";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import { Link } from "react-router-dom";
 import "./CategoryPage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";

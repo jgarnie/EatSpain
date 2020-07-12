@@ -1,62 +1,60 @@
 @import "../../../src/scss/variables/variables";
 
-
 .product-detail {
+  display: flex;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  width: 70%;
+  margin: auto;
+
+  &__container {
     display: flex;
-    padding-top: 10vh;
-    padding-bottom: 5vh;
-    width: 70%;
-    margin: auto;
+    flex-direction: column;
+    width: 50%;
+    min-height: 30rem;
+  }
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        min-height: 30rem;
+  &__img {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 30rem;
+    margin: 1rem;
+    align-items: center;
+    padding: 3rem;
+    img {
+      width: auto;
+      height: 100%;
     }
+  }
 
-    &__img {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-        height: 30rem;
-        margin: 1rem;
-        align-items: center;
-        padding: 3rem;
-        img{
-            width: auto;
-            height: 100%;
-        }
+  &__number {
+    width: 4rem;
+    height: 3rem;
+    font-size: 1.5;
+    padding-left: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  &__btn {
+    background-color: $yellow;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $green;
     }
+  }
 
-    &__number {
-        width: 4rem;
-        height: 3rem;
-        font-size: 1.5;
-        padding-left: 0.5rem;
-        border: 1px solid grey;
-        border-radius: 10px;
-        
-    }
-
-
-    &__btn {
-        background-color: $yellow;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        height: 3rem;
-        width: 9rem;
-        font-size: 1rem;
-        margin-left: 2rem;
-        
-        &:hover {
-            background-color:$green;
-        }
-    }
-
-    &__cart {
-        padding-left: 0.5rem;
-        font-size: 1.3rem;
-    }
+  &__cart {
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+  }
 }

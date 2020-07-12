@@ -34,7 +34,6 @@ const DeliveryAddress = () => {
   const { deliveryDetails } = useContext(CartContext);
 
   useEffect(() => {
-    console.log("del", deliveryDetails);
     if (Object.keys(deliveryDetails).length > 0) {
       dispatch({
         action: "replace",

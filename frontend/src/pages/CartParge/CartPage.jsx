@@ -3,9 +3,10 @@ import { CartContext } from "../../providers/CartProvider";
 import CartItem from "../../components/CartItem/CartItem";
 
 import "./CartPage.scss";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
-  const { cart, isCartLoading } = useContext(CartContext);
+  const { cart, cartTotal, isCartLoading } = useContext(CartContext);
 
   return (
     <div className="cart">
@@ -14,10 +15,11 @@ const CartPage = () => {
         <CartItem key={item.id} item={item} />
       ))}
 
-      <p className="cart__total">Total price: 000 eur</p>
+      <p className="cart__total">Total price: {cartTotal} €</p>
 
-      <button className="cart__btn">Continue</button>
-
+      <Link to="/order-details" className="cart__btn">
+        Continue
+      </Link>
     </div>
   );
 };
