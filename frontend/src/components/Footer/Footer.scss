@@ -16,6 +16,7 @@
     }
 
     &__about {
+        padding-top: 0;
         padding-bottom: 1rem;
         font-size: 0.9rem;
         
@@ -31,8 +32,8 @@
     &__category {
         display: flex;
         flex-direction: column;
-        padding-top: 1rem;
         text-transform: capitalize;
+        padding-top: 1rem;
     }
 
     &__input {
@@ -40,6 +41,7 @@
         padding-bottom: 1rem;
         text-decoration: none;
         font-size: 0.9rem;
+        padding-top: 0;
         &:hover {
             color: $yellow;
         }
