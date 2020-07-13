@@ -9988,4 +9988,37 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.productsWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+}
+.productsWrapper__productCard {
+  flex-basis: 25%;
+  margin: 1rem;
+  max-height: 25%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+.productsWrapper__image {
+  width: 15vh;
+  max-width: 15vh;
+  height: auto;
+  max-height: 60%;
+  align-self: center;
+}
+.productsWrapper__description {
+  overflow: auto;
+  height: 15vh;
+  max-height: 20%;
+}
+.productsWrapper__discount {
+  color: red;
+  font-weight: bold;
+}
 /*# sourceMappingURL=app.css.map*/

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./PaymentPage.scss";
-import Spinner from "../../components/Spinner/Spinner";
+
 
  const PaymentPage=({thankerHandler})=> {
     const [number, setNumber] = useState('');
@@ -22,14 +22,14 @@ const verifier=(e)=>{
 
     if(number.length>=16 && name!=='' && expiry!=='' && cvc.length>=3){
         setStatus(true)
-        console.log('alert',status)
+       
              setSpinner(false)
        setInterval(print,500);
         
        
     }else{
         setAlert(false)
-        console.log('alert',alert)
+        
     }
 
 }
@@ -45,8 +45,8 @@ const handleAlert=()=>{
 
 useEffect(() => {
      
-    console.log('cc details', number,name,expiry,cvc,expiry)
-   
+    
+   //signal to server will be sent
 
 }, [status])
 useEffect(() => {
@@ -127,7 +127,8 @@ console.log('props',thankerHandler)
             <div hidden={spinner} className="cardContainer__verify">
                 <div className="cardContainer__verify__inner">
                 <h4>We are processing you request, this may take few seconds</h4>
-                <p>conecting with server <div className="cardContainer__verify__inner__loading">{verification}</div></p>
+                <p>conecting with server </p>
+                <div className="cardContainer__verify__inner__loading">{verification}</div>
                 </div>
             </div>
             
