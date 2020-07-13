@@ -38,7 +38,7 @@ class CartController extends Controller
 
     public function find($token)
     {
-        $cart = Cart::where("token", $token)->with("products")->first();
+        $cart = Cart::where("token", $token)->with(["products", "orderDetails"])->first();
         return $cart;
     }
 

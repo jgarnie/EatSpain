@@ -9,10 +9,18 @@ export class CartApi {
     }
   };
 
-  static getCartItems = async (token, setData, setIsLoading) => {
+  static getCartItems = async (
+    token,
+    setProductData,
+    setDeliveryData,
+    setIsLoading
+  ) => {
     const data = await fetchData(`${baseUrl}/api/carts/${token}`);
+    console.log(data)
     if (data.products) {
-      setData(data.products);
+      console.log("DDDDDD", data);
+      setProductData(data.products);
+      setDeliveryData(data.order_details ? data.order_details : {});
     }
     setIsLoading(false);
   };
@@ -52,4 +60,6 @@ export class CartApi {
     }
     setIsLoading(false);
   };
+
+  static submit;
 }

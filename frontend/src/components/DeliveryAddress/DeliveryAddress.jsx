@@ -1,5 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect, useContext } from "react";
 import "./DeliveryAddress.scss";
+import { CartContext } from "../../providers/CartProvider";
 
 const initialState = {
   firstName: "",
@@ -12,20 +13,49 @@ const initialState = {
   terms: false,
 };
 
-function reducer(state, { field, value }) {
-  return {
-    ...state,
-    [field]: value,
-  };
+function reducer(state, { action, value, field = null }) {
+  switch (action) {
+    case "change":
+      return {
+        ...state,
+        [field]: value,
+      };
+    case "replace":
+      return {
+        ...state,
+        ...value,
+      };
+    default:
+      throw new Error("Invalid action for reducer", action);
+  }
 }
 
 const DeliveryAddress = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { deliveryDetails } = useContext(CartContext);
+
+  useEffect(() => {
+    console.log("del", deliveryDetails);
+    if (Object.keys(deliveryDetails).length > 0) {
+      dispatch({
+        action: "replace",
+        value: {
+          firstName: deliveryDetails.first_name,
+          lastName: deliveryDetails.last_name,
+          email: deliveryDetails.email,
+          address: deliveryDetails.address,
+          zip: deliveryDetails.zip,
+          city: deliveryDetails.city,
+        },
+      });
+    }
+  }, [deliveryDetails]);
+
+  const [state, dispatch] = useReducer(reducer, { ...initialState });
 
   const handleChange = (e) => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    dispatch({ field: e.target.name, value });
+    dispatch({ action: "change", value, field: e.target.name });
   };
 
   const handleSubmit = (e) => {
@@ -35,7 +65,9 @@ const DeliveryAddress = () => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h3 className="form__headline">Billing information</h3>
-      <p className="form__input__name">First Name:</p>
+      <label htmlFor="firstName" className="form__input__name">
+        First Name:
+      </label>
       <input
         className="form__input"
         value={state.firstName}
@@ -44,7 +76,9 @@ const DeliveryAddress = () => {
         name="firstName"
         required
       />
-      <p className="form__input__name">Last Name:</p>
+      <label htmlFor="lastName" className="form__input__name">
+        Last Name:
+      </label>
       <input
         className="form__input"
         value={state.lastName}
@@ -53,7 +87,9 @@ const DeliveryAddress = () => {
         name="lastName"
         required
       />
-      <p className="form__input__name">Email:</p>
+      <label htmlFor="email" className="form__input__name">
+        Email:
+      </label>
       <input
         className="form__input"
         value={state.email}
@@ -62,7 +98,9 @@ const DeliveryAddress = () => {
         name="email"
         required
       />
-      <p className="form__input__name">Address:</p>
+      <label htmlFor="address" className="form__input__name">
+        Address:
+      </label>
       <input
         className="form__input"
         value={state.address}
@@ -71,22 +109,26 @@ const DeliveryAddress = () => {
         name="address"
         required
       />
-      <p className="form__input__name">ZIP:</p>
-      <input
-        className="form__input"
-        value={state.zip}
-        onChange={handleChange}
-        type="text"
-        name="zip"
-        required
-      />
-      <p className="form__input__name">City:</p>
+      <label htmlFor="city" className="form__input__name">
+        City:
+      </label>
       <input
         className="form__input"
         value={state.city}
         onChange={handleChange}
         type="text"
         name="city"
+        required
+      />
+      <label htmlFor="zip" className="form__input__name">
+        ZIP:
+      </label>
+      <input
+        className="form__input"
+        value={state.zip}
+        onChange={handleChange}
+        type="text"
+        name="zip"
         required
       />
 

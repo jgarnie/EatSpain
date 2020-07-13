@@ -20,7 +20,7 @@
     &__name {
       color: black;
       font-size: 0.8rem;
-      margin-bottom: 0.5rem;
+      margin: 0.75rem 0 0.25rem 0;
       align-self: flex-start;
     }
 
@@ -48,6 +48,7 @@
     font-size: 0.9rem;
 
     &:hover {
+      cursor: pointer;
       background-color: $green;
     }
   }
