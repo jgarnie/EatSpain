@@ -6,62 +6,58 @@ form{
     padding: 0.2rem;
     
 }
-input{
-    color:grey;
-    background-color: rgb(248, 238, 238);
-    margin-bottom: 0.2rem;
-    margin: 0.2rem;
-}
+
 .cardContainer{
     padding: 1rem;
     &__alert{
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    background-color: lightgray;
-    color: rgb(255, 123, 0);
-    text-align: center;
-    padding: 1rem;
-    box-shadow: 2px 2px grey;
-    min-height: 20%;
-    border-radius: 10px;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        background-color: lightgray;
+        color: rgb(255, 123, 0);
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 2px 2px grey;
+        min-height: 20%;
+        border-radius: 10px;
         button{
             padding: 1rem;
             border-radius: 5px;
             background-color: palegoldenrod;
         }
+        
+    }
+    input{
+        color:grey;
+        background-color: rgb(248, 238, 238);
+        margin-bottom: 0.2rem;
+        margin: 0.1rem;
     }
     &__verify{
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        min-height: 100%;
-        top: 0;
-        left: 0;
-        text-align: center;
-        align-items: center;
-        background-color: whitesmoke;
-        opacity: 0.9;
-        padding: 5rem 0;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            min-height: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            align-items: center;
+            background-color: whitesmoke;
+            opacity: 0.9;
+            padding: 5rem 0;
+       
         &__inner{
             
-            width: 60%;
-            height: 70%;
-            margin: auto;
-            opacity: 1;
-           
+                width: 60%;
+                height: 70%;
+                margin: auto;
+                opacity: 1;
+            
             &__loading{
-                font-size: 5rem;
+                     font-size: 5rem;
             }
         }
     }
 }
-.spinner{
-    position: absolute;
-    left: 40%;
-    top:50%;
-    width: 20%;
-    height: 20%;
-    margin: auto;
-}
+
 
