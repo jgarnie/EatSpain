@@ -25,32 +25,39 @@ const CartItem = ({ item }) => {
   return (
 
         <div className="cartItem">
-          <div>
+
+
+          <div className="cartItem__container1">
             <img
               className="cartItem__img"
               src={`${baseUrl}/images/uploads/${item.image}`}
               alt={item.name}
             />
+            <h3 className="cartItem__name">{item.name}</h3>
           </div>
 
-          <div className="cartItem__text">
-            <h3 className="cartItem__name">{item.name}</h3>
+          <div className="cartItem__container2">
+            <div className="cartItem__price">{item.price} eur</div>
+          </div>
 
+          <div className="cartItem__container3">
             <input
               className="cartItem__number"
               type="number"
               value={input}
-              onChange={handleInputChange}
-            />
-            <div className="cartItem__price">{item.price} eur</div>
+              onChange={handleInputChange}/>
           </div>
 
-          <div>
-            <button className="cartItem__btn" onClick={handleDelete}>
+
+
+          <div className="cartItem__container4">
+          <button className="cartItem__btn" onClick={handleDelete}>
               &times;
             </button>
+            Subtotal
           </div>
       </div>
+
   );
 };
 

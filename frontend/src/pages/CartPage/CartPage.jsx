@@ -10,7 +10,13 @@ const CartPage = () => {
 
   return (
     <div className="cart">
-      <h1>Cart Items</h1>
+      <h1 className="cart__name">Shoping Cart</h1>
+      <div className="cart__heading">
+        <p className="cart__item">Item</p>
+        <p className="cart__price">Price</p>
+        <p className="cart__qty">Qty</p>
+        <p>Subtotal</p>
+      </div>
       {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
