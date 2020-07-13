@@ -16,6 +16,7 @@ export class CartApi {
     setIsLoading
   ) => {
     const data = await fetchData(`${baseUrl}/api/carts/${token}`);
+    console.log(data)
     if (data.products) {
       setProductData(data.products);
       setDeliveryData(data.order_details ? data.order_details : {});
