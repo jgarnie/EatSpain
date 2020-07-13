@@ -34,11 +34,11 @@ const ProductDetailPage = (props) => {
     <Spinner />
   ) : (
     <div className="productDetail">
-      <button className="productDetail__btn"> <FontAwesomeIcon className="productDetail__arrow" icon={faAngleDoubleLeft}/>go back to Category</button>
+      <button className="productDetail__btn"> <FontAwesomeIcon className="productDetail__arrow" icon={faAngleDoubleLeft}/> go back to "category"</button>
 
       <ProductDetail product={product} />
 
-      <h1 className="productDetail__text">similar</h1>
+      <h1 className="productDetail__text">Check also</h1>
       <ProductSlider>
         {sliderProducts.map((prod) => (
           <ProductCard key={prod.id} {...prod} />

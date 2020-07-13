@@ -13,7 +13,12 @@ const ProductCard = ({ id, name, image, price }) => {
         alt={name}
       />
       <h3 className="product-card__title">{name}</h3>
+      <div className="product-card__container">
+      <button className="product-card__btn">add to cart</button>
+
       <div className="product-card__price">{price} EUR</div>
+      </div>
+      
     </Link>
     </div>
   );

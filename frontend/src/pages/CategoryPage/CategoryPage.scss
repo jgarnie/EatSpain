@@ -1,35 +1,58 @@
-.categorypage__products__wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    &--ProductCard{
-        width: 30%;
-        margin: 0.25rem;
-        a{
-            text-decoration: none;
-            color: black;
+@import "../../scss/variables/variables";
+
+
+.categoryPage {
+    position: relative;
+
+    &__container {
+        position: relative;
+        &:after {
+            content:"";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(black, 0.3); 
         }
     }
-}
-.categorypageSection__wrapper{
-    text-align: center;
-    width: 15%;
-    margin: auto;
-    margin-bottom: 0.5rem;
-    background-color: rgb(241, 228, 149);
-    border: 1px solid goldenrod;
-    box-shadow: 1px 2px grey;
-    transition: 0.5s ease;
-        &__faIcon{
-            font-size: 4rem;
-            color: goldenrod;
+
+    &__img {
+        width: 100vw;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    
+    &__name {
+        font-size: 2.5rem;
+        position: absolute;
+        top:calc(10rem - 2.5rem);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: white;
+        text-transform: capitalize;
+    }
+
+    &__products{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+        &--ProductCard{
+            width: 30%;
+            margin: 0.25rem;
+            a{
+                text-decoration: none;
+                color: black;
+            }
         }
-        &:hover{
-            background-color: rgb(225, 240, 14);
-            
-        }
+    }
+
+
+
 
 }

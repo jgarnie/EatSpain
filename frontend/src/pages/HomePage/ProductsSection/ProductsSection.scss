@@ -4,12 +4,13 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 80%;
+    width: 90%;
     margin: auto;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    margin-left: 4rem;
 
     &__ProductCard{
-        width: 33%;
+        width: 22.5%;
     }
 
     &__ProductsSection{

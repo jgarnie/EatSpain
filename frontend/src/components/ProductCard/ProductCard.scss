@@ -1,3 +1,6 @@
+@import "../../scss/variables/variables";
+
+
 .product-card {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -28,5 +31,23 @@
     font-size: 0.8rem;
     text-align: right;
     text-decoration:none;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn {
+    background-color: $yellow;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    &:hover {
+      background-color: $green;
+    }
   }
 }

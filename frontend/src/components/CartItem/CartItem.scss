@@ -4,9 +4,10 @@
 .cartItem {
     display: flex;
     flex-direction: row;
-    border: 1px solid grey;
-    margin: 2rem auto;
+    border-top: 1px solid grey;
+    margin: 1rem auto;
     width: 60%;
+    align-items: center;
 
     &__img {
         height: 8rem;
@@ -18,26 +19,39 @@
         color: $red;
         font-size: 2rem;
         border: none;
+        cursor: pointer;
+    }
+    &__name {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
     }
 
+    &__number {
+        width: 2.5rem;
+        height: 2rem;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid grey;
+    }
 
-&__text {
-    padding-left: 2rem;
-    flex-grow:2;
-}
+    &__container1 {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+    }
 
-&__name {
-    font-size: 1.5rem;
-}
+    &__container2 {
+        width: 10%;
+    }
 
-&__price {
-    color: $green;
-}
+    &__container3 {
+        width: 10%;
+    }
 
-&__number {
-    width: 5rem;
-    height: 1.5rem;
-}
+    &__container4 {
+        width: 10%;
+    }
+
 
 
 }
