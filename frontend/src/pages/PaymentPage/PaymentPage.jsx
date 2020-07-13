@@ -128,9 +128,6 @@ console.log('props',thankerHandler)
                 <div className="cardContainer__verify__inner">
                 <h4>We are processing you request, this may take few seconds</h4>
                 <p>conecting with server <div className="cardContainer__verify__inner__loading">{verification}</div></p>
-                   <div className="spinner"><Spinner /></div>
-                        
-                    
                 </div>
             </div>
             

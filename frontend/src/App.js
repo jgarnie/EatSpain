@@ -25,7 +25,6 @@ function App() {
 const thankerHandler=(value)=>{
   setThanks(value)
 }
-  
 
   const handleSearch = (value) => {
     setSearchValue(value);

@@ -17,23 +17,21 @@ const CategoryPage = (props) => {
   const loadProducts = (data) => {
     if (products === null) {
       setProducts(data.data);
+      console.log('last',data.last_page)
+      console.log('first',data.current_page)
       setLastPage(data.last_page);
     } else {
+      
       setProducts(products.concat(data.data));
-      console.log(products);
-    }
-    if (page >= lastPage - 1) {
-      setHider(true);
     }
   };
+  
 
   const handleClick = () => {
-    if (page >= lastPage - 1) {
+  
       setPage(page + 1);
-      setHider(true);
-    } else {
-      setPage(page + 1);
-    }
+      console.log('page',page)
+    
   };
 
   useEffect(() => {
@@ -41,10 +39,19 @@ const CategoryPage = (props) => {
   }, [categoryName]);
 
   useEffect(() => {
-    if (products == null) {
+    
       CategoriesApi.getCategory(loadProducts, setIsLoading, categoryName);
+    
+  }, [page]);
+
+  useEffect(() => {
+    console.log(page,lastPage,hidder)
+    if (page >= lastPage&&lastPage !==null) {
+      setHider(true);
+    }else{
+      setHider(false)
     }
-  }, [products]);
+  }, [page]);
 
   return (
     <>
@@ -73,10 +80,10 @@ const CategoryPage = (props) => {
       ) : (
         <Spinner />
       )}
-      <div className="categorypageSection__wrapper" hidden={hidder}>
+      <div onClick={handleClick} hidden={hidder} className="categorypageSection__wrapper">
         <FontAwesomeIcon
           className="ProductsSection__wrapper__faIcon"
-          onClick={handleClick}
+         
           icon={faChevronDown}
         />
       </div>
