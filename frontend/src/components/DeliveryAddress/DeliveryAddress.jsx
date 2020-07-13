@@ -1,6 +1,7 @@
 import React, { useReducer, useEffect, useContext } from "react";
 import "./DeliveryAddress.scss";
 import { CartContext } from "../../providers/CartProvider";
+import { Link } from "react-router-dom";
 
 const initialState = {
   firstName: "",
@@ -31,7 +32,7 @@ function reducer(state, { action, value, field = null }) {
 }
 
 const DeliveryAddress = () => {
-  const { deliveryDetails } = useContext(CartContext);
+  const { deliveryDetails, updateCheckoutData } = useContext(CartContext);
 
   useEffect(() => {
     if (Object.keys(deliveryDetails).length > 0) {
@@ -58,11 +59,11 @@ const DeliveryAddress = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    updateCheckoutData(state);
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form">
       <h3 className="form__headline">Billing information</h3>
       <label htmlFor="firstName" className="form__input__name">
         First Name:
@@ -154,11 +155,9 @@ const DeliveryAddress = () => {
         </label>
       </div>
 
-      <input
-        className="form__submit"
-        type="submit"
-        value="Checkout to proceed"
-      />
+      <Link onClick={handleSubmit} to="/payment" className="form__submit">
+        Checkout to proceed
+      </Link>
     </form>
   );
 };

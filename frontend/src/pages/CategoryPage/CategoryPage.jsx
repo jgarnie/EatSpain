@@ -17,21 +17,20 @@ const CategoryPage = (props) => {
   const loadProducts = (data) => {
     if (products === null) {
       setProducts(data.data);
-      console.log('last',data.last_page)
-      console.log('first',data.current_page)
+      console.log("last", data.last_page);
+      console.log("first", data.current_page);
       setLastPage(data.last_page);
     } else {
-      
       setProducts(products.concat(data.data));
     }
+    if (page >= lastPage - 1) {
+      setHider(true);
+    }
   };
-  
 
   const handleClick = () => {
-  
-      setPage(page + 1);
-      console.log('page',page)
-    
+    setPage(page + 1);
+    console.log("page", page);
   };
 
   useEffect(() => {
@@ -39,52 +38,51 @@ const CategoryPage = (props) => {
   }, [categoryName]);
 
   useEffect(() => {
-    
-      CategoriesApi.getCategory(loadProducts, setIsLoading, categoryName);
-    
+    CategoriesApi.getCategory(loadProducts, setIsLoading, categoryName);
   }, [page]);
 
   useEffect(() => {
-    console.log(page,lastPage,hidder)
-    if (page >= lastPage&&lastPage !==null) {
+    console.log(page, lastPage, hidder);
+    if (page >= lastPage && lastPage !== null) {
       setHider(true);
-    }else{
-      setHider(false)
+    } else {
+      setHider(false);
     }
   }, [page]);
 
   return (
-    
-            <div className="categoryPage">
-          <div className="categoryPage__container">
-            <img className="categoryPage__img"
-              src={require(`../../img/categories/${categoryName}.jpg`)}
-              alt=""
-            />
-                      <h1 className="categoryPage__name">{categoryName}</h1>
-          </div>
+    <div className="categoryPage">
+      <div className="categoryPage__container">
+        <img
+          className="categoryPage__img"
+          src={require(`../../img/categories/${categoryName}.jpg`)}
+          alt=""
+        />
+        <h1 className="categoryPage__name">{categoryName}</h1>
+      </div>
 
       {products ? (
-
-          <div className="categoryPage__products">
-            {products.map((product, index) => {
-              return (
-                <ProductCard
-                  className="products__ProductCard"
-                  key={product.id}
-                  {...product}
-                />
-              );
-            })}
-          </div>
+        <div className="categoryPage__products">
+          {products.map((product, index) => {
+            return (
+              <ProductCard
+                className="products__ProductCard"
+                key={product.id}
+                {...product}
+              />
+            );
+          })}
+        </div>
       ) : (
         <Spinner />
       )}
 
-      <div className="products__ProductsSection" hidden={hidder}><button className="products__btn" onClick={handleClick}>Load more...</button> 
-                </div> 
-                </div>
-
+      <div className="products__ProductsSection" hidden={hidder}>
+        <button className="products__btn" onClick={handleClick}>
+          Load more...
+        </button>
+      </div>
+    </div>
   );
 };
 

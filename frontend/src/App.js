@@ -16,25 +16,26 @@ import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import ThanksPage from "./pages/PaymentPage/ThanksPage";
 
-
 function App() {
-  const [ searchValue, setSearchValue ] = useState('');
-  const [ redirect, setRedirect ] = useState(false);
-  const [ thanks, setThanks ] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
+  const [redirect, setRedirect] = useState(false);
+  const [thanks, setThanks] = useState(null);
 
-const thankerHandler=(value)=>{
-  setThanks(value)
-}
+  const thankerHandler = (value) => {
+    setThanks(value);
+  };
 
   const handleSearch = (value) => {
     setSearchValue(value);
     setRedirect(true);
   };
 
-  return (<Router>
-      {redirect && <Redirect to={`/search/${searchValue}`} />} 
+  return (
+    <Router>
+      <ScrollToTop />
+      {redirect && <Redirect to={`/search/${searchValue}`} />}
       {thanks && <Redirect to={`/thankyou`} />}
-      <MainNavbar handleSearch={handleSearch}/>
+      <MainNavbar handleSearch={handleSearch} />
       <CategoryNavbar />
       <Switch>
         <Route component={HomePage} exact path="/" />
@@ -50,11 +51,11 @@ const thankerHandler=(value)=>{
         <Route component={OrderDetailsPage} path="/order-details" />
         <Route
           path="/payment"
-          render={(routerProps) => <PaymentPage {...routerProps} thankerHandler={thankerHandler} />}
+          render={(routerProps) => (
+            <PaymentPage {...routerProps} thankerHandler={thankerHandler} />
+          )}
         />
         <Route component={ThanksPage} path="/thankyou" />
-        <Route component={HomePage} path="/" />
-        
       </Switch>
       <Footer />
     </Router>

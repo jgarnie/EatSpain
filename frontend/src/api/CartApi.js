@@ -16,10 +16,9 @@ export class CartApi {
     setIsLoading
   ) => {
     const data = await fetchData(`${baseUrl}/api/carts/${token}`);
-    console.log(data)
     if (data.products) {
       setProductData(data.products);
-      setDeliveryData(data.order_details ? data.order_details : {});
+      setDeliveryData(data.order_detail ? data.order_detail : {});
     }
     setIsLoading(false);
   };
@@ -60,5 +59,21 @@ export class CartApi {
     setIsLoading(false);
   };
 
-  static submit;
+  static updateCheckoutData = async (
+    requestBody,
+    setProductData,
+    setDeliveryData,
+    setIsLoading
+  ) => {
+    const data = await fetchData(
+      `${baseUrl}/api/carts/checkout`,
+      "POST",
+      requestBody
+    );
+    if (data.products) {
+      setProductData(data.products);
+      setDeliveryData(data.order_detail ? data.order_detail : {});
+    }
+    setIsLoading(false);
+  };
 }
