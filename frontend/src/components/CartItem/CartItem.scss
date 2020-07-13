@@ -28,28 +28,49 @@
 
     &__number {
         width: 2.5rem;
-        height: 2rem;
+        height: 2.5rem;
+        margin-right: 0.5rem;
         background-color: white;
         border-radius: 5px;
         border: 1px solid grey;
+
+    }
+
+    &__valueChangeContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__valueChange {
+        background-color:$yellow;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
     }
 
     &__container1 {
         display: flex;
         flex-direction: row;
-        width: 70%;
+        width: 60vw;
     }
 
     &__container2 {
-        width: 10%;
+        width: 10vw;
     }
 
     &__container3 {
-        width: 10%;
+        display: flex;
+        flex-direction: row;
+        width: 10vw;
+
     }
 
     &__container4 {
-        width: 10%;
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
     }
 
 
