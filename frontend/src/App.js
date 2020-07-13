@@ -7,7 +7,7 @@ import CategoryNavbar from "./components/CategoryNavbar/CategoryNavbar";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import CartPage from "./pages/CartParge/CartPage";
+import CartPage from "./pages/CartPage/CartPage";
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
