@@ -1,12 +1,6 @@
 @import "../../scss/variables/variables";
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-}
 
 .mainNav {
     position: relative;
@@ -33,26 +27,54 @@ body {
     top: 0;
   }
 
-  &__search {
+  &__Container {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  &__searchContainer {
+    display: flex;
     background-color: darkgrey;
     margin-right: 1rem;
     padding-right: 1rem;
-    border: 2px solid darkgrey;
     border-radius: 30px;
     height: 1.8rem;
-    outline: none;
     transition: 0.2s;
-    text-indent: 1rem;
-    color: white;
-    &::placeholder {
-      color: white;
-    }
+
 
     &:hover {
       opacity: 0.75;
       height: 2.1rem;
     }
   }
+
+  &__search {
+    background-color: darkgrey;
+    border: none;
+    text-indent: 1rem;
+    outline: none;
+    align-self: center;
+    margin-left: 0.5rem;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  &__magnifyingGlass {
+    align-self: center;
+  }
+
+  // &__search {
+  //   border: 2px solid darkgrey;
+  //   border-radius: 30px;
+  //   color: white;
+  //   &::placeholder {
+  //     color: white;
+  //   }
+  
 
   &__cartNum {
     padding-right: 2rem;
@@ -68,6 +90,12 @@ body {
     padding-left: 0.5rem;
   }
 
-  &__magnifyingGlass {
-  }
+
+
+}
+
+
+.searchbar:hover > .txt {
+  width: 100px;
+  padding:0 6px;
 }
