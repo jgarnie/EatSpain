@@ -34,22 +34,27 @@ const ProductDetail = ({ product }) => {
           alt={product.name}
         />
       </div>
-      <div className="product-detail__container">
+      <div>
         <h1>{product.name}</h1>
         <p>{product.description}</p>
         <p>Price: {product.price} €</p>
 
-        <div>
+        <div className="product-detail__container2">
+          <div className="product-detail__number">
           <input
-            className="product-detail__number"
+            className="product-detail__numberBtn"
             type="number"
             value={count}
             onChange={(e) => dispatch({ type: "set", value: e.target.value })}
           />
-          <button onClick={() => dispatch({ type: "increment" })}>+</button>
-          <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+          <div className="product-detail__valueChangeContainer">
+
+          <button className="product-detail__valueChange" onClick={() => dispatch({ type: "increment" })}>+</button>
+          <button className="product-detail__valueChange" onClick={() => dispatch({ type: "decrement" })}>-</button>
+          </div>
+          </div>
           <button
-            className="product-detail__btn"
+            className="product-detail__Btn"
             onClick={() => addToCart(product.id, count)}
           >
             Add to cart
