@@ -8,7 +8,6 @@ const AboutSection = () => {
   return (
     <section className="about">
 
-      {/* <h1 className="about__heading">Eat Spain</h1> */}
 
       <p className="about__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil possimus

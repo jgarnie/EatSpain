@@ -49,16 +49,16 @@ const CategoryPage = (props) => {
   return (
     <>
       {products ? (
-        <div>
-          <img
+        <div className="categoryPage">
+          <img className="categoryPage__img"
             src={require(`../../img/categories/${categoryName}.jpg`)}
             alt=""
           />
 
-          <h1>Category {categoryName}</h1>
+          <h1 className="categoryPage__name">Category {categoryName}</h1>
 
           <div></div>
-          <div className="categorypage__products__wrapper">
+          <div className="categoryPage__products">
             {products.map((product, index) => {
               return (
                 <ProductCard
@@ -73,13 +73,8 @@ const CategoryPage = (props) => {
       ) : (
         <Spinner />
       )}
-      <div className="categorypageSection__wrapper" hidden={hidder}>
-        <FontAwesomeIcon
-          className="ProductsSection__wrapper__faIcon"
-          onClick={handleClick}
-          icon={faChevronDown}
-        />
-      </div>
+      <div className="products__ProductsSection" hidden={hidder}><button className="products__btn" onClick={handleClick}>Load more...</button> 
+                </div> 
     </>
   );
 };

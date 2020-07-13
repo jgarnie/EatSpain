@@ -40,11 +40,11 @@ export default function ProductsSection() {
 
   return (
     <>
-      {products ? (
-        <div className="products">
+      
+{ products &&       <div className="products">
           {products.map((product, index) => {
             return (
- 
+
                 <ProductCard className="products__ProductCard"
                   key={product.id}
                   {...product}
@@ -53,9 +53,8 @@ export default function ProductsSection() {
             );
           })}
         </div>
-      ) : (
-        <Spinner />
-      )}
+      }
+
       <div className="products__ProductsSection" hidden={hidder}><button className="products__btn" onClick={handleClick}>Load more...</button> 
                 </div> 
     </>
