@@ -44,6 +44,15 @@ const CartProvider = ({ children }) => {
     CartApi.removeFromCart({ productId, token }, setCart, setIsCartLoading);
   };
 
+  const updateCheckoutData = (data) => {
+    CartApi.updateCheckoutData(
+      { token, ...data },
+      setCart,
+      setDeliveryDetails,
+      setIsCartLoading
+    );
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -56,6 +65,7 @@ const CartProvider = ({ children }) => {
         addToCart,
         updateCart,
         removeFromCart,
+        updateCheckoutData,
       }}
     >
       {children}

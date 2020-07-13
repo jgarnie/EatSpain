@@ -20,7 +20,6 @@ const CategoryPage = (props) => {
       setLastPage(data.last_page);
     } else {
       setProducts(products.concat(data.data));
-      console.log(products);
     }
     if (page >= lastPage - 1) {
       setHider(true);
