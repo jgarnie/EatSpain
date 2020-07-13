@@ -12,9 +12,11 @@ function reducer(count, action) {
     case "increment":
       return count + 1;
     case "decrement":
-      return count - 1;
+      if (count <= 1) {
+        return 1;
+      } else return count - 1;
     case "set":
-      return action.value;
+      return Number(action.value);
     default:
       throw new Error();
   }

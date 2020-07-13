@@ -1,6 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
 import { CartApi } from "../api/CartApi";
-
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {

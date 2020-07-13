@@ -37,15 +37,18 @@
   }
 
   &__submit {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 10rem;
+    margin: 1rem 0;
+    width: 12rem;
     height: 2rem;
     background-color: $yellow;
     border: none;
     border-radius: 5px;
     color: white;
     font-size: 0.9rem;
+    text-decoration: none;
+    line-height: 2rem;
+    text-align: center;
+    cursor: pointer;
 
     &:hover {
       cursor: pointer;

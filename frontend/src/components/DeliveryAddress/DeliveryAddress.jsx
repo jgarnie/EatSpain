@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useContext } from "react";
 import "./DeliveryAddress.scss";
 import { CartContext } from "../../providers/CartProvider";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const initialState = {
   firstName: "",
@@ -33,9 +33,12 @@ function reducer(state, { action, value, field = null }) {
 
 const DeliveryAddress = () => {
   const { deliveryDetails, updateCheckoutData } = useContext(CartContext);
+  const history = useHistory();
+  const [state, dispatch] = useReducer(reducer, { ...initialState });
 
   useEffect(() => {
     if (Object.keys(deliveryDetails).length > 0) {
+      console.log(deliveryDetails);
       dispatch({
         action: "replace",
         value: {
@@ -45,12 +48,12 @@ const DeliveryAddress = () => {
           address: deliveryDetails.address,
           zip: deliveryDetails.zip,
           city: deliveryDetails.city,
+          offers: deliveryDetails.offers_email,
+          terms: deliveryDetails.terms_and_conditions,
         },
       });
     }
   }, [deliveryDetails]);
-
-  const [state, dispatch] = useReducer(reducer, { ...initialState });
 
   const handleChange = (e) => {
     const value =
@@ -59,11 +62,13 @@ const DeliveryAddress = () => {
   };
 
   const handleSubmit = (e) => {
-    updateCheckoutData(state);
+    e.preventDefault();
+    updateCheckoutData({ ...state });
+    history.push("/payment");
   };
 
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h3 className="form__headline">Billing information</h3>
       <label htmlFor="firstName" className="form__input__name">
         First Name:
@@ -155,9 +160,11 @@ const DeliveryAddress = () => {
         </label>
       </div>
 
-      <Link onClick={handleSubmit} to="/payment" className="form__submit">
-        Checkout to proceed
-      </Link>
+      <input
+        type="submit"
+        value="Checkout to proceed"
+        className="form__submit"
+      />
     </form>
   );
 };

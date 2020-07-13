@@ -16,10 +16,8 @@ export class CartApi {
     setIsLoading
   ) => {
     const data = await fetchData(`${baseUrl}/api/carts/${token}`);
-    if (data.products) {
-      setProductData(data.products);
-      setDeliveryData(data.order_detail ? data.order_detail : {});
-    }
+    data.products && setProductData(data.products);
+    setDeliveryData(data.order_detail ? data.order_detail : {});
     setIsLoading(false);
   };
 
@@ -70,10 +68,8 @@ export class CartApi {
       "POST",
       requestBody
     );
-    if (data.products) {
-      setProductData(data.products);
-      setDeliveryData(data.order_detail ? data.order_detail : {});
-    }
+    data.products && setProductData(data.products);
+    setDeliveryData(data.order_detail ? data.order_detail : {});
     setIsLoading(false);
   };
 }
