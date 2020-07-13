@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InvoiceEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +50,13 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 //after route name to hide urls should be: ->middleware('can:admin'), has been defined on app\Providers\AuthServiceProvider.php as a gate
 
 
+Route::get('/send-email', function(){
+    return 'hello i will send email';
+    //should be placed in the controller
+    Mail::to('test@app.cz')->send(new InvoiceEmail());
+});
+Route::get('/send-notification', function(){
+    $user = User::first();
+    $user->notify(new ShippedShop());
+
+});
