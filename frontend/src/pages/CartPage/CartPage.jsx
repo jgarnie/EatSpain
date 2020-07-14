@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import { CartContext } from "../../providers/CartProvider";
 import CartItem from "../../components/CartItem/CartItem";
 
+import CartHeading from "../../components/CartHeading/CartHeading";
+
 import "./CartPage.scss";
 import { Link } from "react-router-dom";
+import CartFooter from "../../components/CartFooter/CartFooter";
 
 const CartPage = () => {
   const { cart, cartTotal, isCartLoading } = useContext(CartContext);
@@ -11,17 +14,14 @@ const CartPage = () => {
   return (
     <div className="cart">
       <h1 className="cart__name">Shoping Cart</h1>
-      <div className="cart__heading">
-        <p className="cart__item">Item</p>
-        <p className="cart__price">Price</p>
-        <p className="cart__qty">Qty</p>
-        <p>Subtotal</p>
-      </div>
+
+      <CartHeading />
+
       {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
 
-      <p className="cart__total">Total price: {cartTotal} €</p>
+      <CartFooter />
 
       <Link to="/order-details" className="cart__btn">
         Continue

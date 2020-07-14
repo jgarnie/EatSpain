@@ -2,10 +2,24 @@
 
 .cardContainer {
   display: flex;
-  width: 70%;
+  width: 60%;
   margin: auto;
   justify-content: space-around;
-  padding: 1rem;
+  padding-bottom: 5rem;
+
+  &__headline {
+    width: 60%;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  &__header {
+    width: 60%;
+    margin: auto;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
 
   &__form {
     display: flex;
@@ -26,10 +40,25 @@
   &__input {
     background-color: white;
     font-size: 1rem;
-    width: 100%;
+    width: 20rem;
     height: 2rem;
     border: 1px solid grey;
     border-radius: 5px;
+  }
+
+  &__inputDate {
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  &__dates {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__btnContainer {
   }
 
   &__btn {
@@ -39,6 +68,7 @@
     border-radius: 5px;
     color: white;
     height: 2rem;
+    align-self: center;
     cursor: pointer;
     &:hover {
       background-color: $green;
