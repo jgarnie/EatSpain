@@ -4,33 +4,55 @@
     flex-wrap: wrap;
     overflow: hidden;
     justify-content: center;
+    
 
         &__productCard{
             flex-basis:25%;
             margin: 1rem;
-            max-height: 25%;
-            height: 40vh;
+            max-height: 40%;
+            height: 46vh;
             display: flex;
             flex-direction: column;
             text-align: center;
             overflow: hidden;
-            
-        }
-        &__image{
-            width: 15vh;
-            max-width: 15vh;
-            height: auto;
-            max-height: 60%;
-            align-self: center;
-        }
-        &__description{
-            overflow: auto;
-            height: 15vh;
-            max-height: 20%;
-        }
-        &__discount{
-            color: red;
-            font-weight: bold;
-        }
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            &__image{
+                width: 13vh;
+                max-width: 13vh;
+                height: auto;
+                max-height: 60%;
+                
+            }
+        
+            &__bottom{
+                display: flex;
+                flex-direction: row;
+                
+                width: 100%;
+                padding: 1rem;
+                justify-content: space-evenly;
+           
+                a{
+                padding: 0.5rem 1rem;
+                background-color: rgb(245, 162, 7);
+                border-radius: 4px;
+                color: white; 
+                &:hover{
+                    color: rgb(7, 109, 7);
+                    text-decoration: none;
+                }
+
+            }
+        }  
+      }      
+      
+      
     
+}
+.items__pagination{
+    width: 80%;
+    margin: auto;
+    padding: 0.5rem;
 }

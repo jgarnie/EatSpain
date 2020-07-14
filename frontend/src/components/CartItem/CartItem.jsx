@@ -19,7 +19,7 @@ function reducer(count, action) {
   }
 }
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, compact }) => {
   const { updateCart, removeFromCart } = useContext(CartContext);
   const [count, dispatch] = useReducer(reducer, item.pivot.count);
 
@@ -33,8 +33,10 @@ const CartItem = ({ item }) => {
     removeFromCart(item.id);
   };
 
+  const displayCSS = compact ? "cartItem compact" : "cartItem";
+
   return (
-    <div className="cartItem">
+    <div className={displayCSS}>
       <div className="cartItem__container1">
         <Link to={`/products/${item.id}`}>
           <img
@@ -57,14 +59,27 @@ const CartItem = ({ item }) => {
           value={count}
           onChange={(e) => dispatch({ type: "set", value: e.target.value })}
         />
-        <button onClick={() => dispatch({ type: "increment" })}>+</button>
-        <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+        <div className="cartItem__valueChangeContainer">
+          <button
+            className="cartItem__valueChange"
+            onClick={() => dispatch({ type: "increment" })}
+          >
+            +
+          </button>
+          <button
+            className="cartItem__valueChange"
+            onClick={() => dispatch({ type: "decrement" })}
+          >
+            -
+          </button>
+        </div>
       </div>
 
       <div className="cartItem__container4">
         <button className="cartItem__btn" onClick={handleDelete}>
           &times;
         </button>
+
         {`${(item.price * count).toFixed(2)} €`}
       </div>
     </div>

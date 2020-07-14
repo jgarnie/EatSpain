@@ -1,4 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+.logoutBlade {
+  background-color: #161313;
+  padding: 0.5rem;
+}
+.logoutBlade__wrap {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigationBar nav {
+  background-color: grey;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.navigationBar .nav__wrap {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navigationBar .nav__wrap a {
+  padding: 0.5rem;
+  color: white;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -9998,27 +10027,43 @@ h3 {
 .productsWrapper__productCard {
   flex-basis: 25%;
   margin: 1rem;
-  max-height: 25%;
-  height: 40vh;
+  max-height: 40%;
+  height: 46vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
 }
-.productsWrapper__image {
-  width: 15vh;
-  max-width: 15vh;
+.productsWrapper__productCard__image {
+  width: 13vh;
+  max-width: 13vh;
   height: auto;
   max-height: 60%;
-  align-self: center;
 }
-.productsWrapper__description {
-  overflow: auto;
-  height: 15vh;
-  max-height: 20%;
+.productsWrapper__productCard__bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-evenly;
 }
-.productsWrapper__discount {
-  color: red;
-  font-weight: bold;
+.productsWrapper__productCard__bottom a {
+  padding: 0.5rem 1rem;
+  background-color: #f5a207;
+  border-radius: 4px;
+  color: white;
+}
+.productsWrapper__productCard__bottom a:hover {
+  color: #076d07;
+  text-decoration: none;
+}
+
+.items__pagination {
+  width: 80%;
+  margin: auto;
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=app.css.map*/

@@ -1,30 +1,22 @@
 
 
+<div class="navigationBar">
 
-<nav>
+    <nav>
 
-    <a href="{{ route('products.create') }}">Create a product</a>
+        <div class="nav__wrap">
 
-    <a href="{{ route('products.index') }}">Product Index</a>
+            <a href="">Orders</a>
 
-    <a href="{{ route('admin.users.index') }}">Manage Users</a>
+            <a href="{{ route('products.index') }}">Product Index</a>
 
-    <h6>the next links are not working, are there for testing purpose</h6>
+            <a href="{{ route('products.create') }}">Create a product</a>
 
-    <a href="">Make a promo</a>
+            <a href="{{ route('admin.users.index') }}">Manage Users</a>
 
-    <a href="">Pending Orders</a>
+            
+        </div>
 
-    <a href="">Completed Orders</a>
+    </nav>
 
-<br/>
-
-    <a href="">category 1</a>
-    <a href="">category 2</a>
-    <a href="">category 3</a>
-    <a href="">category 4</a>
-    <a href="">category 5</a>
-    <a href="">category 6</a>
-<h6>from here it works again</h6>
-</nav>
-
+</div>
