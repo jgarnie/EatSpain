@@ -33,22 +33,24 @@ const Navbar = ({ handleSearch }) => {
 
       <div className="mainNav__Container">
         <div className="mainNav__searchContainer">
-
-        <input
-        onKeyDown={handleKeyDown}
-        className="mainNav__search"
-        type="text"
-        placeholder="Search"/>
-        <FontAwesomeIcon className="mainNav__magnifyingGlass" icon={faSearch}></FontAwesomeIcon>
-
+          <input
+            onKeyDown={handleKeyDown}
+            className="mainNav__search"
+            type="text"
+            placeholder="Search"
+          />
+          <FontAwesomeIcon
+            className="mainNav__magnifyingGlass"
+            icon={faSearch}
+          ></FontAwesomeIcon>
         </div>
-        
-        
 
-        <Link className="mainNav__cartLink" to="/cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
-          <span className="mainNav__cartNum">{cartCount}</span>
-        </Link>
+        <div className="mainNav__cart">
+          <Link className="mainNav__cartLink" to="/cart">
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span className="mainNav__cartNum">{cartCount}</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
