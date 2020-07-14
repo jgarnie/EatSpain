@@ -52,33 +52,39 @@ const CartItem = ({ item, compact }) => {
         <div className="cartItem__price">{item.price} eur</div>
       </div>
 
-      <div className="cartItem__container3">
-        <input
-          className="cartItem__number"
-          type="number"
-          value={count}
-          onChange={(e) => dispatch({ type: "set", value: e.target.value })}
-        />
-        <div className="cartItem__valueChangeContainer">
-          <button
-            className="cartItem__valueChange"
-            onClick={() => dispatch({ type: "increment" })}
-          >
-            +
-          </button>
-          <button
-            className="cartItem__valueChange"
-            onClick={() => dispatch({ type: "decrement" })}
-          >
-            -
-          </button>
+      {compact ? (
+        <div className="cartItem__container3">{count}</div>
+      ) : (
+        <div className="cartItem__container3">
+          <input
+            className="cartItem__number"
+            type="number"
+            value={count}
+            onChange={(e) => dispatch({ type: "set", value: e.target.value })}
+          />
+          <div className="cartItem__valueChangeContainer">
+            <button
+              className="cartItem__valueChange"
+              onClick={() => dispatch({ type: "increment" })}
+            >
+              +
+            </button>
+            <button
+              className="cartItem__valueChange"
+              onClick={() => dispatch({ type: "decrement" })}
+            >
+              -
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="cartItem__container4">
-        <button className="cartItem__btn" onClick={handleDelete}>
-          &times;
-        </button>
+        {compact ? null : (
+          <button className="cartItem__btn" onClick={handleDelete}>
+            &times;
+          </button>
+        )}
 
         {`${(item.price * count).toFixed(2)} €`}
       </div>
