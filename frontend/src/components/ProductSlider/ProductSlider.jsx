@@ -56,20 +56,16 @@ const ProductSlider = ({ children, header, className }) => {
         <Slider className="product-slider__slider">
           {children.map((child, index) => {
             return (
-              <Slide
-                key={index}
-                index={index}
-                className="product-slider__slide"
-              >
+              <Slide key={index} index={index}>
                 {child}
               </Slide>
             );
           })}
         </Slider>
-        <ButtonBack className="btn btn--back">
+        <ButtonBack className="product-slider__btn product-slider__btn--back">
           <FontAwesomeIcon icon={faAngleLeft} />
         </ButtonBack>
-        <ButtonNext className="btn btn--next">
+        <ButtonNext className="product-slider__btn product-slider__btn--next">
           <FontAwesomeIcon icon={faAngleRight} />
         </ButtonNext>
       </div>

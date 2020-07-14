@@ -2,12 +2,16 @@
 
 .productDetail {
   &__btn {
+    text-decoration: none;
+    display: inline-block;
     background-color: $yellow;
+    padding: 0 1rem;
     color: white;
     height: 3rem;
     font-size: 1rem;
     border: none;
     margin: 2rem;
+    line-height: 3rem;
     border-radius: 5px;
     &:hover {
       cursor: pointer;
@@ -19,7 +23,6 @@
   }
 
   &__text {
-    width: 80%;
     margin: auto;
   }
 

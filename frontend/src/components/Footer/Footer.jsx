@@ -13,9 +13,21 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__flex">
         <div className="footer__about">
-          <p><Link className="footer__about__input" to="/about">Recipes</Link></p>
-          <p><Link className="footer__about__input" to="/about">Events</Link></p>
-          <p><Link className="footer__about__input" to="/about">About page</Link></p>
+          <div className="footer__about__item">
+            <Link className="footer__about__input" to="/about">
+              Recipes
+            </Link>
+          </div>
+          <div className="footer__about__item">
+            <Link className="footer__about__input" to="/about">
+              Events
+            </Link>
+          </div>
+          <div className="footer__about__item">
+            <Link className="footer__about__input" to="/about">
+              About page
+            </Link>
+          </div>
         </div>
 
         <div className="footer__category">
@@ -31,20 +43,34 @@ const Footer = () => {
         </div>
 
         <div className="footer__socials">
-          <a className="footer__fb" href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon  icon={faFacebook} /></a>
-          <a className="footer__insta" href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon  icon={faInstagram} /></a>
+          <a
+            className="footer__fb"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a
+            className="footer__insta"
+            href="https://www.instagram.com/?hl=en"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
         </div>
 
         <div className="footer__address">
-          <h4>Eat Spain</h4>
-          <p>IČ: 123456789</p>
-          <p>Palouček 11</p>
-          <p>140 00 Prague 4</p>
-          <p>Czech Republic</p>
+          <div className="footer__address__title">Eat Spain</div>
+          <div className="footer__address__text">IČ: 123456789</div>
+          <div className="footer__address__text">Palouček 11</div>
+          <div className="footer__address__text">140 00 Prague 4</div>
+          <div className="footer__address__text">Czech Republic</div>
         </div>
       </div>
 
-      <p>© Eat Spain 2020</p>
+      <div className="footer__copyright">© Eat Spain 2020</div>
     </div>
   );
 };

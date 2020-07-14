@@ -1,9 +1,10 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./ProductDetail.scss";
 import { CartContext } from "../../providers/CartProvider";
 import { baseUrl } from "../../env";
+import Modal from "../Modal/Modal";
 
 function reducer(count, action) {
   switch (action.type) {
@@ -23,6 +24,17 @@ function reducer(count, action) {
 const ProductDetail = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   const [count, dispatch] = useReducer(reducer, 1);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAddToCart = () => {
+    console.log("click");
+    addToCart(product.id, count);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="product-detail">
@@ -60,10 +72,7 @@ const ProductDetail = ({ product }) => {
               </button>
             </div>
           </div>
-          <button
-            className="product-detail__Btn"
-            onClick={() => addToCart(product.id, count)}
-          >
+          <button className="product-detail__Btn" onClick={handleAddToCart}>
             Add to cart
             <FontAwesomeIcon
               className="product-detail__cart"
@@ -71,9 +80,17 @@ const ProductDetail = ({ product }) => {
             />
           </button>
         </div>
-
         <p>Ships Worldwide</p>
       </div>
+      <Modal show={showModal} handleCloseModal={handleCloseModal}>
+        <div className="product-detail__modal">
+          <img
+            src={`${baseUrl}/images/uploads/${product.image}`}
+            alt={product.name}
+          />
+          <h3>{product.name} has been successfully added to cart.</h3>
+        </div>
+      </Modal>
     </div>
   );
 };

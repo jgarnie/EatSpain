@@ -16,26 +16,27 @@
   }
 
   &__slide {
-  }
-}
-
-.btn {
-  border: none;
-  background-color: transparent;
-  font-size: 2rem;
-  color: #555;
-  position: absolute;
-  top: 50%;
-
-  &:hover {
-    color: #000;
+    padding: 0;
   }
 
-  &--back {
-    left: -2rem;
-  }
+  &__btn {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    color: #555;
+    position: absolute;
+    top: 45%;
 
-  &--next {
-    right: -2rem;
+    &:hover {
+      color: #000;
+    }
+
+    &--back {
+      left: -2rem;
+    }
+
+    &--next {
+      right: -2rem;
+    }
   }
 }

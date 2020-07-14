@@ -4,6 +4,8 @@ import "react-credit-cards/es/styles-compiled.css";
 import "./PaymentPage.scss";
 import CartItem from "../../components/CartItem/CartItem";
 import { CartContext } from "../../providers/CartProvider";
+import CartHeading from "../../components/CartHeading/CartHeading";
+import CartFooter from "../../components/CartFooter/CartFooter";
 
 const PaymentPage = ({ thankerHandler }) => {
   const [number, setNumber] = useState("");
@@ -62,11 +64,15 @@ const PaymentPage = ({ thankerHandler }) => {
   return (
     <>
       <div>
-        <h1>Order SUmmary</h1>
+        <h3 className="cardContainer__header">Order Summary</h3>
+        <CartHeading />
         {cart.map((item) => (
           <CartItem compact key={item.id} item={item} />
         ))}
+        <CartFooter />
       </div>
+      <h3 className="cardContainer__headline">Payment Information</h3>
+
       <div className="cardContainer">
         <form className="cardContainer__form" onSubmit={verifier}>
           <label className="cardContainer__name">
@@ -94,32 +100,35 @@ const PaymentPage = ({ thankerHandler }) => {
               onFocus={(e) => setFocus(e.target.name)}
             />
           </label>
+          <div className="cardContainer__dates">
+            <label className="cardContainer__name">
+              MM/DD Expiration:
+              <input
+                className="cardContainer__inputDate"
+                type="text"
+                name="expiry"
+                value={expiry}
+                onChange={(e) => setExpiry(e.target.value)}
+                onFocus={(e) => setFocus(e.target.name)}
+              />
+            </label>
 
-          <label className="cardContainer__name">
-            MM/DD Expiration:
-            <input
-              className="cardContainer__input"
-              type="text"
-              name="expiry"
-              value={expiry}
-              onChange={(e) => setExpiry(e.target.value)}
-              onFocus={(e) => setFocus(e.target.name)}
-            />
-          </label>
-
-          <label className="cardContainer__name">
-            CVC:
-            <input
-              className="cardContainer__input"
-              type="tel"
-              name="cvc"
-              value={cvc}
-              onChange={(e) => setCvc(e.target.value)}
-              onFocus={(e) => setFocus(e.target.name)}
-            />
-          </label>
-
-          <button className="cardContainer__btn">Complete Order</button>
+            <label className="cardContainer__name">
+              <br />
+              CVC:
+              <input
+                className="cardContainer__inputDate"
+                type="tel"
+                name="cvc"
+                value={cvc}
+                onChange={(e) => setCvc(e.target.value)}
+                onFocus={(e) => setFocus(e.target.name)}
+              />
+            </label>
+          </div>
+          <div className="cardContainer__btnContainer">
+            <button className="cardContainer__btn">Complete Order</button>
+          </div>
         </form>
 
         <Cards
