@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index(){
 
-        $items = Product::orderByRaw('RAND()')->get();
+        $items = Product::orderby('name','desc')->paginate(15);
       
         return view('items',compact('items'));
     }
@@ -118,7 +118,7 @@ class ProductController extends Controller
     public function searchBar(Request $request){
         $name = $request->input('name');
 
-        $items = Product::where('name','like','%'.$name.'%')->get();
+        $items = Product::where('name','like','%'.$name.'%')->paginate(15);
         
         return view('/items', compact('items'));
     }

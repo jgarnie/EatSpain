@@ -1,3 +1,4 @@
+<!-- ot being used -->
 <form action="{{ route('products.searchBar') }}" method="post">
     
         <input type="text" name="name">
