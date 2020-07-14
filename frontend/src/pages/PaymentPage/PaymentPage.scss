@@ -1,63 +1,94 @@
-form{
-    
-    width: 80%;
-    margin: auto;
+@import "../../scss/variables/variables";
+
+.cardContainer {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+  padding: 1rem;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card {
+    justify-content: center;
+  }
+
+  &__name {
+    color: black;
+    font-size: 0.8rem;
+    margin: 0.75rem 0 0.25rem 0;
+    align-self: flex-start;
+  }
+
+  &__input {
+    background-color: white;
+    font-size: 1rem;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+    background-color: $yellow;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 2rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $green;
+    }
+  }
+
+  &__alert {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: rgba(black, 0.5);
+    color: $yellow;
     text-align: center;
-    padding: 0.2rem;
-    
-}
-
-.cardContainer{
     padding: 1rem;
-    &__alert{
-        position: absolute;
-        top: 30%;
-        left: 30%;
-        background-color: lightgray;
-        color: rgb(255, 123, 0);
-        text-align: center;
-        padding: 1rem;
-        box-shadow: 2px 2px grey;
-        min-height: 20%;
-        border-radius: 10px;
-        button{
-            padding: 1rem;
-            border-radius: 5px;
-            background-color: palegoldenrod;
-        }
-        
+    box-shadow: 2px 2px grey;
+    min-height: 20%;
+    border-radius: 5px;
+    button {
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: $yellow;
+      color: white;
+      border: none;
+      border-radius: 5px;
     }
-    input{
-        color:grey;
-        background-color: rgb(248, 238, 238);
-        margin-bottom: 0.2rem;
-        margin: 0.1rem;
+  }
+
+  &__verify {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    padding: 5rem 0;
+
+    &__inner {
+      width: 60%;
+      height: 70%;
+      margin: auto;
+      opacity: 1;
+
+      &__loading {
+        font-size: 5rem;
+      }
     }
-    &__verify{
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            min-height: 100%;
-            top: 0;
-            left: 0;
-            text-align: center;
-            align-items: center;
-            background-color: whitesmoke;
-            opacity: 0.9;
-            padding: 5rem 0;
-       
-        &__inner{
-            
-                width: 60%;
-                height: 70%;
-                margin: auto;
-                opacity: 1;
-            
-            &__loading{
-                     font-size: 5rem;
-            }
-        }
-    }
+  }
 }
-
-

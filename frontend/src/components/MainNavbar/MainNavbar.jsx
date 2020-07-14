@@ -1,4 +1,4 @@
-import React, { useContext,useState} from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -8,18 +8,16 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ handleSearch }) => {
   const { cartCount } = useContext(CartContext);
-  const [value, setValue] = useState('');
-  
+  const [value, setValue] = useState("");
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSearch(value);
     }
   };
-  const handleClick=(e)=>{
-    handleSearch(value)
+  const handleClick = (e) => {
+    handleSearch(value);
   };
-
 
   return (
     <nav className="mainNav">
@@ -39,24 +37,31 @@ const Navbar = ({ handleSearch }) => {
 
       <div className="mainNav__Container">
         <div className="mainNav__searchContainer">
-
-        <input
-        onKeyDown={handleKeyDown}
-        onChange={e=>{ setValue( e.target.value ) }}
-        className="mainNav__search"
-        value={ value }
-        type="text"
-        placeholder="Search"/>
-        <FontAwesomeIcon onClick={e=>{handleClick(e)}} className="mainNav__magnifyingGlass" icon={faSearch}></FontAwesomeIcon>
-
+          <input
+            onKeyDown={handleKeyDown}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            className="mainNav__search"
+            value={value}
+            type="text"
+            placeholder="Search"
+          />
+          <FontAwesomeIcon
+            onClick={(e) => {
+              handleClick(e);
+            }}
+            className="mainNav__magnifyingGlass"
+            icon={faSearch}
+          ></FontAwesomeIcon>
         </div>
-        
-        
 
-        <Link className="mainNav__cartLink" to="/cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
-          <span className="mainNav__cartNum">{cartCount}</span>
-        </Link>
+        <div className="mainNav__cart">
+          <Link className="mainNav__cartLink" to="/cart">
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span className="mainNav__cartNum">{cartCount}</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
