@@ -6,7 +6,7 @@
 
         <div class="nav__wrap">
 
-            <a href="">Orders</a>
+            <a href="{{ route('orders.pending') }}">Orders</a>
 
             <a href="{{ route('products.index') }}">Product Index</a>
 

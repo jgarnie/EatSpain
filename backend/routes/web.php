@@ -28,9 +28,13 @@ Route::get('/item/{id}/edit','ProductController@edit');
 Route::post('/items/{id}/update', 'ProductController@update');
 Route::post('/items/search','ProductController@searchBar')->name('products.searchBar');
 
+//Orders
+Route::get('/orders','OrderDetailController@index')->name('orders.pending');
+
+Route::post('/orders/{id}','OrderDetailController@update')->name('orders.update');
 
 
-//dashboard
+
 
 
 
@@ -58,5 +62,4 @@ Route::get('/send-email', function(){
 Route::get('/send-notification', function(){
     $user = User::first();
     $user->notify(new ShippedShop());
-
 });

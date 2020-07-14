@@ -9,7 +9,7 @@ use App\Category;
 class ProductController extends Controller
 {
     public function index(){
-
+       
         $items = Product::orderby('name','desc')->paginate(15);
       
         return view('items',compact('items'));
@@ -87,25 +87,27 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'price' => 'required|string|between:0,10',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required|numeric|between:0,100',
             'discount' => 'nullable|numeric|between:0,10',
         ], [
             'name.required' => 'That number is outside of bounds.',
             'description.required' => 'A review without a text does not make sense, love.',
-            'image.max.required' => 'valid formats jpeg,png,jpg,gif,svg, max size 2MB',
             'category_id.required' => 'category is required and must be number!',
             'price.max.required' => 'price is required'
         ]);
 
         $editId= Product::findOrFail($id);
-        $newFileName = md5(time()) . '.' . $request->file('image')->extension();
-        $request->file('image')->move(public_path('images/uploads'), $newFileName);
+        
+        if($request->file('image')!==null){
+
+            $newFileName = md5(time()) . '.' . $request->file('image')->extension();
+            $request->file('image')->move(public_path('images/uploads'), $newFileName);
+            $editId->image = $newFileName;
+        }
 
         $editId->name = $request->input('name');
         $editId->description = $request->input('description');
         $editId->price = $request->input('price');
-        $editId->image = $newFileName;
         $editId->category_id = $request->input('category_id');
         $editId->discount = $request->input('discount');
         $editId->save();
