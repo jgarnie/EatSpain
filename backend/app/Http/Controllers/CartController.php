@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
-
+use App\OrderDetail;
 
 class CartController extends Controller
 {
@@ -38,7 +38,7 @@ class CartController extends Controller
 
     public function find($token)
     {
-        $cart = Cart::where("token", $token)->with(["products", "orderDetails"])->first();
+        $cart = Cart::where("token", $token)->with(["products", "orderDetail"])->first();
         return $cart;
     }
 
@@ -78,6 +78,34 @@ class CartController extends Controller
         $cart = Cart::where("token", $token)->with("products")->first();
         $cart->products()->detach($request->input("productId"));
         $cart->load('products');
+        return $cart;
+    }
+
+    public function checkout(Request $request)
+    {
+        $token = $request->input("token");
+        $cart = Cart::where("token", $token)->with("orderDetail")->first();
+        $order_detail = OrderDetail::where("cart_id", $cart->id)->first();
+
+        if ($order_detail == NULL) {
+            $order_detail = new OrderDetail;
+            $order_detail->cart_id = $cart->id;
+        }
+
+        $order_detail->first_name = $request->input("firstName") ?? $order_detail->first_name;
+        $order_detail->last_name = $request->input("lastName") ?? $order_detail->last_name;
+        $order_detail->email = $request->input("email") ?? $order_detail->email;
+        $order_detail->address = $request->input("address") ?? $order_detail->address;
+        $order_detail->city = $request->input("city") ?? $order_detail->city;
+        $order_detail->zip = $request->input("zip") ?? $order_detail->zip;
+        $order_detail->offers_email = $request->input("offers") ?? $order_detail->offers_email;
+        $order_detail->terms_and_conditions = $request->input("terms") ?? $order_detail->terms_and_conditions;
+        $order_detail->payment_method = $request->input("paymentMethod") ?? $order_detail->payment_method;
+        $order_detail->total = $request->input("total") ?? $order_detail->total;
+        $order_detail->order_status = $request->input("orderStatus") ?? $order_detail->order_status;
+
+        $order_detail->save();
+        $cart->load("orderDetail");
         return $cart;
     }
 }

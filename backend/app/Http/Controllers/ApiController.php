@@ -25,7 +25,7 @@ class ApiController extends Controller
 
     public function productDetail($product_id)
     {
-        $product = Product::findOrFail($product_id);
+        $product = Product::with("category")->findOrFail($product_id);
         return $product;
     }
     public function categoryAll()
@@ -70,5 +70,4 @@ class ApiController extends Controller
             'products' => $items,
         ];
     }
-    
 }

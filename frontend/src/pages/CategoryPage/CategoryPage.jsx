@@ -11,19 +11,19 @@ const CategoryPage = (props) => {
   const [lastPage, setLastPage] = useState(null);
   const [hidder, setHider] = useState(false);
   const [page, setPage] = useState(1);
+  const [safe, setSafe] = useState('');
 
   const loadProducts = (data) => {
     if (products === null) {
-      setProducts(data.data);
-      console.log("last", data.last_page);
-      console.log("first", data.current_page);
-      setLastPage(data.last_page);
-    } else {
-      setProducts(products.concat(data.data));
+        setProducts(data.data);
+        
+        console.log("last", data.last_page);
+        console.log("first", data.current_page);
+        setLastPage(data.last_page);
+    } else if(categoryName==safe){
+        setProducts(products.concat(data.data));
     }
-    if (page >= lastPage - 1) {
-      setHider(true);
-    }
+   
   };
 
   const handleClick = () => {
@@ -33,11 +33,16 @@ const CategoryPage = (props) => {
 
   useEffect(() => {
     setProducts(null);
+    setSafe(categoryName)//helps to prevent data from concatenating, also refreshes the products
+    setPage(1)
   }, [categoryName]);
 
+  
+
   useEffect(() => {
-    CategoriesApi.getCategory(loadProducts, setIsLoading, categoryName);
-  }, [page]);
+    CategoriesApi.getCategory(loadProducts, setIsLoading, categoryName, page);
+    
+  }, [page,safe]);
 
   useEffect(() => {
     console.log(page, lastPage, hidder);
@@ -46,7 +51,7 @@ const CategoryPage = (props) => {
     } else {
       setHider(false);
     }
-  }, [page]);
+  }, [page,lastPage]);
 
   return (
     <div className="categoryPage">

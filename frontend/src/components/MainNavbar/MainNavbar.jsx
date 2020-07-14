@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -8,12 +8,18 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ handleSearch }) => {
   const { cartCount } = useContext(CartContext);
+  const [value, setValue] = useState('');
+  
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      handleSearch(e.target.value);
+      handleSearch(value);
     }
   };
+  const handleClick=(e)=>{
+    handleSearch(value)
+  };
+
 
   return (
     <nav className="mainNav">
@@ -36,10 +42,12 @@ const Navbar = ({ handleSearch }) => {
 
         <input
         onKeyDown={handleKeyDown}
+        onChange={e=>{ setValue( e.target.value ) }}
         className="mainNav__search"
+        value={ value }
         type="text"
         placeholder="Search"/>
-        <FontAwesomeIcon className="mainNav__magnifyingGlass" icon={faSearch}></FontAwesomeIcon>
+        <FontAwesomeIcon onClick={e=>{handleClick(e)}} className="mainNav__magnifyingGlass" icon={faSearch}></FontAwesomeIcon>
 
         </div>
         
