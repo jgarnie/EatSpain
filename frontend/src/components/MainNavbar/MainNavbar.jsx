@@ -53,7 +53,7 @@ const Navbar = ({ handleSearch }) => {
             }}
             className="mainNav__magnifyingGlass"
             icon={faSearch}
-          ></FontAwesomeIcon>
+          />
         </div>
 
         <div className="mainNav__cart">

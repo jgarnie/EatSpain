@@ -9,13 +9,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2rem;
+  @media screen and (max-width: $bp-large) {
+    padding: 0 1rem;
+  }
 
   &__img {
     height: 4rem;
-    padding-left: 2rem;
   }
 
   &__title {
+    @media screen and (max-width: $bp-large) {
+      display: none;
+    }
     font-family: "Amatic SC", cursive;
     font-size: 4rem;
     color: $yellow;
@@ -32,44 +38,44 @@
 
   &__searchContainer {
     display: flex;
-    background-color: darkgrey;
     margin-right: 1rem;
-    padding-right: 1rem;
-    border-radius: 30px;
+    padding-right: 0.5rem;
     height: 1.8rem;
-    transition: 0.2s;
-
-    &:hover {
-      opacity: 0.75;
-      height: 2.1rem;
-    }
+    border-bottom: 1px solid $red;
   }
 
   &__search {
-    background-color: darkgrey;
     border: none;
-    text-indent: 1rem;
     outline: none;
     align-self: center;
-    margin-left: 0.5rem;
-    color: white;
+    color: $red;
+    width: 11rem;
+
+    @media screen and (max-width: $bp-medium) {
+      width: 8rem;
+    }
+
+    @media screen and (max-width: $bp-xsmall) {
+      width: 5rem;
+    }
 
     &::placeholder {
-      color: white;
+      opacity: 0.5;
+      color: $red;
+    }
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        opacity: 0.75;
+      }
     }
   }
 
   &__magnifyingGlass {
     align-self: center;
+    cursor: pointer;
   }
-
-  // &__search {
-  //   border: 2px solid darkgrey;
-  //   border-radius: 30px;
-  //   color: white;
-  //   &::placeholder {
-  //     color: white;
-  //   }
 
   &__cart {
     display: flex;
@@ -77,22 +83,12 @@
     align-items: center;
   }
 
-  &__cartNum {
-    padding-right: 2rem;
-    padding-left: 0.5rem;
-  }
   &__cartLink {
     text-decoration: none;
     color: inherit;
   }
 
   &__cartNum {
-    padding-right: 2rem;
     padding-left: 0.5rem;
   }
-}
-
-.searchbar:hover > .txt {
-  width: 100px;
-  padding: 0 6px;
 }

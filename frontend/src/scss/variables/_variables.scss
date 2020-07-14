@@ -1,8 +1,13 @@
+$fontFamily: "Montserrat", sans-serif;
 
-$fontFamily: 'Montserrat', sans-serif;
+$grey: #e2e2e2;
+$red: #aa151b;
+$green: #058e6e;
+$yellow: #f1bf00;
 
+//breakpoints
 
-$grey: #E2E2E2;
-$red:#AA151B;
-$green:#058E6E;
-$yellow:#F1BF00;
+$bp-xsmall: 375px;
+$bp-medium: 450px;
+$bp-medium1: 650px;
+$bp-large: 800px;
