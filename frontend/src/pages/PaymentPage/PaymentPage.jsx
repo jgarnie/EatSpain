@@ -3,137 +3,123 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./PaymentPage.scss";
 
+const PaymentPage = ({ thankerHandler }) => {
+  const [number, setNumber] = useState("");
+  const [name, setName] = useState("");
+  const [expiry, setExpiry] = useState("");
+  const [cvc, setCvc] = useState("");
+  const [focus, setFocus] = useState("");
+  const [status, setStatus] = useState(false);
+  const [alert, setAlert] = useState(true);
+  const [spinner, setSpinner] = useState(true);
+  const [verification, setVerification] = useState("");
+  const [thanks, setThanks] = useState(false);
 
- const PaymentPage=({thankerHandler})=> {
-    const [number, setNumber] = useState('');
-    const [name, setName] = useState('');
-    const [expiry, setExpiry] = useState('');
-    const [cvc, setCvc] = useState('');
-    const [focus, setFocus] = useState('');
-    const [status, setStatus] = useState(false);
-    const [alert, setAlert] = useState(true);
-    const [spinner, setSpinner] = useState(true);
-    const [verification, setVerification] = useState("");
-    const [thanks, setThanks] = useState(false);
-  
-
-const verifier=(e)=>{
+  const verifier = (e) => {
     e.preventDefault();
 
-    if(number.length>=16 && name!=='' && expiry!=='' && cvc.length>=3){
-        setStatus(true)
-       
-             setSpinner(false)
-       setInterval(print,500);
-        
-       
-    }else{
-        setAlert(false)
-        
+    if (
+      number.length >= 16 &&
+      name !== "" &&
+      expiry !== "" &&
+      cvc.length >= 3
+    ) {
+      setStatus(true);
+
+      setSpinner(false);
+      setInterval(print, 500);
+    } else {
+      setAlert(false);
     }
+  };
+  const print = () => {
+    setVerification((verification) => verification + ".");
+  };
 
-}
-const print=()=>{
+  const handleAlert = () => {
+    setAlert(true);
+  };
 
-    setVerification(verification=> verification+".");
-
-}
-
-const handleAlert=()=>{
-    setAlert(true)
-}
-
-useEffect(() => {
-     
-    
-   //signal to server will be sent
-
-}, [status])
-useEffect(() => {
-     
-    if(verification.length===8){
-   
-        setThanks(true);
-    
+  useEffect(() => {
+    //signal to server will be sent
+  }, [status]);
+  useEffect(() => {
+    if (verification.length === 8) {
+      setThanks(true);
     }
-   
-}, [verification])
+  }, [verification]);
 
-useEffect(() => {
-     
+  useEffect(() => {
     thankerHandler(thanks);
+  }, [thanks]);
 
-}, [thanks])
+  console.log("props", thankerHandler);
 
-console.log('props',thankerHandler)
+  return (
+    <>
+      <div className="cardContainer">
+        <Cards
+          number={number}
+          name={name}
+          expiry={expiry}
+          cvc={cvc}
+          focused={focus}
+        />
+        <form onSubmit={verifier}>
+          <input
+            type="tel"
+            name="number"
+            placeholder="Card Number"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
+          <input
+            type="text"
+            name="expiry"
+            placeholder="MM/DD Expiration"
+            value={expiry}
+            onChange={(e) => setExpiry(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
+          <input
+            type="tel"
+            name="cvc"
+            placeholder="CVC"
+            value={cvc}
+            onChange={(e) => setCvc(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
 
+          <button>Complete Order</button>
+        </form>
+        <div hidden={alert} className="cardContainer__alert">
+          <p>
+            {" "}
+            "please, verify the paymetn information is correct and try again"
+          </p>
 
-
-    return (<>
-        <div className="cardContainer">
-            <Cards 
-            number={number}
-            name={name}
-            expiry={expiry}
-            cvc={cvc}
-            focused={focus}
-            
-            />
-            <form onSubmit={verifier}>
-
-                <input 
-                type="tel" 
-                name="number" 
-                placeholder="Card Number" 
-                value={number}
-                onChange={e=>setNumber(e.target.value)}
-                onFocus={e=> setFocus(e.target.name)}
-                />
-                <input 
-                type="text" 
-                name="name" 
-                placeholder="Name" 
-                value={name}
-                onChange={e=>setName(e.target.value)}
-                onFocus={e=> setFocus(e.target.name)}
-                />
-                <input 
-                type="text" 
-                name="expiry" 
-                placeholder="MM/DD Expiration" 
-                value={expiry}
-                onChange={e=>setExpiry(e.target.value)}
-                onFocus={e=> setFocus(e.target.name)}
-                />
-                <input 
-                type="tel" 
-                name="cvc" 
-                placeholder="CVC" 
-                value={cvc}
-                onChange={e=>setCvc(e.target.value)}
-                onFocus={e=> setFocus(e.target.name)}
-                />
-                
-                    <button>Complete Order</button>
-                
-            </form>
-            <div hidden={alert} className="cardContainer__alert">
-
-                <p> "please, verify the paymetn information is correct and try again"</p>
-                   
-                <button onClick={handleAlert}>Try Again</button>
-
-            </div>
-            <div hidden={spinner} className="cardContainer__verify">
-                <div className="cardContainer__verify__inner">
-                <h4>We are processing you request, this may take few seconds</h4>
-                <p>conecting with server </p>
-                <div className="cardContainer__verify__inner__loading">{verification}</div>
-                </div>
-            </div>
-            
+          <button onClick={handleAlert}>Try Again</button>
         </div>
-        
-    </>)
-}
+        <div hidden={spinner} className="cardContainer__verify">
+          <div className="cardContainer__verify__inner">
+            <h4>We are processing you request, this may take few seconds</h4>
+            <p>conecting with server </p>
+            <div className="cardContainer__verify__inner__loading">
+              {verification}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 export default PaymentPage;

@@ -9,15 +9,14 @@ export class CategoriesApi {
     }
     setIsLoading(false);
   };
-  static getCategory = async (setData, setIsLoading, category) => {
+  static getCategory = async (setData, setIsLoading, category, page) => {
     try {
       const response = await fetch(
-        `${baseUrl}/api/categories/all?name=${category}`
+        `${baseUrl}/api/categories/all?name=${category}&page=${page}`
       );
       if (!response.status) throw Error(response.statusText);
       const data = await response.json();
       setData(data);
-      console.log('data',data)
       setIsLoading(false);
     } catch (e) {
       console.log("There was an error when trying to fetch the categories", e);

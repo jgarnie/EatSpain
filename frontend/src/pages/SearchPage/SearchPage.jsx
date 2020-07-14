@@ -6,29 +6,24 @@ import Spinner from "../../components/Spinner/Spinner.jsx";
 
 const SearchPage = ({searchValue, ...restProps}) => {
 
-  const {query} = restProps.match.params
-  //const [products, setProducts] = useState([]);
+  const {query} = restProps.match.params  
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
- 
-  //console.log(restProps, "PROSPO");
-
-    //  useEffect(() => {
-    //   setIsLoading(true);
-    //    ProductsApi.getAllProducts(setProducts, setIsLoading);
-    //  }, []);
 
 
     useEffect(() => {
-       setIsLoading(true);
-       //setSearchResults(searchValue)
-       ProductsApi.getSearchProducts(query,setSearchResults, setIsLoading);
+        setIsLoading(true);
+    
+        ProductsApi.getSearchProducts(query,setSearchResults, setIsLoading);
+       
     }, [query]);
 
+
  const results = searchResults;
-// console.log('results',results)
+
     return (
         <>
+          
           {searchResults.length<= 0 ?  <Spinner/> :
 
            <>
