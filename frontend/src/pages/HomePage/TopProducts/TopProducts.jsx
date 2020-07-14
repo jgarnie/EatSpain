@@ -14,7 +14,7 @@ const TopProducts = () => {
   }, []);
 
   return (
-    <ProductSlider header={"Top Products"} className={"carousel"}>
+    <ProductSlider header={"Top Products"}>
       {products.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}

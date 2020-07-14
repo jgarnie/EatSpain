@@ -7,6 +7,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import "./ProductDetailPage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const ProductDetailPage = (props) => {
   const productId = props.match.params.productId;
@@ -30,14 +31,17 @@ const ProductDetailPage = (props) => {
     <Spinner />
   ) : (
     <div className="productDetail">
-      <button className="productDetail__btn">
+      <Link
+        to={`/category/${product.category.name}`}
+        className="productDetail__btn"
+      >
         <FontAwesomeIcon
           className="productDetail__arrow"
           icon={faAngleDoubleLeft}
         />
         Back to{" "}
         <b className="productDetail__categoryName">{product.category.name}</b>
-      </button>
+      </Link>
 
       <ProductDetail product={product} />
 
