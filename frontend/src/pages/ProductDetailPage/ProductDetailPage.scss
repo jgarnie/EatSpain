@@ -1,28 +1,29 @@
 @import "../../scss/variables/variables";
 
-
 .productDetail {
-    // display: flex;
-    // flex-direction: column;
-    &__btn{
-        background-color: $yellow;
-        color: white;
-        height: 3rem;
-        font-size: 1rem;
-        border: none;
-        margin: 2rem;
-        border-radius: 5px;
-        &:hover{
-            cursor: pointer;
-            background-color: $green;
-        }
+  &__btn {
+    background-color: $yellow;
+    color: white;
+    height: 3rem;
+    font-size: 1rem;
+    border: none;
+    margin: 2rem;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: $green;
     }
-    &__arrow {
-        padding-right: 4px;
-    }
+  }
+  &__arrow {
+    padding-right: 4px;
+  }
 
-    &__text {
-        width: 80%;
-        margin: auto;
-    }
+  &__text {
+    width: 80%;
+    margin: auto;
+  }
+
+  &__categoryName {
+    text-transform: capitalize;
+  }
 }

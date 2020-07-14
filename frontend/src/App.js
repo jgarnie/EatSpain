@@ -14,7 +14,7 @@ import OrderDetailsPage from "./pages/OrderDetailsPage/OrderDetailsPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ScrollToTop from "./utils/ScrollToTop";
-import ThanksPage from "./pages/PaymentPage/ThanksPage";
+import ThanksPage from "./pages/ThanksPage/ThanksPage";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");

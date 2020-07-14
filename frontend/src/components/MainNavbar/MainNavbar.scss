@@ -1,16 +1,14 @@
 @import "../../scss/variables/variables";
 
-
-
 .mainNav {
-    position: relative;
-    height: 5rem;
-    background-color: white;
-    color: $red;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  height: 5rem;
+  background-color: white;
+  color: $red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
   &__img {
     height: 4rem;
@@ -32,7 +30,6 @@
     flex-direction: row;
   }
 
-
   &__searchContainer {
     display: flex;
     background-color: darkgrey;
@@ -41,7 +38,6 @@
     border-radius: 30px;
     height: 1.8rem;
     transition: 0.2s;
-
 
     &:hover {
       opacity: 0.75;
@@ -74,7 +70,12 @@
   //   &::placeholder {
   //     color: white;
   //   }
-  
+
+  &__cart {
+    display: flex;
+    height: 1.8rem;
+    align-items: center;
+  }
 
   &__cartNum {
     padding-right: 2rem;
@@ -89,13 +90,9 @@
     padding-right: 2rem;
     padding-left: 0.5rem;
   }
-
-
-
 }
-
 
 .searchbar:hover > .txt {
   width: 100px;
-  padding:0 6px;
+  padding: 0 6px;
 }

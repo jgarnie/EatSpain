@@ -4,14 +4,11 @@ import { ProductsApi } from "../../api/ProductsApi";
 import Spinner from "../../components/Spinner/Spinner";
 import ProductSlider from "../../components/ProductSlider/ProductSlider";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import { CategoriesApi } from "../../api/CategoriesApi";
 import "./ProductDetailPage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetailPage = (props) => {
-  // console.log(props)
-
   const productId = props.match.params.productId;
 
   const [product, setProduct] = useState(null);
@@ -29,12 +26,18 @@ const ProductDetailPage = (props) => {
     ProductsApi.getNewProducts(setSliderProducts, setIsSliderLoading);
   }, []);
 
-  console.log(product)
   return !product ? (
     <Spinner />
   ) : (
     <div className="productDetail">
-      <button className="productDetail__btn"> <FontAwesomeIcon className="productDetail__arrow" icon={faAngleDoubleLeft}/> go back to "category"</button>
+      <button className="productDetail__btn">
+        <FontAwesomeIcon
+          className="productDetail__arrow"
+          icon={faAngleDoubleLeft}
+        />
+        Back to{" "}
+        <b className="productDetail__categoryName">{product.category.name}</b>
+      </button>
 
       <ProductDetail product={product} />
 
@@ -44,7 +47,6 @@ const ProductDetailPage = (props) => {
           <ProductCard key={prod.id} {...prod} />
         ))}
       </ProductSlider>
-
     </div>
   );
 };

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Product;
-use App\OrderDetails;
+use App\OrderDetail;
 
 class Cart extends Model
 {
@@ -13,8 +13,8 @@ class Cart extends Model
         return $this->belongsToMany(Product::class)->withPivot(['count'])->with("category");
     }
 
-    public function orderDetails()
+    public function orderDetail()
     {
-        return $this->hasOne(OrderDetails::class);
+        return $this->hasOne(OrderDetail::class);
     }
 }

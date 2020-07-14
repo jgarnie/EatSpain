@@ -17,7 +17,6 @@ export class CategoriesApi {
       if (!response.status) throw Error(response.statusText);
       const data = await response.json();
       setData(data);
-      console.log('data',data)
       setIsLoading(false);
     } catch (e) {
       console.log("There was an error when trying to fetch the categories", e);
