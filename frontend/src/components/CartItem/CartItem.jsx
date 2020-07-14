@@ -1,9 +1,8 @@
-import React, { useContext, useState, useReducer, useEffect } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import { CartContext } from "../../providers/CartProvider";
 import "./CartItem.scss";
 import { baseUrl } from "../../env";
-
-const initialState = 1;
+import { Link } from "react-router-dom";
 
 function reducer(count, action) {
   switch (action.type) {
@@ -22,8 +21,7 @@ function reducer(count, action) {
 
 const CartItem = ({ item }) => {
   const { updateCart, removeFromCart } = useContext(CartContext);
-
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [count, dispatch] = useReducer(reducer, item.pivot.count);
 
   useEffect(() => {
     if (count) {
@@ -38,11 +36,13 @@ const CartItem = ({ item }) => {
   return (
     <div className="cartItem">
       <div className="cartItem__container1">
-        <img
-          className="cartItem__img"
-          src={`${baseUrl}/images/uploads/${item.image}`}
-          alt={item.name}
-        />
+        <Link to={`/products/${item.id}`}>
+          <img
+            className="cartItem__img"
+            src={`${baseUrl}/images/uploads/${item.image}`}
+            alt={item.name}
+          />
+        </Link>
         <h3 className="cartItem__name">{item.name}</h3>
       </div>
 

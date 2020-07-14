@@ -5,8 +5,6 @@ import "./ProductDetail.scss";
 import { CartContext } from "../../providers/CartProvider";
 import { baseUrl } from "../../env";
 
-const initialState = 1;
-
 function reducer(count, action) {
   switch (action.type) {
     case "increment":
@@ -24,7 +22,7 @@ function reducer(count, action) {
 
 const ProductDetail = ({ product }) => {
   const { addToCart } = useContext(CartContext);
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [count, dispatch] = useReducer(reducer, 1);
 
   return (
     <div className="product-detail">
@@ -41,17 +39,26 @@ const ProductDetail = ({ product }) => {
 
         <div className="product-detail__container2">
           <div className="product-detail__number">
-          <input
-            className="product-detail__numberBtn"
-            type="number"
-            value={count}
-            onChange={(e) => dispatch({ type: "set", value: e.target.value })}
-          />
-          <div className="product-detail__valueChangeContainer">
-
-          <button className="product-detail__valueChange" onClick={() => dispatch({ type: "increment" })}>+</button>
-          <button className="product-detail__valueChange" onClick={() => dispatch({ type: "decrement" })}>-</button>
-          </div>
+            <input
+              className="product-detail__numberBtn"
+              type="number"
+              value={count}
+              onChange={(e) => dispatch({ type: "set", value: e.target.value })}
+            />
+            <div className="product-detail__valueChangeContainer">
+              <button
+                className="product-detail__valueChange"
+                onClick={() => dispatch({ type: "increment" })}
+              >
+                +
+              </button>
+              <button
+                className="product-detail__valueChange"
+                onClick={() => dispatch({ type: "decrement" })}
+              >
+                -
+              </button>
+            </div>
           </div>
           <button
             className="product-detail__Btn"
