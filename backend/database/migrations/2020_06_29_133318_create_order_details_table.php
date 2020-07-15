@@ -19,7 +19,7 @@ class CreateOrderDetailsTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->nullable();
-            $table->string('address')->unique()->nullable();
+            $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('zip')->nullable();
             $table->boolean('offers_email')->nullable();

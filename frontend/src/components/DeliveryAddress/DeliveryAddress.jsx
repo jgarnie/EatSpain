@@ -38,7 +38,6 @@ const DeliveryAddress = () => {
 
   useEffect(() => {
     if (Object.keys(deliveryDetails).length > 0) {
-      console.log(deliveryDetails);
       dispatch({
         action: "replace",
         value: {
