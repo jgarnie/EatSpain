@@ -12,7 +12,6 @@ const Modal = ({ show, children, handleCloseModal }) => {
     <div
       className="modal"
       onClick={(e) => {
-        console.dir(e.target, "modal");
         if (e.target.className === "modal") {
           handleCloseModal();
         }

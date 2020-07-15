@@ -20,6 +20,6 @@ export default async function fetchData(
     const data = await response.json();
     return data;
   } catch (e) {
-    console.log("There was an error when trying to fetch the categories", e);
+    console.log("There was an error when trying to fetch the data", e);
   }
 }

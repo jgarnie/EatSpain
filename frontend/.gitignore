@@ -19,7 +19,6 @@ src/env.js
 .env.development.local
 .env.test.local
 .env.production.local
-
 npm-debug.log*
 phploy.ini
 yarn-debug.log*

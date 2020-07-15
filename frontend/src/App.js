@@ -15,6 +15,7 @@ import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import ThanksPage from "./pages/ThanksPage/ThanksPage";
+import EasterEgg from "./pages/EasterEgg/EasterEgg";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -56,6 +57,8 @@ function App() {
           )}
         />
         <Route component={ThanksPage} path="/thankyou" />
+
+        <Route component={EasterEgg} path="/easteregg" />
       </Switch>
       <Footer />
     </Router>

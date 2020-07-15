@@ -8,6 +8,10 @@ import CartHeading from "../../components/CartHeading/CartHeading";
 import CartFooter from "../../components/CartFooter/CartFooter";
 
 const PaymentPage = ({ thankerHandler }) => {
+  const { cart, isCartLoading, cartTotal, updateCheckoutData } = useContext(
+    CartContext
+  );
+
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -45,8 +49,11 @@ const PaymentPage = ({ thankerHandler }) => {
   };
 
   useEffect(() => {
-    //signal to server will be sent
+    if (status) {
+      updateCheckoutData({ paymentMethod: "card", orderStatus: "Ordered" });
+    }
   }, [status]);
+
   useEffect(() => {
     if (verification.length === 8) {
       setThanks(true);
@@ -56,10 +63,6 @@ const PaymentPage = ({ thankerHandler }) => {
   useEffect(() => {
     thankerHandler(thanks);
   }, [thanks]);
-
-  console.log("props", thankerHandler);
-
-  const { cart, cartTotal, isCartLoading } = useContext(CartContext);
 
   return (
     <>
@@ -75,57 +78,64 @@ const PaymentPage = ({ thankerHandler }) => {
 
       <div className="cardContainer">
         <form className="cardContainer__form" onSubmit={verifier}>
-          <label className="cardContainer__name">
+          <label for="number" className="cardContainer__name">
             Card Number:
-            <input
-              className="cardContainer__input"
-              type="number"
-              name="number"
-              value={number}
-              onChange={(e) => {
-                setNumber(e.target.value.slice(0, 16));
-              }}
-              onFocus={(e) => setFocus(e.target.name)}
-            />
+          </label>
+          <input
+            className="cardContainer__input"
+            type="number"
+            name="number"
+            value={number}
+            onChange={(e) => {
+              setNumber(e.target.value.slice(0, 16));
+            }}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
+
+          <label for="name" className="cardContainer__name">
+            Name:
           </label>
 
-          <label className="cardContainer__name">
-            Name:
-            <input
-              className="cardContainer__input"
-              type="text"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              onFocus={(e) => setFocus(e.target.name)}
-            />
-          </label>
-          <div className="cardContainer__dates">
-            <label className="cardContainer__name">
-              MM/DD Expiration:
+          <input
+            className="cardContainer__input"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onFocus={(e) => setFocus(e.target.name)}
+          />
+          <div className="cardContainer__datesBox">
+            <div className="cardContainer__date">
+              <label for="expiry" className="cardContainer__name">
+                MM/DD Expiration:
+              </label>
+
               <input
                 className="cardContainer__inputDate"
                 type="text"
                 name="expiry"
                 value={expiry}
-                onChange={(e) => setExpiry(e.target.value)}
+                onChange={(e) => setExpiry(e.target.value.slice(0, 4))}
                 onFocus={(e) => setFocus(e.target.name)}
               />
-            </label>
+            </div>
 
-            <label className="cardContainer__name">
-              <br />
-              CVC:
+            <div className="cardContainer__date">
+              <label for="cvc" className="cardContainer__name">
+                CVC:
+              </label>
+
               <input
                 className="cardContainer__inputDate"
-                type="tel"
+                type="number"
                 name="cvc"
                 value={cvc}
-                onChange={(e) => setCvc(e.target.value)}
+                onChange={(e) => setCvc(e.target.value.slice(0, 3))}
                 onFocus={(e) => setFocus(e.target.name)}
               />
-            </label>
+            </div>
           </div>
+
           <div className="cardContainer__btnContainer">
             <button className="cardContainer__btn">Complete Order</button>
           </div>

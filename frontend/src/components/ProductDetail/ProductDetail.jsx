@@ -27,7 +27,6 @@ const ProductDetail = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleAddToCart = () => {
-    console.log("click");
     addToCart(product.id, count);
     setShowModal(true);
   };
@@ -44,7 +43,7 @@ const ProductDetail = ({ product }) => {
           alt={product.name}
         />
       </div>
-      <div>
+      <div className="product-detail__text">
         <h1>{product.name}</h1>
         <p>{product.description}</p>
         <p>Price: {product.price} €</p>

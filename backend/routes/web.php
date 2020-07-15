@@ -54,21 +54,19 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 //after route name to hide urls should be: ->middleware('can:admin'), has been defined on app\Providers\AuthServiceProvider.php as a gate
 
 
-Route::get('/send-email', function(){
-
-
-    $order= App\OrderDetail::findOrFail(1);
-    //should be placed in the controller
-    //Mail::to('test@app.cz')->send(new InvoiceEmail());
-    //dd('email sent');
-    return view('/emails/invoice-email',compact('order'));
-
-});
-
-
-
-
 Route::get('/send-notification', function(){
     $user = User::first();
     $user->notify(new ShippedShop());
 });
+
+
+// Route::get('/send-email', function(){
+//testing purposes email
+
+//     $order= App\OrderDetail::findOrFail(1);
+//     //should be placed in the controller
+//     //Mail::to('test@app.cz')->send(new InvoiceEmail());
+//     //dd('email sent');
+//     return view('/emails/invoice-email',compact('order'));
+
+// });

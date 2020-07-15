@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\OrderDetail;
 use App\Cart;
+use Mail;
+use App\Mail\InvoiceEmail;
 
 class OrderDetailController extends Controller
 {
