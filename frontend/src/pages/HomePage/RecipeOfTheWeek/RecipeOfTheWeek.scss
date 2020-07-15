@@ -1,60 +1,55 @@
 @import "../../../scss/variables/variables";
 
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .recipe {
-    position: relative;
-    width: 48vw;
-    height: 20rem;
-    overflow: hidden;
+  position: relative;
+  width: 48vw;
+  height: 20rem;
+  overflow: hidden;
 
+  &__container {
+    width: 70%;
+    padding-top: 3rem;
+    height: 100%;
+    padding-left: 2rem;
+    color: white;
+  }
 
-    &__container {
-        width: 100%;
-        height: 100%;
-        padding-left: 2rem;
-        color: white;
+  &__image {
+    position: absolute;
+    background-image: url(../../../img/recipe.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.2s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      transition: 0.2s;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#333333, 0.5);
     }
-    
-    
-    &__image {
-        position: absolute;
-        background-image: url(../../../img/recipe.jpg);
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        transition: 0.2s;
-    
-        &:after {
-            content:"";
-            position: absolute;
-            transition: 0.2s;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(#333333, 0.5);
-        }
-    }
+  }
 
-    &:hover {
-        cursor: pointer;
-        .recipe__image {
-            transform: scale(1.1);
-            &:after {
-                background-color: rgba(#333333, 0.4);
-            }
-        }
+  &:hover {
+    cursor: pointer;
+    .recipe__image {
+      transform: scale(1.1);
+      &:after {
+        background-color: rgba(#333333, 0.4);
+      }
     }
-
+  }
 }
-
-
