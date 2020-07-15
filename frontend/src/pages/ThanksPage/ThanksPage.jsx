@@ -17,7 +17,7 @@ export default function ThanksPage() {
         <strong>{lastOrder.email}</strong>
       </p>
 
-      <h2>With your purchase you are helping us fight global warming</h2>
+      <h2>With your purchase you are helping us fight global warming!</h2>
 
       <h3>
         To find more about our principles and values you can check
