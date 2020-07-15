@@ -45,8 +45,7 @@ const ProductDetailPage = (props) => {
 
       <ProductDetail product={product} />
 
-      <h1 className="productDetail__text">Check also</h1>
-      <ProductSlider>
+      <ProductSlider header="Related products">
         {sliderProducts.map((prod) => (
           <ProductCard key={prod.id} {...prod} />
         ))}

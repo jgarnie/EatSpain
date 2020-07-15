@@ -8,6 +8,10 @@ import CartHeading from "../../components/CartHeading/CartHeading";
 import CartFooter from "../../components/CartFooter/CartFooter";
 
 const PaymentPage = ({ thankerHandler }) => {
+  const { cart, isCartLoading, cartTotal, updateCheckoutData } = useContext(
+    CartContext
+  );
+
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -45,8 +49,11 @@ const PaymentPage = ({ thankerHandler }) => {
   };
 
   useEffect(() => {
-    //signal to server will be sent
+    if (status) {
+      updateCheckoutData({ paymentMethod: "card", orderStatus: "Ordered" });
+    }
   }, [status]);
+
   useEffect(() => {
     if (verification.length === 8) {
       setThanks(true);
@@ -56,10 +63,6 @@ const PaymentPage = ({ thankerHandler }) => {
   useEffect(() => {
     thankerHandler(thanks);
   }, [thanks]);
-
-  console.log("props", thankerHandler);
-
-  const { cart, cartTotal, isCartLoading } = useContext(CartContext);
 
   return (
     <>
