@@ -9,6 +9,7 @@ export default function ProductsSection() {
   const [page, setPage] = useState(1);
   const [hidder, setHider] = useState(false);
   const [lastPage, setLastPage] = useState(null);
+  const [sorry, setSorry] = useState(true);
 
   const loadProducts = (data) => {
     if (products == null) {
@@ -17,12 +18,15 @@ export default function ProductsSection() {
     } else {
       setProducts(products.concat(data.data));
     }
+    
   };
+  
 
   useEffect(() => {
     setIsLoading(true);
 
     ProductsApi.getAllProducts(loadProducts, setIsLoading, page);
+
   }, [page]);
 
   const handleClick = () => {

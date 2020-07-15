@@ -24,7 +24,7 @@ const SearchPage = ({searchValue, ...restProps}) => {
     return (
         <>
           
-          {searchResults.length<= 0 ?  <Spinner/> :
+          {isLoading ?  <Spinner/> :
 
            <>
                 <h3>We have found <span className="SeearchPage__poducts__wrapper--total">{results.length}</span> products</h3> 

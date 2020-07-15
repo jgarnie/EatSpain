@@ -40,7 +40,6 @@
     &__details{
         display: flex;
         flex-direction: column;
-        border: 1px solid grey;
         &__head{
             display: flex;
             flex-direction: row;
@@ -74,6 +73,7 @@
             border-radius: 4px;    
             font-weight: bold;
             color: white; 
+            margin-top: 0.5rem;
             &:hover{
                 color: rgb(7, 109, 7);
                 text-decoration: none;

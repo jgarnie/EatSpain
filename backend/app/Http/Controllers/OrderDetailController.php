@@ -49,7 +49,7 @@ class OrderDetailController extends Controller
         
         $order->save();
 
-        Mail::to($order->email)->send(new InvoiceEmail($order));
+        //Mail::to($order->email)->send(new InvoiceEmail($order));
 
         return redirect(action('OrderDetailController@index'));
         

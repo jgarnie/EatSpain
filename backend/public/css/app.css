@@ -41,7 +41,6 @@
 .orders__wrapper__details {
   display: flex;
   flex-direction: column;
-  border: 1px solid grey;
 }
 .orders__wrapper__details__head {
   display: flex;
@@ -76,6 +75,7 @@
   border-radius: 4px;
   font-weight: bold;
   color: white;
+  margin-top: 0.5rem;
 }
 .orders__wrapper__details button:hover {
   color: #076d07;
