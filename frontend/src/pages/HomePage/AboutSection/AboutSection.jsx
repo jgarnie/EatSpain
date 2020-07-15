@@ -8,10 +8,10 @@ const AboutSection = () => {
     <section className="about">
       <p className="about__text">
         We are EatSpain. The speciality food shop of spanish products. Have you
-        ever tried to make paella but you couldn’t fine the correct type of
+        ever tried to make paella but you couldn’t find the correct type of
         rice? Well you have come to the right place. Check out all our typical
-        Spanish products in once place, and help the environment when buying
-        them
+        Spanish products in one place, and help the environment when buying
+        them.
       </p>
       <FontAwesomeIcon className="about__scroll" icon={faChevronDown} />
     </section>

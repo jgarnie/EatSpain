@@ -14,7 +14,7 @@ const recipeSection = () => {
         <p className="recipe__text">
           Here at EatSpain, we are always searching for the next exciting tastes
           to tantalise you’re tastebuds. Our specialised team is here for you!
-          Find all the ingredients listed below the recipe
+          Find all the ingredients listed below the recipe.
         </p>
       </div>
     </section>
