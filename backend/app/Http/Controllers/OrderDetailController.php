@@ -7,6 +7,7 @@ use App\OrderDetail;
 use App\Cart;
 use Mail;
 use App\Mail\InvoiceEmail;
+use App\Mail\Notification;
 
 class OrderDetailController extends Controller
 {
@@ -49,7 +50,7 @@ class OrderDetailController extends Controller
         
         $order->save();
 
-        //Mail::to($order->email)->send(new InvoiceEmail($order));
+        Mail::to($order->email)->send(new Notification($order));
 
         return redirect(action('OrderDetailController@index'));
         
