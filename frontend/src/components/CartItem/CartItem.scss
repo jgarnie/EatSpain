@@ -40,7 +40,7 @@
   &__valueChangeContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   &__valueChange {
@@ -48,7 +48,8 @@
     border: none;
     border-radius: 5px;
     color: white;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
   }
 
   &__container1 {
