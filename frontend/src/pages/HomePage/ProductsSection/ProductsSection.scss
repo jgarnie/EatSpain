@@ -9,6 +9,11 @@
   justify-content: space-evenly;
   margin-left: 4rem;
 
+  &__headline {
+    padding-bottom: 3rem;
+    width: 90%;
+    margin: auto;
+  }
   &__ProductCard {
     width: 22.5%;
   }

@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [deliveryDetails, setDeliveryDetails] = useState([]);
   const [isCartLoading, setIsCartLoading] = useState(false);
+  const [lastOrder, setLastOrder] = useState({});
   const [token, setToken] = useState(() =>
     window.localStorage.getItem("_cartToken")
   );
@@ -45,11 +46,22 @@ const CartProvider = ({ children }) => {
 
   const updateCheckoutData = (data) => {
     CartApi.updateCheckoutData(
-      { token, ...data },
+      { token, total: cartTotal, ...data },
       setCart,
       setDeliveryDetails,
       setIsCartLoading
     );
+    if (data.orderStatus === "Ordered") {
+      let orderNumber = "#EAT" + ("000000" + deliveryDetails.id).slice(-6);
+
+      setLastOrder({
+        email: deliveryDetails.email,
+        orderNumber: orderNumber,
+        orderTotal: cartTotal,
+        orderCart: cart,
+      });
+      setToken(null);
+    }
   };
 
   return (
@@ -61,6 +73,7 @@ const CartProvider = ({ children }) => {
         cartTotal,
         isCartLoading,
         deliveryDetails,
+        lastOrder,
         addToCart,
         updateCart,
         removeFromCart,

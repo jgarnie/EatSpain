@@ -1,60 +1,70 @@
+@import "../../scss/variables/variables";
 
+.thanksPage {
+  padding-top: 10vh;
+  color: black;
+  text-align: center;
+  width: 70%;
+  height: 90vh;
+  margin: auto;
 
-.thanksWrapper{
-    color: grey;
-    padding: 1rem;
-    h1{
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    h3{
-        margin-top: 2rem;
-    }
-   a{
-       text-decoration: none;
-       position: relative;
-       left: 10%;
-       animation-name: link;
-       color: red;
-       font-size: 1.5rem;
-   
-   }
-   &__wrap{
-       display: flex;
-       justify-content: space-between;
-       width: 80%;
-       margin: auto;
-        &__faIcon{
-           
-          
-            &__home{
-                position: relative;
-                color: rgb(85, 182, 56);
-                font-size: 4rem;
-                flex: 1;
-               
-            }
-            &__truck{
-                animation-name: truck;
-                animation-duration: 6s;
-                position: relative;
-                transition: 1s;
-                color: rgb(85, 182, 56);
-                font-size: 4rem;
-                animation-fill-mode: forwards;
-                flex: 9;
-                z-index: 1;
-            }
-        }
-        
-   }
- 
-}
-@keyframes truck {
-    0% {transform: translateX(0%);}
-    100%   {transform: translateX(85%);}
-}
-@keyframes home {
-    0% {transform: translateX(0%);}
-    100%   {transform: translateX(100%);}
+  &__info {
+    text-align: left;
+  }
+
+  &__motto {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  &__btn {
+    text-decoration: none;
+    color: $yellow;
+  }
+
+  &__img {
+    width: 70vw;
+    height: 30vh;
+  }
+  //   &__wrap {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     width: 80%;
+  //     margin: auto;
+  //     &__faIcon {
+  //       &__home {
+  //         position: relative;
+  //         color: rgb(85, 182, 56);
+  //         font-size: 4rem;
+  //         flex: 1;
+  //       }
+  //       &__truck {
+  //         animation-name: truck;
+  //         animation-duration: 6s;
+  //         position: relative;
+  //         transition: 1s;
+  //         color: rgb(85, 182, 56);
+  //         font-size: 4rem;
+  //         animation-fill-mode: forwards;
+  //         flex: 9;
+  //         z-index: 1;
+  //       }
+  //     }
+  //   }
+  // }
+  // @keyframes truck {
+  //   0% {
+  //     transform: translateX(0%);
+  //   }
+  //   100% {
+  //     transform: translateX(40%);
+  //   }
+  // }
+  // @keyframes home {
+  //   0% {
+  //     transform: translateX(0%);
+  //   }
+  //   100% {
+  //     transform: translateX(70%);
+  //   }
 }

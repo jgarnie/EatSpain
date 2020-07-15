@@ -27,7 +27,6 @@ const ProductDetail = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleAddToCart = () => {
-    console.log("click");
     addToCart(product.id, count);
     setShowModal(true);
   };

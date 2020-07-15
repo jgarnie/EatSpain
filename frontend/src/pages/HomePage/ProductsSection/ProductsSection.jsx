@@ -36,6 +36,7 @@ export default function ProductsSection() {
 
   return (
     <>
+      <h2 className="products__headline">Check Also</h2>
       {products && (
         <div className="products">
           {products.map((product, index) => {
