@@ -1,4 +1,87 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+.orders__wrapper {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.orders__wrapper h1 {
+  color: gray;
+  padding: 1rem;
+  margin: 0;
+}
+.orders__wrapper h3 {
+  padding-top: 0.5rem;
+}
+.orders__wrapper__links {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.orders__wrapper__links button {
+  width: 50%;
+  padding: 0.5rem 1rem;
+  background-color: #f5a207;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.orders__wrapper__links a {
+  color: white;
+}
+.orders__wrapper__links a:hover {
+  color: #076d07;
+  text-decoration: none;
+}
+.orders__wrapper span {
+  color: black;
+  font-size: 1.1rem;
+  padding: 0;
+  font-weight: bold;
+}
+.orders__wrapper__details {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+}
+.orders__wrapper__details__head {
+  display: flex;
+  flex-direction: row;
+}
+.orders__wrapper__details__list {
+  display: flex;
+  flex-direction: row;
+}
+.orders__wrapper__details__list--name {
+  width: 60%;
+  border: 1px solid #302e2e;
+  background-color: #e3f5f5;
+  padding-left: 0.5rem;
+}
+.orders__wrapper__details__list--price {
+  width: 20%;
+  border: 1px solid #302e2e;
+  background-color: #e3f5f5;
+  text-align: center;
+}
+.orders__wrapper__details__list--count {
+  width: 20%;
+  border: 1px solid #302e2e;
+  background-color: #e3f5f5;
+  text-align: center;
+}
+.orders__wrapper__details button {
+  width: 20%;
+  padding: 0.5rem 1rem;
+  background-color: #f5a207;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+.orders__wrapper__details button:hover {
+  color: #076d07;
+  text-decoration: none;
+}
+
 .logoutBlade {
   background-color: #161313;
   padding: 0.5rem;

@@ -16,9 +16,9 @@ class InvoiceEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($order)
     {
-        //
+        $this->order= $order;
     }
 
     /**
@@ -28,6 +28,9 @@ class InvoiceEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails/invoiceEmail');
+        $order= $this->order;
+        
+        return $this->subject('Your delivery is on his way')
+                    ->view('/emails/invoice-email',compact('order'));
     }
 }

@@ -22,10 +22,10 @@
 <body>
     <div id="app">
     </div>
-
-        <main class="py-4">
+    <main class="py-4">
             @yield('content')
         </main>
+       
     
 </body>
 </html>

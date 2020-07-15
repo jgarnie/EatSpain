@@ -1,4 +1,4 @@
-
+@import '../views/orders/orders.scss';
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -7,11 +7,13 @@
 
 // Bootstrap
 @import '../views/layouts/layout.scss';
-
+//navigation
 @import '../views/partials/navigation.scss';
 
 @import '~bootstrap/scss/bootstrap';
-
+//items
 @import '../views/items.scss';
+//orders
+
 
 
