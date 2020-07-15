@@ -1,48 +1,53 @@
 @import "../../../scss/variables/variables";
 
-
-
 .goGreen {
-    position: relative;
-    width: 48vw;
-    overflow: hidden;
+  position: relative;
+  width: 48vw;
+  overflow: hidden;
+  text-decoration: none;
 
-    &__container {
-        width: 100%;
-        height: 100%;
-        padding-left: 2rem;
-        color: white;
+  &__container {
+    width: 70%;
+    margin: auto;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 5rem;
+    display: block;
+  }
+
+  &__image {
+    position: absolute;
+    background-image: url(../../../img/goGreen.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.2s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      transition: 0.2s;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#333333, 0.3);
     }
+  }
 
-    &__image {
-        position: absolute;
-        background-image: url(../../../img/goGreen.jpg);
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        transition: 0.2s;
-    
-        &:after {
-            content:"";
-            position: absolute;
-            transition: 0.2s;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(#333333, 0.3);
-        }
+  &__text {
+    text-decoration: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .goGreen__image {
+      transform: scale(1.1);
+      &:after {
+        background-color: rgba(#333333, 0.1);
+      }
     }
-
-    &:hover {
-        cursor: pointer;
-        .goGreen__image{
-            transform: scale(1.1);
-            &:after {
-            background-color: rgba(#333333, 0.1);
-            }
-        }
-    }
-
+  }
 }

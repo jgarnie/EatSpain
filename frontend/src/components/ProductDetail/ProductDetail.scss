@@ -10,15 +10,20 @@
   &__img {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 50vw;
     height: 30rem;
     margin: 1rem;
     align-items: center;
     padding: 3rem;
     img {
-      width: auto;
+      width: 30vw;
       height: 100%;
     }
+  }
+
+  &__text {
+    width: 70vw;
+    margin-left: 3rem;
   }
 
   &__number {
