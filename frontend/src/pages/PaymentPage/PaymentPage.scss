@@ -35,6 +35,7 @@
     font-size: 0.8rem;
     margin: 0.75rem 0 0.25rem 0;
     align-self: flex-start;
+    display: block;
   }
 
   &__input {
@@ -47,18 +48,25 @@
   }
 
   &__inputDate {
-    width: 5rem;
+    width: 9rem;
     height: 2rem;
     border: 1px solid grey;
     border-radius: 5px;
   }
 
-  &__dates {
+  &__datesBox {
     display: flex;
     flex-direction: row;
+    margin-right: 1rem;
+  }
+
+  &__date {
+    margin-right: 2rem;
   }
 
   &__btnContainer {
+    width: 100%;
+    margin: auto;
   }
 
   &__btn {
@@ -121,4 +129,8 @@
       }
     }
   }
+}
+
+.rccs {
+  padding-top: 2rem;
 }

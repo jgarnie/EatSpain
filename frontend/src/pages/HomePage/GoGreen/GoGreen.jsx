@@ -1,31 +1,25 @@
 import React from "react";
-import "./GoGreen.scss"
-
-
+import "./GoGreen.scss";
+import { Link } from "react-router-dom";
 
 const goGreenSection = () => {
-    return (
-    <section className="goGreen">
+  return (
+    <Link className="goGreen" to="/about">
+      <section>
+        <div className="goGreen__image"></div>
 
-        <div className="goGreen__image">
-
-        </div>
-        
         <div className="goGreen__container">
+          <h1 className="goGreen__heading">Go Green</h1>
 
-            <h1 className="goGreen__heading">Go Green</h1>
-
-            <p className="goGreen__text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil possimus
-            facere totam iure maiores quis odio ea provident autem exercitationem
-            voluptatibus quam veniam fugit.
-            </p>
-            
+          <p className="goGreen__text">
+            We are passionate about food, and inspired by our beautiful country.
+            Find out how you can help us protect our planet for future
+            generations...
+          </p>
         </div>
-        
-
-    </section>
-    );
+      </section>
+    </Link>
+  );
 };
 
 export default goGreenSection;
