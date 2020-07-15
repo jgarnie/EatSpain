@@ -1,0 +1,35 @@
+.editblade__wrapp{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    &__form{
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 70%;
+        min-width: 70%;
+        height: 90%;
+        min-height: auto;
+        margin: auto;
+        border: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__name{
+            font-weight: bold;
+            color: rgb(41, 40, 40);
+            input{
+                width: 100%;
+                }
+        }
+        div{
+            padding: 0 0.5rem 0.5rem 0.5rem;
+        }
+        textarea{
+            width: 100%;
+        }
+        
+    }
+}

@@ -48,6 +48,7 @@
                     </div>
 
                     @foreach($order->cart->products as $product)
+                    
                         <div class="orders__wrapper__details__list">
 
                                 <div class="orders__wrapper__details__list--name">{{$product->name}}</div>
