@@ -1,6 +1,5 @@
 @import "../../scss/variables/variables";
 
-
 .product-card {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -30,7 +29,7 @@
   &__price {
     font-size: 0.8rem;
     text-align: right;
-    text-decoration:none;
+    text-decoration: none;
   }
 
   &__container {

@@ -9,37 +9,42 @@ import { CartContext } from "../../providers/CartProvider";
 export default function ThanksPage() {
   const { lastOrder } = useContext(CartContext);
   return (
-    <div className="thanksWrapper">
-      <h1>Thank you!</h1>
-      <h2>Purchase number {lastOrder.orderNumber}</h2>
-      <p>
-        Information about the order was sent to{" "}
+    <div className="thanksPage">
+      <h1>Thank you for your purchase!</h1>
+
+      <h2 className="thanksPage__info">
+        We recieved your order {lastOrder.orderNumber}
+      </h2>
+      <p className="thanksPage__info">
+        We will keep you informed about our progress with updates to email{" "}
         <strong>{lastOrder.email}</strong>
       </p>
 
-      <h2>With your purchase you are helping us fight global warming!</h2>
+      <h2 className="thanksPage__motto">
+        With your order you are helping us fight global warming
+      </h2>
 
       <h3>
-        To find more about our principles and values you can check
-        <p>
-          <Link to="/about">About us</Link>{" "}
-        </p>
+        To find more about our goals you can check{" "}
+        <Link className="thanksPage__btn" to="/about">
+          here
+        </Link>{" "}
       </h3>
-      <h3>
-        To check more articles
-        <p>
-          {" "}
-          <Link to="/">Eat Spain</Link>{" "}
-        </p>
-      </h3>
-      <div className="thanksWrapper__wrap">
-        <div className="thanksWrapper__wrap__faIcon__truck">
+
+      <img
+        className="thanksPage__img"
+        src={require("../../img/green.jpg")}
+        alt="forest"
+      />
+
+      {/* <div className="thanksPage__wrap">
+        <div className="thanksPage__wrap__faIcon__truck">
           <FontAwesomeIcon icon={faTruck} />
         </div>
-        <div className="thanksWrapper__wrap__faIcon__home">
+        <div className="thanksPage__wrap__faIcon__home">
           <FontAwesomeIcon icon={faHome} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
