@@ -10175,13 +10175,21 @@ h3 {
   font-weight: bold;
   color: #292828;
 }
-.editblade__wrapp__form__name input {
-  width: 100%;
+.editblade__wrapp__form__name__image {
+  text-align: center;
+  padding-top: 0.5rem;
 }
 .editblade__wrapp__form div {
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 .editblade__wrapp__form textarea {
   width: 100%;
+}
+.editblade__wrapp__form input {
+  width: 100%;
+}
+.editblade__wrapp__form img {
+  max-width: 40%;
+  max-height: auto;
 }
 /*# sourceMappingURL=app.css.map*/

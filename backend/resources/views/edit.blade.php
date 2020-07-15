@@ -32,7 +32,9 @@
                 @endif
                     <input type="file" name="image" value="{{ old('image', $item->image) }}">
                     @if($item->id)
-                    <img src="/images/uploads/{{$item->image}}" alt="{{ $item->name }}">
+                    <div class="editblade__wrapp__form__name__image">
+                        <img src="/images/uploads/{{$item->image}}" alt="{{ $item->name }}">
+                    </div>
                     @endif
                 </div>
                 <div>
