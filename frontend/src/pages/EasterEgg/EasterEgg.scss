@@ -1,0 +1,36 @@
+@import "../../scss/variables/variables";
+
+.easter {
+  background-color: #eff3fc;
+  height: 80vh;
+
+  &__heading {
+    position: relative;
+    padding-top: 4rem;
+    font-size: 3rem;
+    width: 50%;
+    margin: auto;
+    z-index: 2;
+    text-transform: uppercase;
+  }
+  &__image {
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    z-index: 1;
+  }
+  &__text {
+    position: relative;
+    padding-top: 4rem;
+    font-size: 3rem;
+    width: 50%;
+    margin: auto;
+    z-index: 2;
+  }
+
+  &__letKnow {
+    color: Red;
+  }
+}
