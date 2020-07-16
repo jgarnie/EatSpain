@@ -10112,6 +10112,11 @@ h3 {
   padding: 0.5rem;
   color: white;
 }
+@media only screen and (max-width: 600px) {
+  .navigationBar .nav__wrap {
+    width: 100%;
+  }
+}
 
 .productsWrapper {
   display: flex;
