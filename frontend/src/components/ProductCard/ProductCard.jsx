@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../providers/CartProvider";
 import Modal from "../Modal/Modal";
 
-const ProductCard = ({ id, name, image, price }) => {
+const ProductCard = ({ id, name, image, price, slider }) => {
   const { addToCart } = useContext(CartContext);
 
   const [showModal, setShowModal] = useState(false);
@@ -19,8 +19,12 @@ const ProductCard = ({ id, name, image, price }) => {
     setShowModal(false);
   };
 
+  const cardStyles = slider
+    ? `product-card product-card--slider`
+    : `product-card`;
+
   return (
-    <div className="product-card">
+    <div className={cardStyles}>
       <Link className="product-card" to={`/products/${id}`}>
         <img
           className="product-card__img"

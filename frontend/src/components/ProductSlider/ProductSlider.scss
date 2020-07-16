@@ -1,6 +1,9 @@
 .carousel {
   width: 90%;
   margin: 0 auto;
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+  }
 
   &__header {
     padding-top: 3rem;
@@ -25,7 +28,7 @@
     font-size: 2rem;
     color: #555;
     position: absolute;
-    top: 45%;
+    top: 30%;
 
     &:hover {
       color: #000;
@@ -39,9 +42,4 @@
       right: -2rem;
     }
   }
-}
-
-.test {
-  //background-color: red;
-  //min-height: 400px;
 }
