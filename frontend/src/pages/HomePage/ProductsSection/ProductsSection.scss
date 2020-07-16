@@ -8,11 +8,17 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-  }
+    justify-content: space-between;
+    // margin: 0 5%;
 
-  &__ProductCard {
-    //width: 22.5%;
+    @media screen and (max-width: $bp-large) {
+      justify-content: center;
+    }
+
+    &:after {
+      width: 30%;
+      content: "";
+    }
   }
 
   &__ProductsSection {
