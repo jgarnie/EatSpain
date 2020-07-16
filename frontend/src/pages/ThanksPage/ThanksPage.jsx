@@ -16,7 +16,7 @@ export default function ThanksPage() {
         We recieved your order {lastOrder.orderNumber}
       </h2>
       <p className="thanksPage__info">
-        We will keep you informed about our progress with updates to email{" "}
+        We will keep you informed about our progress to email{" "}
         <strong>{lastOrder.email}</strong>
       </p>
 
@@ -25,7 +25,7 @@ export default function ThanksPage() {
       </h2>
 
       <h3>
-        To find more about our goals you can check{" "}
+        To find out more about our goals you can check{" "}
         <Link className="thanksPage__btn" to="/about">
           here
         </Link>{" "}
