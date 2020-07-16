@@ -21,14 +21,12 @@ const ProductSlider = ({ children, header, className }) => {
       let display = null;
       //Set responsivity:
 
-      if (window.innerWidth < 550) {
+      if (window.innerWidth < 500) {
         display = 1;
       } else if (window.innerWidth < 800) {
         display = 2;
-      } else if (window.innerWidth < 1024) {
-        display = 3;
       } else {
-        display = 4;
+        display = 3;
       }
       setDisplaySlides(display);
     };

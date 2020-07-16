@@ -28,11 +28,7 @@
     font-size: 2rem;
     color: #555;
     position: absolute;
-    top: 45%;
-
-    @media screen and (min-width: 400px) {
-      top: 20%;
-    }
+    top: 30%;
 
     &:hover {
       color: #000;
