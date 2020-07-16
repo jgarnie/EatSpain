@@ -18,15 +18,12 @@ export default function ProductsSection() {
     } else {
       setProducts(products.concat(data.data));
     }
-    
   };
-  
 
   useEffect(() => {
     setIsLoading(true);
 
     ProductsApi.getAllProducts(loadProducts, setIsLoading, page);
-
   }, [page]);
 
   const handleClick = () => {
@@ -39,10 +36,9 @@ export default function ProductsSection() {
   };
 
   return (
-    <>
-      <h2 className="products__headline">Check Also</h2>
+    <div className="products">
       {products && (
-        <div className="products">
+        <div className="products__wrap">
           {products.map((product, index) => {
             return (
               <ProductCard
@@ -60,6 +56,6 @@ export default function ProductsSection() {
           Load more...
         </button>
       </div>
-    </>
+    </div>
   );
 }

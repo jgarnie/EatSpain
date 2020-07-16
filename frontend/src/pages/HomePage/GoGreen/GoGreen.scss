@@ -5,6 +5,10 @@
   width: 48vw;
   overflow: hidden;
   text-decoration: none;
+  @media screen and (max-width: $bp-large) {
+    margin: 1rem 0;
+    width: 96vw;
+  }
 
   &__container {
     width: 70%;
@@ -39,6 +43,7 @@
 
   &__text {
     text-decoration: none;
+    padding-bottom: 4rem;
   }
 
   &:hover {

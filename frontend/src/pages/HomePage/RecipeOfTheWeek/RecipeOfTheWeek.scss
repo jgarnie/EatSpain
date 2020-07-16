@@ -14,12 +14,21 @@ body {
   height: 20rem;
   overflow: hidden;
 
+  @media screen and (max-width: $bp-large) {
+    margin: 1rem 0;
+    width: 96vw;
+  }
+
   &__container {
     width: 70%;
     padding-top: 3rem;
     height: 100%;
     padding-left: 2rem;
     color: white;
+
+    @media screen and (max-width: $bp-large) {
+      width: 90%;
+    }
   }
 
   &__image {

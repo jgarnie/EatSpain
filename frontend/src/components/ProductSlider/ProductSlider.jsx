@@ -20,8 +20,10 @@ const ProductSlider = ({ children, header, className }) => {
     const checkWindowSize = () => {
       let display = null;
       //Set responsivity:
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 500) {
         display = 2;
+      } else if (window.innerWidth < 1024) {
+        display = 3;
       } else {
         display = 4;
       }
@@ -56,7 +58,7 @@ const ProductSlider = ({ children, header, className }) => {
         <Slider className="product-slider__slider">
           {children.map((child, index) => {
             return (
-              <Slide key={index} index={index}>
+              <Slide key={index} index={index} innerClassName="test">
                 {child}
               </Slide>
             );
