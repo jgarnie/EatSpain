@@ -19,25 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/items', 'ProductController@index')->name('products.index');
-Route::get('/items/{id}', 'ProductController@show');
-Route::get('/create', 'ProductController@create')->name('products.create');
-Route::post('/items/create', 'ProductController@store')->name('products.store');
-Route::post('/items/delete', 'ProductController@delete');
-Route::get('/item/{id}/edit','ProductController@edit');
-Route::post('/items/{id}/update', 'ProductController@update');
-Route::post('/items/search','ProductController@searchBar')->name('products.searchBar');
 
-//Orders
-Route::get('/orders','OrderDetailController@index')->name('orders.pending');
+Route::middleware('auth')->group(function () {//protect all the routes, can be done in controller and also in route specifically ->middleware('auth');
 
-Route::post('/orders/{id}','OrderDetailController@update')->name('orders.update');
+    Route::get('/items', 'ProductController@index')->name('products.index');
+    Route::get('/items/{id}', 'ProductController@show');
+    Route::get('/create', 'ProductController@create')->name('products.create');
+    Route::post('/items/create', 'ProductController@store')->name('products.store');
+    Route::post('/items/delete', 'ProductController@delete');
+    Route::get('/item/{id}/edit','ProductController@edit');
+    Route::post('/items/{id}/update', 'ProductController@update');
+    Route::post('/items/search','ProductController@searchBar')->name('products.searchBar');
 
+    //Orders
+    Route::get('/orders','OrderDetailController@index')->name('orders.pending');
 
+    Route::post('/orders/{id}','OrderDetailController@update')->name('orders.update');
 
-
-
-
+});
 
 Route::prefix('admin')->group(function(){
 
