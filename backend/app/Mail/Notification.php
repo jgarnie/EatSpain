@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class InvoiceEmail extends Mailable
+class Notification extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,7 +18,7 @@ class InvoiceEmail extends Mailable
      */
     public function __construct($order)
     {
-        $this->order= $order;
+        $this->order = $order;
     }
 
     /**
@@ -30,7 +30,8 @@ class InvoiceEmail extends Mailable
     {
         $order= $this->order;
 
-        return $this->subject('Thanks for shoping')
-                    ->view('/emails/invoice-email',compact('order'));
+        return $this->subject('Your delivery is on its way')
+                    ->view('/emails/delivered',compact('order'));
+        
     }
 }

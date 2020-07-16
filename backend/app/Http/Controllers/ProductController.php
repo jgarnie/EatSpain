@@ -9,9 +9,9 @@ use App\Category;
 class ProductController extends Controller
 {
     public function index(){
-       
+        
         $items = Product::orderby('name','desc')->paginate(15);
-      
+        
         return view('items',compact('items'));
     }
     public function show($id){

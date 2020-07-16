@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use App\OrderDetail;
+use Mail;
+use App\Mail\InvoiceEmail;
 
 class CartController extends Controller
 {
@@ -105,7 +107,14 @@ class CartController extends Controller
         $order_detail->order_status = $request->input("orderStatus") ?? $order_detail->order_status;
 
         $order_detail->save();
+
+        if($order_detail->order_status){
+            $order = $order_detail;
+            Mail::to($order->email)->send(new InvoiceEmail($order));
+        }
+
         $cart->load("orderDetail");
+
         return $cart;
     }
 }

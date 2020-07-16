@@ -1,0 +1,83 @@
+.orders__wrapper{
+    h1{
+        color: gray;
+        padding: 1rem;
+        margin:0;
+    }
+    h3{
+        padding-top: 0.5rem;
+    }
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    &__links{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+            button{
+                width: 50%;
+                padding: 0.5rem 1rem;
+                background-color: rgb(245, 162, 7);
+                border-radius: 4px;    
+                font-weight: bold;
+            }
+            a{
+                color: white; 
+                &:hover{
+                    color: rgb(7, 109, 7);
+                    text-decoration: none;
+                }
+            }
+    }
+    span{
+        color:black;
+        font-size: 1.1rem;
+        padding: 0;
+        font-weight: bold;
+
+    }
+    &__details{
+        display: flex;
+        flex-direction: column;
+        &__head{
+            display: flex;
+            flex-direction: row;
+        }
+        &__list{  
+            display: flex;
+            flex-direction: row;
+            &--name{
+                width:60%;
+                border: 1px solid rgb(48, 46, 46);
+                background-color: rgb(227, 245, 245);
+                padding-left: 0.5rem;
+            }
+            &--price{
+                width: 20%;
+                border: 1px solid rgb(48, 46, 46);
+                background-color: rgb(227, 245, 245);
+                text-align: center;
+            }
+            &--count{
+                width: 20%;
+                border: 1px solid rgb(48, 46, 46);
+                background-color: rgb(227, 245, 245);
+                text-align: center;
+            }
+        }
+        button{
+            width: 20%;
+            padding: 0.5rem 1rem;
+            background-color: rgb(245, 162, 7);
+            border-radius: 4px;    
+            font-weight: bold;
+            color: white; 
+            margin-top: 0.5rem;
+            &:hover{
+                color: rgb(7, 109, 7);
+                text-decoration: none;
+            }
+        }
+    }
+}

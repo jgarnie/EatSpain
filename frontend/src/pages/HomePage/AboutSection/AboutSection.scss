@@ -21,11 +21,10 @@
 
   &__text {
     position: relative;
-    width: 50%;
+    width: 70vw;
     font-size: 1.7rem;
     text-align: center;
     color: $yellow;
-    // background-color:rgba(grey, 0.7);
     z-index: 1;
 
     @media screen and (max-width: $bp-xlarge) {

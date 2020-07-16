@@ -28,11 +28,5 @@
         "name": "sweets",
         "slug": "sweets",
         "description": "different kinds of spanish sweets"
-    },
-    {
-        "id": 6,
-        "name": "cheese",
-        "slug": "cheese",
-        "description": "different kinds of spanish cheese"
     }
 ]
