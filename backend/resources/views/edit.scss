@@ -3,12 +3,15 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
+    padding: 1rem;
+    background-color: ivory;
     &__form{
+        background-color: white;
+        box-shadow: 10px 10px 5px -2px #888;
         margin-top: 1rem;
         padding: 1rem;
-        width: 70%;
-        min-width: 70%;
+        width: 60%;
+        min-width: 60%;
         height: 90%;
         min-height: auto;
         margin: auto;
@@ -17,9 +20,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+           
+              width: 90%;
+            
+          }
+        form{
+            min-width: 60%;
+        }
         &__name{
             font-weight: bold;
-            color: rgb(41, 40, 40);
                &__image{
                    text-align: center;
                    padding-top: 0.5rem;
@@ -38,7 +49,53 @@
             max-width: 40%;
             max-height: auto;
         }
-       
-    }
-}
+        select{
+            border: 1px;
+            font-weight: bold;
+            width: 30%;
+            padding: 0.2rem;
+            background-color: rgb(231, 219, 219);
+            min-width: 30%;
+            @media only screen and (max-width: 768px) {
+                /* For mobile phones: */
+               width: 45%;
+              }
+        }
+        &--btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            div{
+                width: 45%;  
+            }
+            &__btn1{
+                background-color: rgb(245, 162, 7);
+                border-radius: 4px;
+                color: white; 
+                width: 100%;
+                padding: 0.5rem 1rem;
+                &:hover{
+                    color: rgb(7, 109, 7);
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                }
+            }
+            &__btn2{
+                background-color: rgb(32, 136, 32);
+                border-radius: 4px;
+                color: white; 
+                padding: 0.5rem 1rem;
+                width: 100%;
+                &:hover{
+                    color: rgb(245, 162, 7);
+                    text-decoration: none;
+                }
+            }
 
+          
+        }
+   
+         
+    }
+
+}

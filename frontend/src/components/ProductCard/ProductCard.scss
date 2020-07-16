@@ -34,7 +34,7 @@
 
   &__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   &__btn {
@@ -47,6 +47,18 @@
     text-transform: capitalize;
     &:hover {
       background-color: $green;
+    }
+  }
+
+  &__modal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      object-fit: contain;
+      width: 6rem;
+      height: 6rem;
+      margin-right: 1rem;
     }
   }
 }

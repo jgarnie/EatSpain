@@ -20,7 +20,10 @@ const ProductSlider = ({ children, header, className }) => {
     const checkWindowSize = () => {
       let display = null;
       //Set responsivity:
-      if (window.innerWidth < 500) {
+
+      if (window.innerWidth < 550) {
+        display = 1;
+      } else if (window.innerWidth < 800) {
         display = 2;
       } else if (window.innerWidth < 1024) {
         display = 3;

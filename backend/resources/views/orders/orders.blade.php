@@ -24,14 +24,13 @@
                     <div class="orders__wrapper__details__contact">
                             <h3>Order:{{$order->id}}</h3>
 
-                            
-
                             <div><span>Total </span>{{$order->total}} Eur</div>
 
                             <div><span>Name: </span>{{$order->first_name}}, {{$order->last_name}}</div>
                             
                             <div><span>Address: </span>{{$order->address}}, {{$order->city}}, {{$order->zip}}</div>
-                        
+
+                            <div><span>Email: </span>{{$order->email}}</div>
                             
                     </div>
                     

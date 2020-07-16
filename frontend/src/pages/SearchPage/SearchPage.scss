@@ -1,6 +1,15 @@
-.SeearchPage__poducts__wrapper{
+.SearchPage {
+  &__number {
+    width: 80vw;
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  &__products {
+    width: 90vw;
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 1rem;
+  }
 }

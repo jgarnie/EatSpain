@@ -10027,6 +10027,13 @@ h3 {
   padding: 0;
   font-weight: bold;
 }
+@media only screen and (max-width: 768px) {
+  .orders__wrapper span {
+    /* For mobile phones: */
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+}
 .orders__wrapper__details {
   display: flex;
   flex-direction: column;
@@ -10065,6 +10072,12 @@ h3 {
   font-weight: bold;
   color: white;
   margin-top: 0.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .orders__wrapper__details button {
+    /* For mobile phones: */
+    min-width: 50%;
+  }
 }
 .orders__wrapper__details button:hover {
   color: #076d07;
@@ -10120,6 +10133,12 @@ h3 {
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (max-width: 768px) {
+  .productsWrapper__productCard {
+    /* For mobile phones: */
+    flex-basis: 80%;
+  }
+}
 .productsWrapper__productCard__image {
   width: 13vh;
   max-width: 13vh;
@@ -10155,13 +10174,16 @@ h3 {
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
+  background-color: ivory;
 }
 .editblade__wrapp__form {
+  background-color: white;
+  box-shadow: 10px 10px 5px -2px #888;
   margin-top: 1rem;
   padding: 1rem;
-  width: 70%;
-  min-width: 70%;
+  width: 60%;
+  min-width: 60%;
   height: 90%;
   min-height: auto;
   margin: auto;
@@ -10171,9 +10193,17 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .editblade__wrapp__form {
+    /* For mobile phones: */
+    width: 90%;
+  }
+}
+.editblade__wrapp__form form {
+  min-width: 60%;
+}
 .editblade__wrapp__form__name {
   font-weight: bold;
-  color: #292828;
 }
 .editblade__wrapp__form__name__image {
   text-align: center;
@@ -10191,5 +10221,112 @@ h3 {
 .editblade__wrapp__form img {
   max-width: 40%;
   max-height: auto;
+}
+.editblade__wrapp__form select {
+  border: 1px;
+  font-weight: bold;
+  width: 30%;
+  padding: 0.2rem;
+  background-color: #e7dbdb;
+  min-width: 30%;
+}
+@media only screen and (max-width: 768px) {
+  .editblade__wrapp__form select {
+    /* For mobile phones: */
+    width: 45%;
+  }
+}
+.editblade__wrapp__form--btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.editblade__wrapp__form--btns div {
+  width: 45%;
+}
+.editblade__wrapp__form--btns__btn1 {
+  background-color: #f5a207;
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.editblade__wrapp__form--btns__btn1:hover {
+  color: #076d07;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.editblade__wrapp__form--btns__btn2 {
+  background-color: #208820;
+  border-radius: 4px;
+  color: white;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+.editblade__wrapp__form--btns__btn2:hover {
+  color: #f5a207;
+  text-decoration: none;
+}
+
+.show__wrapp {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  background-color: ivory;
+}
+.show__wrapp__content {
+  margin-top: 1rem;
+  width: 60%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #888;
+  box-shadow: 10px 10px 5px -2px #888;
+}
+.show__wrapp__content__img {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+.show__wrapp__content__img img {
+  max-width: 50%;
+  height: auto;
+}
+.show__wrapp__content__btns {
+  display: flex;
+}
+.show__wrapp__content__btns :first-child :first-child {
+  background-color: #208820;
+}
+.show__wrapp__content__btns :nth-child(2) :first-child {
+  background-color: #f5a207;
+}
+.show__wrapp__content__btns :nth-child(-n+2) {
+  width: 35%;
+}
+.show__wrapp__content__btns :nth-child(-n+2) :nth-child(1) {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+}
+.show__wrapp__content__btns :last-child {
+  margin-left: auto;
+}
+.show__wrapp__content__btns :last-child :last-child {
+  padding: 0.5rem 1rem;
+  background-color: #cc361c;
+  border-radius: 4px;
+  color: white;
+}
+.show__wrapp__content span {
+  font-weight: bold;
 }
 /*# sourceMappingURL=app.css.map*/

@@ -61,13 +61,16 @@
                     <input type="text" name="discount" value="{{ old('discount', $item->discount) }}">
                 </div> -->
                 <div class="editblade__wrapp__form--btns">
-                    
-                    @if($item->id)
-                        <button type="submit">Update</button>
-                    @else
-                        <button type="submit">Create</button>
-                    @endif
-                    <a href="/items"><button>back</button></a>
+                    <div>
+                        @if($item->id)
+                            <button class ="editblade__wrapp__form--btns__btn1" type="submit">Update</button>
+                        @else
+                            <button class ="editblade__wrapp__form--btns__btn1" type="submit">Create</button>
+                        @endif
+                    </div>
+                    <div>
+                        <a href="/items"><button class ="editblade__wrapp__form--btns__btn2" type="button">back</button></a>
+                    </div>
                 </div>
         </form>
         

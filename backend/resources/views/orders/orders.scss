@@ -1,4 +1,6 @@
+
 .orders__wrapper{
+    
     h1{
         color: gray;
         padding: 1rem;
@@ -35,7 +37,11 @@
         font-size: 1.1rem;
         padding: 0;
         font-weight: bold;
-
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            font-size: 0.9rem;
+            font-weight: normal;
+          }
     }
     &__details{
         display: flex;
@@ -74,6 +80,10 @@
             font-weight: bold;
             color: white; 
             margin-top: 0.5rem;
+            @media only screen and (max-width: 768px) {
+                /* For mobile phones: */
+                min-width: 50%;
+              }
             &:hover{
                 color: rgb(7, 109, 7);
                 text-decoration: none;
@@ -81,3 +91,4 @@
         }
     }
 }
+
