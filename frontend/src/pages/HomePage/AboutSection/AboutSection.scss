@@ -27,6 +27,14 @@
     color: $yellow;
     // background-color:rgba(grey, 0.7);
     z-index: 1;
+
+    @media screen and (max-width: $bp-xlarge) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 1.25rem;
+    }
   }
 
   &__scroll {

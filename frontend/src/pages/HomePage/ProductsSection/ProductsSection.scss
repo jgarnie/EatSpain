@@ -1,41 +1,42 @@
 @import "../../../scss/variables/variables";
 
-.products{
+.products {
+  width: 90%;
+  margin: 0 auto;
+
+  &__wrap {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 90%;
+    justify-content: center;
+  }
+
+  &__ProductCard {
+    //width: 22.5%;
+  }
+
+  &__ProductsSection {
+    text-align: center;
+    width: 20%;
     margin: auto;
-    // justify-content: space-evenly;
-    margin-left: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
 
-    &__ProductCard{
-        width: 22.5%;
-    }
+  &__btn {
+    background-color: $yellow;
+    color: white;
+    height: 3rem;
+    transition: 0.2s;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px;
 
-    &__ProductsSection{
-        text-align: center;
-        width: 20%;
-        margin: auto;
-        margin-bottom: 2rem;
-        padding-top: 3rem;
-        padding-bottom: 5rem;
-        }
-    
-    
-    &__btn {
-        background-color: $yellow;
-        color: white;
-        height: 3rem;
-        transition: 0.2s;
-        width: 100%;
-        border: none;
-        font-size: 1rem;
-        border-radius: 10px;
-    
-        &:hover{
-            background-color: $green;
-            cursor: pointer;
-        }
+    &:hover {
+      background-color: $green;
+      cursor: pointer;
     }
+  }
 }
