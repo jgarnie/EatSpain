@@ -5,7 +5,6 @@
   color: black;
   text-align: center;
   width: 70%;
-  height: 90vh;
   margin: auto;
 
   &__info {
@@ -23,9 +22,10 @@
   }
 
   &__img {
-    width: 70vw;
-    height: 30vh;
+    width: 70%;
+    height: auto;
   }
+
   //   &__wrap {
   //     display: flex;
   //     justify-content: space-between;
