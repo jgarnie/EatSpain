@@ -2,13 +2,15 @@
 
 .about {
   position: relative;
-  height: calc(100vh - 7rem);
+  min-height: calc(100vh - 7rem);
   background-image: url(../../../img/main.jpg);
   background-size: cover;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem 0;
   &:after {
     content: "";
     width: 100%;
@@ -22,7 +24,24 @@
   &__text {
     position: relative;
     width: 70vw;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: $yellow;
+    z-index: 1;
+
+    @media screen and (max-width: $bp-xlarge) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__header {
+    position: relative;
+    width: 70vw;
+    font-size: 2.5rem;
     text-align: center;
     color: $yellow;
     z-index: 1;
@@ -43,6 +62,12 @@
     color: $yellow;
     font-size: 5rem;
     bottom: 1.5rem;
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 3rem;
+      left: calc(50% - 24px);
+      bottom: 0.75rem;
+    }
 
     animation-iteration-count: infinite;
     animation-duration: 1.5s;
