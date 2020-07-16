@@ -49,7 +49,7 @@ const CartItem = ({ item, compact }) => {
       </div>
 
       <div className="cartItem__container2">
-        <div className="cartItem__price">{item.price} eur</div>
+        <div className="cartItem__price">{item.price} €</div>
       </div>
 
       {compact ? (
@@ -86,7 +86,7 @@ const CartItem = ({ item, compact }) => {
           </button>
         )}
 
-        {`${(item.price * count).toFixed(2)} €`}
+        <p className="cartItem__text">{`${(item.price * count).toFixed(2)} €`}</p>
       </div>
     </div>
   );

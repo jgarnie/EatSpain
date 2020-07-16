@@ -3,6 +3,7 @@
 .cart {
   display: flex;
   flex-direction: column;
+  
 
   &__name {
     font-size: 1rem;
@@ -11,6 +12,9 @@
     margin-left: 20vw;
     font-size: 2rem;
     margin-top: 2rem;
+    @media only screen and (max-width: 600px) {
+     margin-left: 5vw;
+    }
   }
 
   &__heading {
@@ -18,21 +22,31 @@
     flex-direction: row;
     width: 60%;
     margin: auto;
+    
+    @media only screen and (max-width: 600px) {
+      
+      display: none;
+    
+    }
   }
 
 
   &__item {
     width: 60vw;
+   
   }
 
   &__price {
     width: 10vw;
+
   }
   &__qty {
     width: 10vw;
+  
   }
   &__subtotal {
     width: 40vw;
+   
   }
 
   &__btn {
@@ -50,6 +64,11 @@
     margin-right: 20vw;
     align-self: flex-end;
     cursor: pointer;
+    @media only screen and (max-width: 600px) {
+      width: 40%;
+      margin-right: 1rem;
+      margin-top: 1rem;
+    }
   }
 
   &__total {

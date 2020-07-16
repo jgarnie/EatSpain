@@ -16,7 +16,7 @@ use App\Mail\InvoiceEmail;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin/login');
 });
 
 
@@ -43,9 +43,11 @@ Route::prefix('admin')->group(function(){
 Auth::routes();
 });//to have the url admin/login
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
+Route::get('/home', function () {
+    return redirect('/admin/login');
+});
+Route::resource('/users', 'UsersController',['except'=>['show','create','store']]);
+//TAKEN OUT FOR PRESENTATION, EVERYONE CAN ACCES THE ROUTE TO MANAGE USERS
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::resource('/users', 'UsersController',['except'=>['show','create','store']]);
