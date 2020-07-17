@@ -2,7 +2,8 @@
 
 .easter {
   background-color: #eff3fc;
-  height: 80vh;
+  height: auto;
+  padding-bottom: 2rem;
 
   &__heading {
     position: relative;
@@ -12,6 +13,12 @@
     margin: auto;
     z-index: 2;
     text-transform: uppercase;
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 1.5rem;
+      width: 100%;
+      margin: auto;
+    }
   }
   &__image {
     position: absolute;
@@ -28,9 +35,17 @@
     width: 50%;
     margin: auto;
     z-index: 2;
+    @media screen and (max-width: $bp-large) {
+      font-size: 2rem;
+      width: 100%;
+      margin: auto;
+    }
   }
 
   &__letKnow {
     color: Red;
+    @media screen and (max-width: $bp-large) {
+      font-size: 1.5rem;
+    }
   }
 }
