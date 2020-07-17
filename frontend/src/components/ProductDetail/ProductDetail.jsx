@@ -87,7 +87,9 @@ const ProductDetail = ({ product }) => {
             src={`${baseUrl}/images/uploads/${product.image}`}
             alt={product.name}
           />
-          <h3>{product.name} has been successfully added to cart.</h3>
+          <h3 className="product-detail__modal__title">
+            {product.name} has been successfully added to cart.
+          </h3>
         </div>
       </Modal>
     </div>

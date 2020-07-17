@@ -52,8 +52,11 @@ body {
     }
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &:hover {
-    cursor: pointer;
     .recipe__image {
       transform: scale(1.1);
       &:after {

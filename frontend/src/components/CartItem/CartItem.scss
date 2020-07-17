@@ -8,11 +8,11 @@
   width: 60%;
   align-items: center;
   @media only screen and (max-width: 600px) {
-   width: 90%;
-   margin: 1rem auto 0 0.5rem;
-   padding-top: 0.6rem;
-   position: relative;
-   padding-right: 0.5rem;
+    width: 90%;
+    margin: 1rem auto 0 0.5rem;
+    padding-top: 0.6rem;
+    position: relative;
+    padding-right: 0.5rem;
   }
 
   &__img {
@@ -37,15 +37,13 @@
       font-size: 2rem;
       position: absolute;
       top: 30%;
-    
-     
     }
   }
   &__name {
     font-size: 1.5rem;
     margin-bottom: 0.3rem;
     @media only screen and (max-width: 600px) {
-     font-size: 0.8rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -83,8 +81,8 @@
   &__container2 {
     width: 10vw;
     @media only screen and (max-width: 600px) {
-      width:14vw;
-     }
+      width: 14vw;
+    }
   }
 
   &__container3 {
@@ -101,19 +99,14 @@
     width: 10vw;
     padding-left: 0.5rem;
     @media only screen and (max-width: 600px) {
-    margin-top: 1rem;
-    
-
+      margin-top: 1rem;
     }
   }
-  &__text{
+  &__text {
     @media only screen and (max-width: 600px) {
-      
-        display: none;
-      
-
+      display: none;
     }
-    &__price{
+    &__price {
       white-space: nowrap;
     }
   }
@@ -142,8 +135,7 @@
     @media only screen and (max-width: 600px) {
       position: relative;
       left: 1.5rem;
-   }
-    
+    }
   }
 
   .cartItem__container4 {
@@ -151,9 +143,9 @@
     padding-top: 1rem;
     padding-left: 2.5rem;
   }
-  .cartItem__container1{
-      @media only screen and (max-width: 600px) {
-         padding-left: 1rem;;
-      }
+  .cartItem__container1 {
+    @media only screen and (max-width: 600px) {
+      padding-left: 1rem;
+    }
   }
 }

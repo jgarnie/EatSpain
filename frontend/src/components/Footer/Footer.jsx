@@ -14,9 +14,14 @@ const Footer = () => {
       <div className="footer__flex">
         <div className="footer__about">
           <div className="footer__about__item">
-            <Link className="footer__about__input" to="/about">
+            <a
+              href="https://cookbook.codeboot.cz/"
+              className="footer__about__input"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               Recipes
-            </Link>
+            </a>
           </div>
           <div className="footer__about__item">
             <Link className="footer__about__input" to="/easteregg">

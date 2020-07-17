@@ -2,7 +2,7 @@
 
 .modal {
   position: fixed;
-  z-index: 2;
+  z-index: 11;
   left: 0;
   top: 0;
   width: 100%;
@@ -19,7 +19,9 @@
     border-radius: 5px;
     width: 60%;
     max-width: 650px;
-    min-width: 400px;
+    @media screen and (max-width: "650px") {
+      width: 80%;
+    }
   }
 
   &__actions {

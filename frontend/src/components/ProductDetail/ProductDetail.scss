@@ -137,5 +137,11 @@
       height: 6rem;
       margin-right: 1rem;
     }
+    &__title {
+      font-size: 1rem;
+      @media screen and (max-width: "450px") {
+        font-size: 0.9rem;
+      }
+    }
   }
 }

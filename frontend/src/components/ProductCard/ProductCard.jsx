@@ -45,7 +45,9 @@ const ProductCard = ({ id, name, image, price, slider }) => {
       <Modal show={showModal} handleCloseModal={handleCloseModal}>
         <div className="product-card__modal">
           <img src={`${baseUrl}/images/uploads/${image}`} alt={name} />
-          <h3>{name} has been successfully added to cart.</h3>
+          <h3 className="product-card__modal__title">
+            {name} has been successfully added to cart.
+          </h3>
         </div>
       </Modal>
     </div>
