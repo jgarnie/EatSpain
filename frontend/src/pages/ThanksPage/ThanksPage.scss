@@ -26,45 +26,44 @@
     height: auto;
   }
 
-  //   &__wrap {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     width: 80%;
-  //     margin: auto;
-  //     &__faIcon {
-  //       &__home {
-  //         position: relative;
-  //         color: rgb(85, 182, 56);
-  //         font-size: 4rem;
-  //         flex: 1;
-  //       }
-  //       &__truck {
-  //         animation-name: truck;
-  //         animation-duration: 6s;
-  //         position: relative;
-  //         transition: 1s;
-  //         color: rgb(85, 182, 56);
-  //         font-size: 4rem;
-  //         animation-fill-mode: forwards;
-  //         flex: 9;
-  //         z-index: 1;
-  //       }
-  //     }
-  //   }
-  // }
-  // @keyframes truck {
-  //   0% {
-  //     transform: translateX(0%);
-  //   }
-  //   100% {
-  //     transform: translateX(40%);
-  //   }
-  // }
-  // @keyframes home {
-  //   0% {
-  //     transform: translateX(0%);
-  //   }
-  //   100% {
-  //     transform: translateX(70%);
-  //   }
-}
+     &__wrap {
+       display: flex;
+       justify-content: space-between;
+       width: 100%;
+       
+       &__faIcon {
+         &__home {
+           position: relative;
+           color: rgb(85, 182, 56);
+           font-size: 4rem;
+           flex: 1;
+           color: blue;
+        }
+         &__truck {
+           animation-name: truck;
+           animation-duration: 5s;
+           position: relative;
+           transition: 1s;
+           color: rgb(85, 182, 56);
+           font-size: 4rem;
+           animation-fill-mode: forwards;
+           flex: 9;
+           z-index: 1;
+           color: gold;
+           
+         }
+       }
+     }
+   }
+   @keyframes truck {
+     0% {
+       transform: translateX(-30%);
+       flex: 9;
+    
+     }
+     100% {
+       transform: translateX(55%);
+       flex:3;
+     }
+   }
+

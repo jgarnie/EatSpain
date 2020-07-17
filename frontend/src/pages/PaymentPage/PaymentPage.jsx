@@ -140,15 +140,16 @@ const PaymentPage = ({ thankerHandler }) => {
             <button className="cardContainer__btn">Complete Order</button>
           </div>
         </form>
-
-        <Cards
-          className="cardContainer__card"
-          number={number}
-          name={name}
-          expiry={expiry}
-          cvc={cvc}
-          focused={focus}
-        />
+          <div className="cardContainer__card__wrapp">
+            <Cards
+              className="cardContainer__card"
+              number={number}
+              name={name}
+              expiry={expiry}
+              cvc={cvc}
+              focused={focus}
+            />
+          </div>
         <div hidden={alert} className="cardContainer__alert">
           <p>
             {" "}
@@ -158,14 +159,15 @@ const PaymentPage = ({ thankerHandler }) => {
           <button onClick={handleAlert}>Try Again</button>
         </div>
         <div hidden={spinner} className="cardContainer__verify">
-          <div className="cardContainer__verify__inner">
+            {/* position abdolute hiden for payment background */}
+        </div>
+        <div hidden={spinner} className="cardContainer__verify__inner">
             <h4>We are processing you request, this may take few seconds</h4>
             <p>conecting with server </p>
             <div className="cardContainer__verify__inner__loading">
               {verification}
             </div>
           </div>
-        </div>
       </div>
     </>
   );

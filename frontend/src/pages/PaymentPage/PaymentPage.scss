@@ -6,6 +6,12 @@
   margin: auto;
   justify-content: space-around;
   padding-bottom: 5rem;
+  @media only screen and (max-width: 600px) {
+
+    padding-left: 3rem;
+    
+}
+  
 
   &__headline {
     width: 60%;
@@ -28,8 +34,15 @@
 
   &__card {
     justify-content: center;
+   
   }
-
+  &__card__wrapp{
+    @media only screen and (max-width: 600px) {
+      
+        display: none;
+      
+    }
+  }
   &__name {
     color: black;
     font-size: 0.8rem;
@@ -108,8 +121,8 @@
   &__verify {
     position: absolute;
     z-index: 1;
-    width: 100%;
-    min-height: 100%;
+    width: 100vw;
+    min-height: 100vh;
     top: 0;
     left: 0;
     text-align: center;
@@ -117,13 +130,16 @@
     background-color: whitesmoke;
     opacity: 0.9;
     padding: 5rem 0;
-
+  
     &__inner {
+      position: absolute;
+      top: 45%;
+      left: 20%;
       width: 60%;
       height: 70%;
       margin: auto;
       opacity: 1;
-
+      z-index: 2;
       &__loading {
         font-size: 5rem;
       }

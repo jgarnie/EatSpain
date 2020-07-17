@@ -10179,7 +10179,6 @@ h3 {
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   background-color: ivory;
 }
 .editblade__wrapp__form {
@@ -10333,5 +10332,22 @@ h3 {
 }
 .show__wrapp__content span {
   font-weight: bold;
+}
+
+.alertmesg__wrapp {
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 5rem;
+  background-color: #659236;
+}
+.alertmesg__wrapp__inner {
+  margin: auto;
+  width: 80%;
+  color: lemonchiffon;
+}
+
+.error__wrapp {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: lemonchiffon;
 }
 /*# sourceMappingURL=app.css.map*/
