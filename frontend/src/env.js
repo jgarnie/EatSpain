@@ -1,1 +1,2 @@
-export const baseUrl = "http://www.eatspain.test:80";
+export const baseUrl = "https://eat-spain-data.codeboot.cz";
+//"https://eat-spain-data.codeboot.cz";
