@@ -1,51 +1,145 @@
 @import "../../../src/scss/variables/variables";
 
-
 .aboutPage {
+  display: flex;
+  flex-direction: column;
+  background-color: $green;
+  color: white;
+
+  &__headline {
     display: flex;
     flex-direction: column;
-    background-color: $green;
-    color: lightgrey;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 1.2rem;
 
-    &__headline {
-        text-align: center;
-        padding-top: 5rem;
-        padding-right: 15rem;
-        padding-bottom: 5rem;
-        padding-left: 15rem;
-        padding: 5rem,15rem;
-        color:$grey;
-        opacity: 0.7;
+    @media screen and (max-width: $bp-large) {
+      font-size: 1rem;
+      padding-bottom: 2rem;
     }
 
-    &__first {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    @media screen and (max-width: $bp-medium1) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__first {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 1rem;
     }
 
-    &__second {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-bottom: 10rem;
+    // @media screen and (max-width: $bp-medium1) {
+    //   font-size: 0.8rem;
+    // }
+
+    @media screen and (max-width: $bp-medium1) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__second {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (max-width: $bp-large) {
+      font-size: 1rem;
+      padding-bottom: 2rem;
     }
 
-    &__img {
-        padding: 3rem;
-        height: 30rem;
-        width: 50vw;
+    // @media screen and (max-width: $bp-medium1) {
+    //   font-size: 0.8rem;
+    // }
 
+    @media screen and (max-width: $bp-medium1) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__img {
+    padding: 3rem;
+    height: auto;
+    width: 35rem;
+    object-fit: cover;
+
+    @media screen and (max-width: $bp-large) {
+      width: 20rem;
+      height: auto;
+      display: block;
+      padding: 1rem;
+    }
+    @media screen and (max-width: $bp-large) {
+      width: 25rem;
+      height: auto;
+      display: block;
+      padding: 1rem;
     }
 
-    &__text {
-        font-size: 1.3rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
+    @media screen and (max-width: $bp-medium1) {
+      width: 20rem;
+      height: auto;
+      display: block;
+      padding: 1rem;
+    }
+  }
 
-        
+  &__text {
+    font-size: 1.2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: justify;
 
+    @media screen and (max-width: $bp-large) {
+      font-size: 1rem;
     }
 
+    @media screen and (max-width: $bp-large1) {
+      font-size: 0.8rem;
+    }
 
+    @media screen and (max-width: $bp-medium1) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__thankYou {
+    text-align: center;
+    font-size: 1.8rem;
+    @media screen and (max-width: $bp-large) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: $bp-medium1) {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__imgParents {
+    width: 35rem;
+    height: auto;
+    padding-bottom: 4rem;
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (max-width: $bp-large) {
+      width: 25rem;
+      height: auto;
+      padding-bottom: 2rem;
+    }
+
+    @media screen and (max-width: $bp-medium1) {
+      width: 15rem;
+      height: auto;
+      padding-bottom: 2rem;
+    }
+  }
 }
