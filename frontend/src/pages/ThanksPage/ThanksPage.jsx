@@ -15,6 +15,14 @@ export default function ThanksPage() {
       <h2 className="thanksPage__info">
         We recieved your order {lastOrder.orderNumber}
       </h2>
+      <div className="thanksPage__wrap">
+        <div className="thanksPage__wrap__faIcon__truck">
+          <FontAwesomeIcon icon={faTruck} />
+        </div>
+        <div className="thanksPage__wrap__faIcon__home">
+          <FontAwesomeIcon icon={faHome} />
+        </div>
+      </div>
       <p className="thanksPage__info">
         We will keep you informed about our progress to email{" "}
         <strong>{lastOrder.email}</strong>
@@ -37,14 +45,7 @@ export default function ThanksPage() {
         alt="forest"
       />
 
-      {/* <div className="thanksPage__wrap">
-        <div className="thanksPage__wrap__faIcon__truck">
-          <FontAwesomeIcon icon={faTruck} />
-        </div>
-        <div className="thanksPage__wrap__faIcon__home">
-          <FontAwesomeIcon icon={faHome} />
-        </div>
-      </div> */}
+       
     </div>
   );
 }

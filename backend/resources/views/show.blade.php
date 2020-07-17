@@ -4,14 +4,16 @@
 
 @section('content')
 
-@if (Session::has('success_message'))
-    
-    <div class="alert alert-success">
+
+        @if (Session::has('success_message'))
+<div class="alertmesg__wrapp">
+    <div class="alertmesg__wrapp__inner">
         {{ Session::get('success_message') }}
     </div>
-
-@endif
-
+</div>
+        @endif
+  
+  
 <div class="show__wrapp">
     <div class="show__wrapp__content">
 

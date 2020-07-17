@@ -35,16 +35,16 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
-            'price' => 'required|string|between:0,10',
+            'price' => 'required|numeric|between:0,10',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required|numeric|between:0,100',
             'discount' => 'nullable|numeric|between:0,10',
         ], [
-            'name.required' => 'That number is outside of bounds.',
+            'name.required' => 'Name is required, what are thinking about?',
             'description.required' => 'A review without a text does not make sense, love.',
-            'image.required' => 'accepted formats jpeg,png,jpg,gif,svg|max:2048',
+            'image.required' => 'Required picture, accepted formats jpeg,png,jpg,gif,svg|max:2MB',
             'category_id.required' => 'category is required',
-            'price.max.required' => 'price is required'
+            'price.max.required' => 'Price is required, this is a business'
         ]);
         $newFileName = md5(time()) . '.' . $request->file('image')->extension();
         $request->file('image')->move(public_path('images/uploads'), $newFileName);
@@ -86,14 +86,14 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
-            'price' => 'required|string|between:0,10',
+            'price' => 'required|numeric|between:0,10',
             'category_id' => 'required|numeric|between:0,100',
             'discount' => 'nullable|numeric|between:0,10',
         ], [
-            'name.required' => 'That number is outside of bounds.',
-            'description.required' => 'A review without a text does not make sense, love.',
+            'name.required' => 'Name is required, what are thinking about?',
+            'description.required' => 'A description without a text does not make sense, love.',
             'category_id.required' => 'category is required and must be number!',
-            'price.max.required' => 'price is required'
+            'price.max.required' => 'Price is required, this is a business!'
         ]);
 
         $editId= Product::findOrFail($id);

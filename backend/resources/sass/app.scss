@@ -16,4 +16,22 @@
 //show
 @import '../views/show.scss';
 
+.alertmesg__wrapp{
+    margin: 0;
+    padding: 0.5rem 1rem 0.5rem 5rem;
+    background-color: rgb(101, 146, 54);
+    &__inner{
+        margin: auto;
+        width: 80%;
+        color: lemonchiffon;
+    }
+}
+.error__wrapp{
+    text-align: center;
+    padding: 0.5rem;
+    background-color: lemonchiffon;
+    
+}
+    
+
 

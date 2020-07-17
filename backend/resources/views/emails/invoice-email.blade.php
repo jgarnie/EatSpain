@@ -1,6 +1,7 @@
-<h1>Eat Spain</h1>
+<h1>we dont like styling!!</h1>
 
-<h2>Your order is on his way</h2>
+<h2>but Your order is on his way, :)</h2>
+<p>We only wanted to test this functionality, we would be very surprised if you are one of those who likes to read spam emails!!</p>
 
 @foreach($order->cart->products as $product)
 

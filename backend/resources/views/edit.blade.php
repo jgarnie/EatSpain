@@ -7,7 +7,9 @@
 <div class="editblade__wrapp">
 
     @foreach ($errors->all() as $error)
+    <div class="error__wrapp">
             <li>{{ $error }}</li>
+    </div>
     @endforeach
 
     <div class="editblade__wrapp__form">
@@ -24,7 +26,7 @@
                 </div>
                 <div>
                 <div class="editblade__wrapp__form__name">Description</div>
-                    <textarea type="textarea" rows="6" name="description" value="{{ old('description', $item->description) }}">@if($item->id){{$item->description}}@endif</textarea>
+                    <textarea type="textarea" rows="6" name="description" value="{{ old('description', $item->description) }}">@if($item->id){{$item->description}}@else{{ old('description') }}@endif</textarea>
                 </div>
                 <div>
                 @if(!$item->id)
