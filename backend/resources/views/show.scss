@@ -17,6 +17,10 @@
         background-color: white;
         border: 1px solid #888;
         box-shadow: 10px 10px 5px -2px #888;
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+          width: 90%;
+          }
         &__img{
             text-align: center;
             margin: 1rem;
