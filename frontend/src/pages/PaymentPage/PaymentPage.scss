@@ -7,11 +7,8 @@
   justify-content: space-around;
   padding-bottom: 5rem;
   @media only screen and (max-width: 600px) {
-
     padding-left: 3rem;
-    
-}
-  
+  }
 
   &__headline {
     width: 60%;
@@ -34,13 +31,10 @@
 
   &__card {
     justify-content: center;
-   
   }
-  &__card__wrapp{
-    @media only screen and (max-width: 600px) {
-      
-        display: none;
-      
+  &__card__wrapp {
+    @media screen and (max-width: $bp-large) {
+      display: none;
     }
   }
   &__name {
@@ -130,7 +124,7 @@
     background-color: whitesmoke;
     opacity: 0.9;
     padding: 5rem 0;
-  
+
     &__inner {
       position: absolute;
       top: 45%;
