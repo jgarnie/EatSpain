@@ -42,7 +42,7 @@
                             <span>Price</span>
                         </div>
                         <div class="orders__wrapper__details__list--count">
-                            <span>Nº of Products</span>
+                            <span>Nº <span class="hiderclass"> of Products</span></span>
                         </div>
                     </div>
 
