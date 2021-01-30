@@ -18,7 +18,7 @@ use App\Mail\InvoiceEmail;
 Route::get('/', function () {
     return redirect('/admin/login');
 });
-
+//testgit
 
 Route::middleware('auth')->group(function () {//protect all the routes, can be done in controller and also in route specifically ->middleware('auth');
 
